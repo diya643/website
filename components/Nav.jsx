@@ -127,15 +127,6 @@ const Nav = () => {
                     onMouseEnter={(e) => e.currentTarget.style.background = "var(--pascal-paper-soft)"}
                     onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
                     >
-                      <span style={{
-                        flex: "none",
-                        width: 34, height: 34, borderRadius: 8,
-                        background: "var(--pascal-paper-card)",
-                        color: "var(--pascal-emerald)",
-                        display: "inline-flex", alignItems: "center", justifyContent: "center",
-                      }}>
-                        <i data-lucide={sub.icon} style={{ width: 16, height: 16 }}/>
-                      </span>
                       <span style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                         <span style={{ fontWeight: 600, fontSize: 14, color: "var(--pascal-ink)" }}>{sub.label}</span>
                         <span style={{ fontSize: 12.5, color: "var(--pascal-fg-muted)", lineHeight: 1.4 }}>{sub.desc}</span>
@@ -164,9 +155,6 @@ const Nav = () => {
         onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--pascal-ink)"; }}
         >
           Contact Us
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-            <path d="M3 11 L11 3 M5 3 L11 3 L11 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </a>
       </div>
     </nav>
