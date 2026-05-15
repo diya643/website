@@ -39,10 +39,10 @@ const Hero = () => (
         {/* Headline */}
         <h1 style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(48px, 6.5vw, 84px)",
-          lineHeight: 1.03,
-          letterSpacing: "-0.038em",
-          fontWeight: 700,
+          fontSize: "clamp(44px, 6vw, 76px)",
+          lineHeight: 1.0,
+          letterSpacing: "-0.05em",
+          fontWeight: 600,
           color: "var(--pascal-ink)",
           margin: 0,
         }}>

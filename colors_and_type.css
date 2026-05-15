@@ -1,31 +1,18 @@
 /* =========================================================================
-   Unique — Design System Tokens
-   Extracted from unique.ai (2026-05-13)
-   Palette overhaul: muted nature-inspired greens (May 2026)
-   Typography overhaul: Nohemi (May 2026) — Onest substituted via Google Fonts
+   Pascal AI — Design Tokens
+   Vercel-inspired color system + Geist typography (May 2026)
    ========================================================================= */
 
-/* --- Real Nohemi (uncomment once Nohemi-Variable.ttf is in /fonts) --------
-@font-face {
-  font-family: 'Nohemi';
-  src: url('./fonts/Nohemi-Variable.ttf') format('truetype-variations'),
-       url('./fonts/Nohemi-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
--------------------------------------------------------------------------- */
-
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap");
 
 :root {
   /* ------------------------------------------------------------------ */
-  /* Brand colors — Pascal AI teal + gray system                        */
+  /* Brand colors — Pascal teal + Vercel gray system                    */
   /* ------------------------------------------------------------------ */
-  /* Primary teal */
-  --color-primary-50:  #EBFAF0;
-  --color-primary-100: #DCF9E8;
-  --color-primary-200: #BCF0D5;
+  /* Primary teal (brand hint) */
+  --color-primary-50:  rgba(39, 156, 123, 0.06);
+  --color-primary-100: rgba(39, 156, 123, 0.10);
+  --color-primary-200: rgba(39, 156, 123, 0.20);
   --color-primary-300: #8DE2B5;
   --color-primary-400: #55C390;
   --color-primary-500: #279C7B;  /* brand */
@@ -35,19 +22,19 @@
   --color-primary-900: #07434A;
   --color-primary-950: #052A2E;
 
-  /* Gray */
-  --color-gray-25:  #FDFDFD;
-  --color-gray-50:  #F9FAFA;
-  --color-gray-100: #F5F5F5;
-  --color-gray-200: #EDEDEE;
-  --color-gray-300: #D3D4D5;
-  --color-gray-400: #ABADAF;
-  --color-gray-500: #7D7F83;
-  --color-gray-600: #52555A;
-  --color-gray-700: #33373D;
-  --color-gray-800: #1D2025;
-  --color-gray-900: #171A1D;
-  --color-gray-950: #0A0D12;
+  /* Vercel-style gray scale */
+  --color-gray-25:  #fafafa;
+  --color-gray-50:  #f5f5f5;
+  --color-gray-100: #f0f0f0;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #666666;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #1a1a1a;
+  --color-gray-950: #171717;
 
   /* ------------------------------------------------------------------ */
   /* Semantic color roles                                               */
@@ -55,87 +42,84 @@
   --color-primary:     var(--color-primary-500);
   --color-accent:      var(--color-primary-500);
 
-  --color-bg:          var(--color-gray-25);
-  --color-bg-soft:     var(--color-gray-50);
-  --color-bg-inverse:  var(--color-gray-950);
+  --color-bg:          #fafafa;
+  --color-bg-soft:     #f5f5f5;
+  --color-bg-inverse:  #171717;
 
-  --color-fg:          var(--color-gray-800);
-  --color-fg-muted:    var(--color-gray-600);
-  --color-fg-inverse:  var(--color-gray-100);
+  --color-fg:          #171717;
+  --color-fg-muted:    #666666;
+  --color-fg-inverse:  #fafafa;
 
-  --color-border:      var(--color-gray-200);
-  --color-border-soft: var(--color-gray-100);
-  --color-border-dark: var(--color-gray-300);
+  --color-border:      rgba(0, 0, 0, 0.08);
+  --color-border-soft: rgba(0, 0, 0, 0.05);
+  --color-border-dark: #d4d4d4;
 
   --color-link:        var(--color-primary-500);
   --color-focus:       var(--color-primary-500);
 
   /* ------------------------------------------------------------------ */
-  /* Typography — Lexend (display/headings) + Nunito Sans (body)        */
+  /* Typography — Geist (heading + body)                                */
   /* ------------------------------------------------------------------ */
-  --font-display: "Lexend", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans:    "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:    "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body:    var(--font-sans);
-  --font-mono:    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono:    "Geist Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Type scale */
-  --fs-display: 64px;
-  --fs-h1:      48px;
-  --fs-h2:      36px;
-  --fs-h3:      24px;
-  --fs-h4:      20px;
+  --fs-display: 56px;
+  --fs-h1:      44px;
+  --fs-h2:      32px;
+  --fs-h3:      22px;
+  --fs-h4:      18px;
   --fs-body-l:  18px;
   --fs-body:    16px;
   --fs-small:   14px;
   --fs-xs:      12px;
 
   /* Line heights */
-  --lh-display: 1.05;
-  --lh-heading: 1.15;
+  --lh-display: 1.0;
+  --lh-heading: 1.1;
   --lh-body:    1.55;
-  --lh-tight:   1.25;
+  --lh-tight:   1.2;
 
-  /* Weights — mapped to Nohemi's recommended usage */
-  --fw-regular:  400;   /* body */
-  --fw-medium:   500;   /* UI / nav */
-  --fw-semibold: 600;   /* section heads */
-  --fw-bold:     700;   /* page titles */
-  --fw-extrabold:800;   /* hero / display */
-  --fw-black:    900;   /* heavy display */
+  /* Weights — Geist */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     600;   /* Geist: semibold is the bold equivalent */
+  --fw-extrabold:700;
+  --fw-black:    800;
 
   /* ------------------------------------------------------------------ */
-  /* Spacing — base unit 7.5px                                          */
+  /* Spacing — 4px base unit (Vercel system)                            */
   /* ------------------------------------------------------------------ */
-  --space-1: 7.5px;
-  --space-2: 15px;
-  --space-3: 22.5px;
-  --space-4: 30px;
-  --space-5: 45px;
-  --space-6: 60px;
-  --space-7: 90px;
-  --space-8: 120px;
-  --space-9: 160px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
 
   /* ------------------------------------------------------------------ */
   /* Radii                                                              */
   /* ------------------------------------------------------------------ */
   --radius-subtle: 4px;
-  --radius-button: 8px;
-  --radius-card:   18px;
+  --radius-button: 6px;
+  --radius-card:   8px;
   --radius-pill:   999px;
 
   /* ------------------------------------------------------------------ */
-  /* Shadows                                                            */
+  /* Shadows — Vercel subtle system                                     */
   /* ------------------------------------------------------------------ */
-  --shadow-sm: 0 2px 8px 0 rgba(52, 37, 47, 0.08);
-  --shadow-md: 0 4px 8px 0 rgba(52, 37, 47, 0.16);
-  --shadow-lg: 0 14px 40px -10px rgba(52, 37, 47, 0.20);
+  --shadow-sm: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.02) 0px 1px 1px 0px;
+  --shadow-md: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.02) 0px 1px 1px 0px, rgba(0,0,0,0.04) 0px 4px 8px 0px;
+  --shadow-lg: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.02) 0px 2px 2px 0px, rgba(0,0,0,0.06) 0px 8px 24px 0px;
 
   /* Layout */
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
   --container-max: 1240px;
 }
 
@@ -156,17 +140,17 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--color-fg);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-semibold);
   line-height: var(--lh-heading);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   margin: 0;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: -0.03em; font-weight: var(--fw-extrabold); }
-h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); letter-spacing: -0.02em; }
-h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
-h4 { font-size: var(--fs-h4); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+h1 { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: -0.05em; }
+h2 { font-size: var(--fs-h2); letter-spacing: -0.04em; }
+h3 { font-size: var(--fs-h3); letter-spacing: -0.025em; }
+h4 { font-size: var(--fs-h4); letter-spacing: -0.015em; }
 
 p { margin: 0; text-wrap: pretty; }
 
@@ -176,11 +160,10 @@ a {
   color: var(--color-link);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
-  transition: color 160ms ease;
+  transition: color 140ms ease;
 }
-a:hover { color: var(--color-granite); }
 
-code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
+code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.9em; }
 
 /* ==========================================================================
    Typography utilities
@@ -188,22 +171,22 @@ code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
 
 .t-eyebrow {
   font-family: var(--font-sans);
-  font-size: var(--fs-small);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-medium);
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-fg-muted);
 }
 
-.t-display    { font-size: var(--fs-display); font-weight: var(--fw-extrabold); line-height: var(--lh-display); letter-spacing: -0.03em; }
-.t-h1         { font-size: var(--fs-h1); font-weight: var(--fw-extrabold); line-height: var(--lh-heading); letter-spacing: -0.02em; }
-.t-h2         { font-size: var(--fs-h2); font-weight: var(--fw-bold); line-height: var(--lh-heading); letter-spacing: -0.02em; }
-.t-h3         { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: var(--lh-heading); letter-spacing: -0.01em; }
-.t-h4         { font-size: var(--fs-h4); font-weight: var(--fw-semibold); line-height: var(--lh-heading); }
-.t-body-l     { font-size: var(--fs-body-l); font-weight: var(--fw-regular); line-height: var(--lh-body); }
-.t-body       { font-size: var(--fs-body); font-weight: var(--fw-regular); line-height: var(--lh-body); }
-.t-small      { font-size: var(--fs-small); font-weight: var(--fw-regular); line-height: 1.45; }
-.t-muted      { color: var(--color-fg-muted); }
+.t-display { font-size: var(--fs-display); font-weight: var(--fw-semibold); line-height: var(--lh-display); letter-spacing: -0.05em; }
+.t-h1      { font-size: var(--fs-h1); font-weight: var(--fw-semibold); line-height: var(--lh-heading); letter-spacing: -0.04em; }
+.t-h2      { font-size: var(--fs-h2); font-weight: var(--fw-semibold); line-height: var(--lh-heading); letter-spacing: -0.04em; }
+.t-h3      { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: var(--lh-heading); letter-spacing: -0.025em; }
+.t-h4      { font-size: var(--fs-h4); font-weight: var(--fw-semibold); line-height: var(--lh-heading); }
+.t-body-l  { font-size: var(--fs-body-l); font-weight: var(--fw-regular); line-height: var(--lh-body); }
+.t-body    { font-size: var(--fs-body); font-weight: var(--fw-regular); line-height: var(--lh-body); }
+.t-small   { font-size: var(--fs-small); font-weight: var(--fw-regular); line-height: 1.45; }
+.t-muted   { color: var(--color-fg-muted); }
 
 /* ==========================================================================
    Buttons
@@ -213,72 +196,76 @@ code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-1);
+  gap: 6px;
   font-family: var(--font-sans);
-  font-size: var(--fs-body);
+  font-size: var(--fs-small);
   font-weight: var(--fw-medium);
-  padding: 12px 18px;
-  border-radius: var(--radius-button);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  letter-spacing: -0.005em;
-  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 120ms ease;
+  letter-spacing: -0.01em;
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, transform 100ms ease;
   line-height: 1.2;
 }
 .btn:active { transform: translateY(1px); }
 
 .btn-primary {
-  background: var(--color-shadow);
-  color: var(--color-ash);
+  background: #171717;
+  color: #fafafa;
+  border-color: #171717;
 }
-.btn-primary:hover { background: #1f1620; }
+.btn-primary:hover { background: #000; border-color: #000; }
 
 .btn-accent {
-  background: var(--color-seagreen);
-  color: var(--color-shadow);
+  background: var(--color-primary-500);
+  color: #fff;
   font-weight: var(--fw-semibold);
 }
-.btn-accent:hover { background: #428060; color: var(--color-ash); }
+.btn-accent:hover { background: var(--color-primary-600); }
 
 .btn-outline {
   background: transparent;
-  color: var(--color-shadow);
-  border-color: var(--color-shadow);
+  color: #171717;
+  border-color: rgba(0,0,0,0.15);
 }
-.btn-outline:hover { background: var(--color-shadow); color: var(--color-ash); }
+.btn-outline:hover { background: #171717; color: #fafafa; border-color: #171717; }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-shadow);
+  color: #666666;
   border-color: transparent;
-  padding: 12px 0;
+  padding: 10px 0;
 }
-.btn-ghost:hover { color: var(--color-seagreen); }
+.btn-ghost:hover { color: #171717; }
 
 .btn-inverse {
-  background: var(--color-ash);
-  color: var(--color-shadow);
+  background: #fafafa;
+  color: #171717;
+  border-color: rgba(0,0,0,0.12);
 }
-.btn-inverse:hover { background: #D5D9C6; }
+.btn-inverse:hover { background: #f0f0f0; }
 
 /* ==========================================================================
    Surfaces
    ========================================================================== */
 
 .card {
-  background: var(--color-ash);
-  border: 1px solid var(--color-border-soft);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--radius-card);
-  padding: var(--space-4);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
 }
+
 .card-dark {
-  background: var(--color-shadow);
-  color: var(--color-ash);
-  border: none;
+  background: #171717;
+  color: #fafafa;
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-card);
-  padding: var(--space-4);
+  padding: var(--space-6);
 }
 
 .tag {
@@ -286,13 +273,13 @@ code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
   align-items: center;
   gap: 6px;
   font-family: var(--font-sans);
-  font-size: var(--fs-small);
+  font-size: var(--fs-xs);
   font-weight: var(--fw-medium);
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
-  background: var(--color-ash);
-  color: var(--color-shadow);
-  border: 1px solid var(--color-sage);
+  background: #fafafa;
+  color: #171717;
+  border: 1px solid rgba(0,0,0,0.08);
 }
-.tag-accent { background: var(--color-seagreen); color: var(--color-shadow); border-color: transparent; }
-.tag-dark   { background: var(--color-shadow); color: var(--color-ash); border-color: transparent; }
+.tag-accent { background: var(--color-primary-500); color: #fff; border-color: transparent; }
+.tag-dark   { background: #171717; color: #fafafa; border-color: transparent; }
