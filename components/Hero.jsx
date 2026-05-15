@@ -33,6 +33,7 @@ const Hero = () => (
           letterSpacing: "0.04em",
           color: "var(--pascal-fg-muted)",
         }}>
+          <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--pascal-accent)", flex: "none" }} />
           Enterprise AI Platform · Built for Finance
         </span>
 
@@ -47,7 +48,7 @@ const Hero = () => (
           margin: 0,
         }}>
           Context driven AI for{" "}
-          <span style={{ color: "var(--pascal-ink)" }}>Institutional Finance</span>
+          <span style={{ color: "var(--pascal-accent)" }}>Institutional Finance</span>
         </h1>
 
         {/* Subtext */}

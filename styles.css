@@ -19,16 +19,21 @@
   --fs-small:   14px;
   --fs-xs:      12px;
 
-  /* Remapped: emerald → ink, mint → subtle grey (Vercel palette) */
-  --pascal-emerald:       #171717;
-  --pascal-emerald-2:     #0a0a0a;
-  --pascal-emerald-light: #404040;
-  --pascal-mint:          #f5f5f5;
-  --pascal-mint-2:        #ebebeb;
+  /* Brand accent */
+  --pascal-accent:        #279C7B;
+  --pascal-accent-hover:  #1f8a6a;
+  --pascal-accent-light:  rgba(39, 156, 123, 0.08);
+
+  /* Legacy compat */
+  --pascal-emerald:       #279C7B;
+  --pascal-emerald-2:     #1f8a6a;
+  --pascal-emerald-light: rgba(39, 156, 123, 0.12);
+  --pascal-mint:          rgba(39, 156, 123, 0.06);
+  --pascal-mint-2:        rgba(39, 156, 123, 0.10);
 
   /* Light surfaces — Vercel color system */
-  --pascal-ink:           #171717;
-  --pascal-ink-2:         #0a0a0a;
+  --pascal-ink:           #1a1a1a;
+  --pascal-ink-2:         #0f0f0f;
   --pascal-paper:         #fafafa;
   --pascal-paper-soft:    #f5f5f5;
   --pascal-paper-card:    #ffffff;
@@ -38,7 +43,7 @@
   --pascal-line-strong:   #d4d4d4;
 
   /* Muted text */
-  --pascal-fg-muted:      #666666;
+  --pascal-fg-muted:      #6b7280;
 
   /* Dark section surfaces — Vercel dark */
   --pascal-dark:          #171717;
@@ -90,13 +95,13 @@ a { border-bottom: none; }
 .pbtn:active { transform: translateY(1px); }
 
 .pbtn-primary {
-  background: var(--pascal-ink);
-  color: #fafafa;
+  background: var(--pascal-accent);
+  color: #fff;
   padding: 13px 24px;
   font-size: var(--fs-small);
   font-weight: 600;
 }
-.pbtn-primary:hover { background: var(--pascal-ink-2); }
+.pbtn-primary:hover { background: var(--pascal-accent-hover); }
 
 .pbtn-outline {
   background: transparent;
@@ -128,7 +133,7 @@ h1, h2, h3, h4 {
   line-height: 1.1;
 }
 
-h1 { letter-spacing: -0.05em; font-weight: 600; line-height: 1.0; }
+h1 { letter-spacing: -0.05em; font-weight: 500; line-height: 1.0; }
 h2 { letter-spacing: -0.04em; font-weight: 600; }
 h3 { letter-spacing: -0.025em; font-weight: 600; }
 h4 { letter-spacing: -0.015em; font-weight: 600; }
@@ -148,7 +153,7 @@ h4 { letter-spacing: -0.015em; font-weight: 600; }
   display: inline-block;
   width: 20px;
   height: 1px;
-  background: var(--pascal-line-strong);
+  background: var(--pascal-accent);
 }
 
 .section { padding: 120px 0; }

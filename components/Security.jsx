@@ -132,7 +132,7 @@ const Security = () => (
           color: "var(--pascal-dark-muted)",
           marginBottom: 22,
         }}>
-          <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }}/>
+          <span style={{ width: 20, height: 2, borderRadius: 99, background: "var(--pascal-accent)" }}/>
           Trust &amp; Compliance
         </span>
         <h2 style={{

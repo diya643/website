@@ -125,9 +125,9 @@ const Partners = () => {
     <section style={{
       padding: "60px 0 80px",
       overflow: "hidden",
-      borderTop: "1px solid var(--pascal-line)",
-      borderBottom: "1px solid var(--pascal-line)",
-      background: "var(--pascal-paper-soft)",
+      borderTop: "1px solid #d4d4d4",
+      borderBottom: "1px solid #d4d4d4",
+      background: "#e8e8e8",
     }}>
       <div className="container" style={{ marginBottom: 36 }}>
         <div style={{ textAlign: "center" }}>
