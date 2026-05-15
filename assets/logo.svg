@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" fill="none">
+  
+  <g>
+    
+    <path d="M14 8 L48 8 L48 60 L14 60 Z" stroke="#2A4A47" stroke-width="2.5" fill="none" stroke-linejoin="round"></path>
+    
+    <path d="M14 8 L8 14 L8 66 L14 60" stroke="#2A4A47" stroke-width="2.5" fill="none" stroke-linejoin="round"></path>
+    
+    <path d="M8 66 L42 66 L48 60" stroke="#2A4A47" stroke-width="2.5" fill="none" stroke-linejoin="round"></path>
+    
+    <path d="M20 14 L43 14 L43 53 L20 53 Z" fill="#519872"></path>
+  </g>
+  
+  <text x="62" y="50" font-family="Onest, Nohemi, -apple-system, sans-serif" font-size="40" font-weight="700" fill="#2A4A47" letter-spacing="-0.02em">Pascal A<tspan dx="-2">i</tspan></text>
+  
+  <g transform="translate(254 18)">
+    <path d="M0 -5 L0 5 M-5 0 L5 0" stroke="#519872" stroke-width="2.2" stroke-linecap="round"></path>
+  </g>
+</svg>

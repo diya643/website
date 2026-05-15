@@ -1,0 +1,298 @@
+/* =========================================================================
+   Unique — Design System Tokens
+   Extracted from unique.ai (2026-05-13)
+   Palette overhaul: muted nature-inspired greens (May 2026)
+   Typography overhaul: Nohemi (May 2026) — Onest substituted via Google Fonts
+   ========================================================================= */
+
+/* --- Real Nohemi (uncomment once Nohemi-Variable.ttf is in /fonts) --------
+@font-face {
+  font-family: 'Nohemi';
+  src: url('./fonts/Nohemi-Variable.ttf') format('truetype-variations'),
+       url('./fonts/Nohemi-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+-------------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&display=swap");
+
+:root {
+  /* ------------------------------------------------------------------ */
+  /* Brand colors — Pascal AI teal + gray system                        */
+  /* ------------------------------------------------------------------ */
+  /* Primary teal */
+  --color-primary-50:  #EBFAF0;
+  --color-primary-100: #DCF9E8;
+  --color-primary-200: #BCF0D5;
+  --color-primary-300: #8DE2B5;
+  --color-primary-400: #55C390;
+  --color-primary-500: #279C7B;  /* brand */
+  --color-primary-600: #1C8672;
+  --color-primary-700: #137068;
+  --color-primary-800: #0C595A;
+  --color-primary-900: #07434A;
+  --color-primary-950: #052A2E;
+
+  /* Gray */
+  --color-gray-25:  #FDFDFD;
+  --color-gray-50:  #F9FAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EDEDEE;
+  --color-gray-300: #D3D4D5;
+  --color-gray-400: #ABADAF;
+  --color-gray-500: #7D7F83;
+  --color-gray-600: #52555A;
+  --color-gray-700: #33373D;
+  --color-gray-800: #1D2025;
+  --color-gray-900: #171A1D;
+  --color-gray-950: #0A0D12;
+
+  /* ------------------------------------------------------------------ */
+  /* Semantic color roles                                               */
+  /* ------------------------------------------------------------------ */
+  --color-primary:     var(--color-primary-500);
+  --color-accent:      var(--color-primary-500);
+
+  --color-bg:          var(--color-gray-25);
+  --color-bg-soft:     var(--color-gray-50);
+  --color-bg-inverse:  var(--color-gray-950);
+
+  --color-fg:          var(--color-gray-800);
+  --color-fg-muted:    var(--color-gray-600);
+  --color-fg-inverse:  var(--color-gray-100);
+
+  --color-border:      var(--color-gray-200);
+  --color-border-soft: var(--color-gray-100);
+  --color-border-dark: var(--color-gray-300);
+
+  --color-link:        var(--color-primary-500);
+  --color-focus:       var(--color-primary-500);
+
+  /* ------------------------------------------------------------------ */
+  /* Typography — Lexend (display/headings) + Nunito Sans (body)        */
+  /* ------------------------------------------------------------------ */
+  --font-display: "Lexend", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:    "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    var(--font-sans);
+  --font-mono:    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale */
+  --fs-display: 64px;
+  --fs-h1:      48px;
+  --fs-h2:      36px;
+  --fs-h3:      24px;
+  --fs-h4:      20px;
+  --fs-body-l:  18px;
+  --fs-body:    16px;
+  --fs-small:   14px;
+  --fs-xs:      12px;
+
+  /* Line heights */
+  --lh-display: 1.05;
+  --lh-heading: 1.15;
+  --lh-body:    1.55;
+  --lh-tight:   1.25;
+
+  /* Weights — mapped to Nohemi's recommended usage */
+  --fw-regular:  400;   /* body */
+  --fw-medium:   500;   /* UI / nav */
+  --fw-semibold: 600;   /* section heads */
+  --fw-bold:     700;   /* page titles */
+  --fw-extrabold:800;   /* hero / display */
+  --fw-black:    900;   /* heavy display */
+
+  /* ------------------------------------------------------------------ */
+  /* Spacing — base unit 7.5px                                          */
+  /* ------------------------------------------------------------------ */
+  --space-1: 7.5px;
+  --space-2: 15px;
+  --space-3: 22.5px;
+  --space-4: 30px;
+  --space-5: 45px;
+  --space-6: 60px;
+  --space-7: 90px;
+  --space-8: 120px;
+  --space-9: 160px;
+
+  /* ------------------------------------------------------------------ */
+  /* Radii                                                              */
+  /* ------------------------------------------------------------------ */
+  --radius-subtle: 4px;
+  --radius-button: 8px;
+  --radius-card:   18px;
+  --radius-pill:   999px;
+
+  /* ------------------------------------------------------------------ */
+  /* Shadows                                                            */
+  /* ------------------------------------------------------------------ */
+  --shadow-sm: 0 2px 8px 0 rgba(52, 37, 47, 0.08);
+  --shadow-md: 0 4px 8px 0 rgba(52, 37, 47, 0.16);
+  --shadow-lg: 0 14px 40px -10px rgba(52, 37, 47, 0.20);
+
+  /* Layout */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --container-max: 1240px;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html, body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--color-fg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: -0.03em; font-weight: var(--fw-extrabold); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-bold); letter-spacing: -0.02em; }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+h4 { font-size: var(--fs-h4); font-weight: var(--fw-semibold); letter-spacing: -0.01em; }
+
+p { margin: 0; text-wrap: pretty; }
+
+small { font-size: var(--fs-small); color: var(--color-fg-muted); }
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color 160ms ease;
+}
+a:hover { color: var(--color-granite); }
+
+code, pre, kbd, samp { font-family: var(--font-mono); font-size: 0.95em; }
+
+/* ==========================================================================
+   Typography utilities
+   ========================================================================== */
+
+.t-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.t-display    { font-size: var(--fs-display); font-weight: var(--fw-extrabold); line-height: var(--lh-display); letter-spacing: -0.03em; }
+.t-h1         { font-size: var(--fs-h1); font-weight: var(--fw-extrabold); line-height: var(--lh-heading); letter-spacing: -0.02em; }
+.t-h2         { font-size: var(--fs-h2); font-weight: var(--fw-bold); line-height: var(--lh-heading); letter-spacing: -0.02em; }
+.t-h3         { font-size: var(--fs-h3); font-weight: var(--fw-semibold); line-height: var(--lh-heading); letter-spacing: -0.01em; }
+.t-h4         { font-size: var(--fs-h4); font-weight: var(--fw-semibold); line-height: var(--lh-heading); }
+.t-body-l     { font-size: var(--fs-body-l); font-weight: var(--fw-regular); line-height: var(--lh-body); }
+.t-body       { font-size: var(--fs-body); font-weight: var(--fw-regular); line-height: var(--lh-body); }
+.t-small      { font-size: var(--fs-small); font-weight: var(--fw-regular); line-height: 1.45; }
+.t-muted      { color: var(--color-fg-muted); }
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  padding: 12px 18px;
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 120ms ease;
+  line-height: 1.2;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--color-shadow);
+  color: var(--color-ash);
+}
+.btn-primary:hover { background: #1f1620; }
+
+.btn-accent {
+  background: var(--color-seagreen);
+  color: var(--color-shadow);
+  font-weight: var(--fw-semibold);
+}
+.btn-accent:hover { background: #428060; color: var(--color-ash); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-shadow);
+  border-color: var(--color-shadow);
+}
+.btn-outline:hover { background: var(--color-shadow); color: var(--color-ash); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-shadow);
+  border-color: transparent;
+  padding: 12px 0;
+}
+.btn-ghost:hover { color: var(--color-seagreen); }
+
+.btn-inverse {
+  background: var(--color-ash);
+  color: var(--color-shadow);
+}
+.btn-inverse:hover { background: #D5D9C6; }
+
+/* ==========================================================================
+   Surfaces
+   ========================================================================== */
+
+.card {
+  background: var(--color-ash);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+.card-dark {
+  background: var(--color-shadow);
+  color: var(--color-ash);
+  border: none;
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-ash);
+  color: var(--color-shadow);
+  border: 1px solid var(--color-sage);
+}
+.tag-accent { background: var(--color-seagreen); color: var(--color-shadow); border-color: transparent; }
+.tag-dark   { background: var(--color-shadow); color: var(--color-ash); border-color: transparent; }
