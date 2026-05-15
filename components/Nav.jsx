@@ -108,7 +108,7 @@ const Nav = () => {
                     background: "var(--pascal-paper)",
                     border: "1px solid var(--pascal-line)",
                     borderRadius: 14,
-                    boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.12) 0px 0px 0px 1px, rgba(0,0,0,0.08) 0px 8px 24px 0px",
+                    boxShadow: "rgba(23,25,28,0.06) 0px 12px 16px 0px, rgba(23,25,28,0.12) 0px 5px 32px 0px",
                     padding: 8,
                     minWidth: 300,
                     display: "grid",

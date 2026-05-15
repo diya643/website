@@ -30,7 +30,7 @@ const PlatformSketch = () => (
     borderRadius: 16,
     overflow: "hidden",
     border: "1px solid var(--pascal-line)",
-    boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.12) 0px 0px 0px 1px, rgba(0,0,0,0.08) 0px 1px 2px 0px",
+    boxShadow: "rgba(23,25,28,0.05) 0px 4px 8px 0px",
     background: "var(--pascal-paper)",
   }}>
     <div style={{
@@ -133,7 +133,7 @@ const ModuleCard = ({ name, tag, icon }) => {
         cursor: "pointer",
         transition: "all 200ms ease",
         transform: hover ? "translateY(-2px)" : "none",
-        boxShadow: hover ? "rgba(39,156,123,0.15) 0px 0px 8px 0px, rgba(0,0,0,0.08) 0px 4px 12px 0px" : "none",
+        boxShadow: hover ? "rgba(23,25,28,0.10) 0px 20px 40px 0px, rgba(23,25,28,0.20) 0px 40px 80px 0px" : "rgba(23,25,28,0.05) 0px 4px 8px 0px",
       }}>
       <span style={{
         flex: "none",
