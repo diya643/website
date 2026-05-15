@@ -30,7 +30,7 @@ const PlatformSketch = () => (
     borderRadius: 16,
     overflow: "hidden",
     border: "1px solid var(--pascal-line)",
-    boxShadow: "0 20px 48px -12px rgba(26,36,20,0.10)",
+    boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.12) 0px 0px 0px 1px, rgba(0,0,0,0.08) 0px 1px 2px 0px",
     background: "var(--pascal-paper)",
   }}>
     <div style={{
@@ -133,7 +133,7 @@ const ModuleCard = ({ name, tag, icon }) => {
         cursor: "pointer",
         transition: "all 200ms ease",
         transform: hover ? "translateY(-2px)" : "none",
-        boxShadow: hover ? "0 12px 24px -10px rgba(42,74,71,0.20)" : "none",
+        boxShadow: hover ? "rgba(39,156,123,0.15) 0px 0px 8px 0px, rgba(0,0,0,0.08) 0px 4px 12px 0px" : "none",
       }}>
       <span style={{
         flex: "none",
@@ -152,11 +152,6 @@ const ModuleCard = ({ name, tag, icon }) => {
           color: hover ? "rgba(255,255,255,0.65)" : "var(--pascal-fg-muted)",
         }}>{tag}</div>
       </div>
-      <i data-lucide="arrow-up-right" style={{
-        width: 16, height: 16,
-        opacity: hover ? 1 : 0.4,
-        transition: "opacity 200ms ease",
-      }} />
     </div>
   );
 };
@@ -204,7 +199,6 @@ const Product = () => (
             borderBottom: "1px solid var(--pascal-accent)",
           }}>
             Explore the platform
-            <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
           </a>
 
           <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 24 }}>

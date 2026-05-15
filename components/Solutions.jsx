@@ -103,7 +103,7 @@ const Solutions = () => {
           background: "var(--pascal-paper-card)",
           border: "1px solid var(--pascal-line)",
           borderRadius: 20,
-          boxShadow: "0 24px 60px -28px rgba(0,0,0,0.16)",
+          boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.10) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 16px 0px",
           overflow: "hidden",
           display: "grid",
           gridTemplateColumns: "1fr 1.2fr",
@@ -151,7 +151,6 @@ const Solutions = () => {
               alignSelf: "flex-start",
             }}>
               Learn more about {s.label}
-              <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
             </a>
           </div>
 
