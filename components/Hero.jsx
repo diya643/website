@@ -1,37 +1,4 @@
-// Hero.jsx — Dark cinematic hero with animated city-lights background
-
-const HERO_KEYFRAMES = `
-@keyframes heroDrift1 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33%       { transform: translate(-40px, 30px) scale(1.08); }
-  66%       { transform: translate(20px, -20px) scale(0.95); }
-}
-@keyframes heroDrift2 {
-  0%, 100% { transform: translate(0px, 0px) scale(1.1); }
-  40%       { transform: translate(50px, -35px) scale(1); }
-  70%       { transform: translate(-20px, 25px) scale(1.15); }
-}
-@keyframes heroDrift3 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  50%       { transform: translate(30px, 40px) scale(1.05); }
-}
-@keyframes heroDrift4 {
-  0%, 100% { transform: translate(0px, 0px) scale(0.9); }
-  45%       { transform: translate(-60px, -20px) scale(1.1); }
-}
-@keyframes heroDrift5 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  55%       { transform: translate(35px, 15px) scale(0.85); }
-}
-`;
-
-const CITY_LIGHTS = [
-  { top: "15%",  left: "10%",  size: 480, color: "rgba(255,180,60,0.18)",  anim: "heroDrift1 18s ease-in-out infinite" },
-  { top: "60%",  left: "70%",  size: 560, color: "rgba(255,150,40,0.14)",  anim: "heroDrift2 22s ease-in-out infinite" },
-  { top: "30%",  left: "80%",  size: 360, color: "rgba(200,160,80,0.12)",  anim: "heroDrift3 16s ease-in-out infinite" },
-  { top: "70%",  left: "20%",  size: 420, color: "rgba(100,140,255,0.10)", anim: "heroDrift4 20s ease-in-out infinite" },
-  { top: "-10%", left: "50%",  size: 600, color: "rgba(255,200,100,0.08)", anim: "heroDrift5 25s ease-in-out infinite" },
-];
+// Hero.jsx — Dark hero with Vimeo NYC timelapse background
 
 const Hero = () => (
   <section style={{
@@ -43,39 +10,47 @@ const Hero = () => (
     borderBottom: "1px solid rgba(255,255,255,0.08)",
   }}>
 
-    {/* Inject keyframe animations */}
-    <style>{HERO_KEYFRAMES}</style>
-
-    {/* Animated city-lights background */}
-    <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-      {CITY_LIGHTS.map((l, i) => (
-        <div key={i} style={{
+    {/* YouTube background — NYC aerial 4K drone footage */}
+    <div aria-hidden="true" style={{
+      position: "absolute", inset: 0, zIndex: 0,
+      overflow: "hidden",
+    }}>
+      <iframe
+        src="https://www.youtube.com/embed/qpRf06q2PKg?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&playlist=qpRf06q2PKg&playsinline=1&modestbranding=1&disablekb=1"
+        style={{
           position: "absolute",
-          top: l.top, left: l.left,
-          width: l.size, height: l.size,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${l.color} 0%, transparent 70%)`,
-          animation: l.anim,
-          willChange: "transform",
+          top: "50%", left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "177.8vh",
+          height: "56.25vw",
+          minWidth: "100%",
+          minHeight: "100%",
+          border: "none",
+          opacity: 0.55,
           pointerEvents: "none",
-        }} />
-      ))}
+        }}
+        allow="autoplay; fullscreen"
+        frameBorder="0"
+      />
     </div>
 
-    {/* Subtle grid overlay */}
+    {/* Dark overlay for text contrast + YouTube UI masking */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 1,
-      backgroundImage: "radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px)",
-      backgroundSize: "32px 32px",
+      background: "linear-gradient(to bottom, rgba(5,8,15,0.72) 0%, rgba(5,8,15,0.38) 40%, rgba(5,8,15,0.38) 60%, rgba(5,8,15,0.72) 100%)",
     }} />
-
-    {/* Bottom vignette */}
+    {/* Mask YouTube top-left title chip */}
     <div aria-hidden="true" style={{
-      position: "absolute", inset: 0, zIndex: 2,
-      background: "linear-gradient(to bottom, rgba(8,11,18,0.2) 0%, transparent 40%, rgba(8,11,18,0.5) 100%)",
+      position: "absolute", top: 0, left: 0, right: 0, height: 80, zIndex: 2,
+      background: "linear-gradient(to bottom, rgba(5,8,15,0.92) 0%, transparent 100%)",
+    }} />
+    {/* Mask YouTube bottom-right "More videos" chip */}
+    <div aria-hidden="true" style={{
+      position: "absolute", bottom: 0, left: 0, right: 0, height: 80, zIndex: 2,
+      background: "linear-gradient(to top, rgba(5,8,15,0.92) 0%, transparent 100%)",
     }} />
 
-    <div className="container" style={{ position: "relative", zIndex: 3 }}>
+    <div className="container" style={{ position: "relative", zIndex: 2 }}>
       <div style={{
         display: "flex",
         flexDirection: "column",
