@@ -1,28 +1,29 @@
-/* Pascal AI Labs — site styles */
+/* Pascal AI Labs — site styles (Hookdeck-inspired design system) */
 
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
   /* Brand fonts */
-  --font-display: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-sans:    "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono:    "Geist Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:    "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Type scale */
-  --fs-display: clamp(36px, 5vw, 56px);
-  --fs-h1:      clamp(28px, 3.5vw, 44px);
+  --fs-display: clamp(36px, 5vw, 60px);
+  --fs-h1:      clamp(28px, 3.5vw, 40px);
   --fs-h2:      clamp(22px, 2.5vw, 32px);
-  --fs-h3:      22px;
-  --fs-h4:      18px;
-  --fs-body-l:  18px;
-  --fs-body:    16px;
+  --fs-h3:      24px;
+  --fs-h4:      20px;
+  --fs-body-l:  20px;
+  --fs-body:    16.8px;
   --fs-small:   14px;
   --fs-xs:      12px;
 
-  /* Brand accent */
+  /* Brand accent — Pascal green replaces Hookdeck blue */
   --pascal-accent:        #279C7B;
   --pascal-accent-hover:  #1f8a6a;
-  --pascal-accent-light:  rgba(39, 156, 123, 0.08);
+  --pascal-accent-light:  #e8f5f1;
+  --pascal-accent-badge:  rgba(39, 156, 123, 0.12);
 
   /* Legacy compat */
   --pascal-emerald:       #279C7B;
@@ -31,27 +32,36 @@
   --pascal-mint:          rgba(39, 156, 123, 0.06);
   --pascal-mint-2:        rgba(39, 156, 123, 0.10);
 
-  /* Light surfaces — Vercel color system */
-  --pascal-ink:           #1a1a1a;
-  --pascal-ink-2:         #0f0f0f;
-  --pascal-paper:         #fafafa;
-  --pascal-paper-soft:    #f5f5f5;
+  /* Light surfaces — Hookdeck palette */
+  --pascal-ink:           #141412;
+  --pascal-ink-2:         #353533;
+  --pascal-paper:         #fafaf8;
+  --pascal-paper-soft:    #f0f4f7;
   --pascal-paper-card:    #ffffff;
 
-  /* Borders on light */
-  --pascal-line:          rgba(0, 0, 0, 0.08);
-  --pascal-line-strong:   #d4d4d4;
+  /* Borders on light — Hookdeck neutral-outline */
+  --pascal-line:          #ebebeb;
+  --pascal-line-strong:   #e0e0e0;
 
-  /* Muted text */
-  --pascal-fg-muted:      #6b7280;
+  /* Muted text — Hookdeck text-secondary */
+  --pascal-fg-muted:      #919ea6;
+  --pascal-fg-subtle:     #7a786e;
 
-  /* Dark section surfaces — Vercel dark */
-  --pascal-dark:          #171717;
-  --pascal-dark-2:        #1a1a1a;
-  --pascal-dark-card:     #222222;
+  /* Card shadow — Hookdeck elevation system */
+  --shadow-card:          rgba(0,0,0,0.04) 0px -2px 0px 0px inset,
+                          rgba(0,0,0,0.12) 0px 0px 0px 1px,
+                          rgba(0,0,0,0.08) 0px 1px 2px 0px;
+  --shadow-popover:       rgba(39,156,123,0.15) 0px 0px 8px 0px;
+  --shadow-float:         rgba(0,0,0,0.08) 0px 4px 16px 0px,
+                          rgba(0,0,0,0.04) 0px 1px 4px 0px;
+
+  /* Dark section surfaces */
+  --pascal-dark:          #1d1d1b;
+  --pascal-dark-2:        #141412;
+  --pascal-dark-card:     #2d2d2b;
   --pascal-dark-line:     rgba(255, 255, 255, 0.08);
-  --pascal-dark-text:     #fafafa;
-  --pascal-dark-muted:    #a3a3a3;
+  --pascal-dark-text:     #fafaf8;
+  --pascal-dark-muted:    #919ea6;
 }
 
 html, body {
@@ -75,7 +85,7 @@ a { border-bottom: none; }
   padding: 0 32px;
 }
 
-/* Buttons */
+/* ── Buttons ── Hookdeck style: 6px radius, not pill */
 .pbtn {
   display: inline-flex;
   align-items: center;
@@ -83,65 +93,75 @@ a { border-bottom: none; }
   gap: 6px;
   font-family: var(--font-sans);
   font-weight: 500;
-  border-radius: 999px;
+  border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, transform 100ms ease;
+  transition: background 140ms ease, color 140ms ease, border-color 140ms ease, box-shadow 140ms ease, transform 100ms ease;
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 .pbtn:active { transform: translateY(1px); }
 
 .pbtn-primary {
   background: var(--pascal-accent);
   color: #fff;
-  padding: 13px 24px;
+  padding: 12px 24px;
   font-size: var(--fs-small);
   font-weight: 600;
+  box-shadow: rgba(255,255,255,0.16) 0px -1px 0px 0px inset,
+              rgba(0,0,0,0.12) 0px 1px 2px 0px;
 }
-.pbtn-primary:hover { background: var(--pascal-accent-hover); }
+.pbtn-primary:hover {
+  background: var(--pascal-accent-hover);
+  box-shadow: rgba(39,156,123,0.3) 0px 0px 8px 0px;
+}
 
 .pbtn-outline {
-  background: transparent;
+  background: var(--pascal-paper-card);
   color: var(--pascal-ink);
-  border-color: var(--pascal-ink);
-  padding: 10px 20px;
+  border-color: var(--pascal-line-strong);
+  padding: 11px 20px;
   font-size: var(--fs-small);
+  box-shadow: var(--shadow-card);
 }
-.pbtn-outline:hover { background: var(--pascal-ink); color: #fff; }
+.pbtn-outline:hover {
+  border-color: var(--pascal-ink);
+  box-shadow: var(--shadow-float);
+}
 
 .pbtn-ghost {
   background: transparent;
   color: var(--pascal-fg-muted);
   padding: 10px 0;
   font-size: var(--fs-small);
+  border-color: transparent;
 }
 .pbtn-ghost:hover { color: var(--pascal-ink); }
 
-.pbtn-sm { padding: 8px 16px; font-size: var(--fs-small); }
+.pbtn-sm { padding: 7px 14px; font-size: var(--fs-small); }
 
-/* Headings */
+/* ── Headings ── Figtree, Hookdeck weights & letter-spacing */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--pascal-ink);
   margin: 0;
   text-wrap: balance;
-  letter-spacing: -0.04em;
   font-weight: 600;
   line-height: 1.1;
 }
 
-h1 { letter-spacing: -0.05em; font-weight: 500; line-height: 1.0; }
-h2 { letter-spacing: -0.04em; font-weight: 600; }
-h3 { letter-spacing: -0.025em; font-weight: 600; }
-h4 { letter-spacing: -0.015em; font-weight: 600; }
+h1 { letter-spacing: -0.03em; font-weight: 600; line-height: 1.05; }
+h2 { letter-spacing: -0.025em; font-weight: 600; }
+h3 { letter-spacing: -0.015em; font-weight: 600; }
+h4 { letter-spacing: 0; font-weight: 600; }
 
+/* ── Eyebrow label ── */
 .eyebrow {
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--pascal-accent);
   display: inline-flex;
@@ -156,12 +176,19 @@ h4 { letter-spacing: -0.015em; font-weight: 600; }
   background: var(--pascal-line-strong);
 }
 
-.section { padding: 120px 0; }
-.section-sm { padding: 80px 0; }
+/* ── Card utility ── Hookdeck shadow */
+.hk-card {
+  background: var(--pascal-paper-card);
+  border-radius: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+.section { padding: 96px 0; }
+.section-sm { padding: 64px 0; }
 
 [data-lucide] { width: 18px; height: 18px; stroke-width: 1.75; }
 
-body::-webkit-scrollbar { width: 8px; }
+body::-webkit-scrollbar { width: 6px; }
 body::-webkit-scrollbar-track { background: var(--pascal-paper); }
 body::-webkit-scrollbar-thumb { background: var(--pascal-line-strong); border-radius: 999px; }
 
