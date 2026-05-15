@@ -27,7 +27,7 @@ const Footer = () => {
             position: "absolute",
             right: -120, top: -120,
             width: 380, height: 380, borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(81, 152, 114,0.35), transparent 70%)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%)",
           }}/>
 
           <div style={{
@@ -41,7 +41,7 @@ const Footer = () => {
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 fontSize: 12, fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase",
-                color: "var(--pascal-emerald)",
+                color: "var(--pascal-ink)",
                 marginBottom: 14,
               }}>
                 <i data-lucide="mail" style={{ width: 14, height: 14 }}/>
@@ -86,7 +86,7 @@ const Footer = () => {
                 }}
               />
               <button type="submit" style={{
-                background: subbed ? "rgba(81, 152, 114,0.4)" : "var(--pascal-emerald)",
+                background: subbed ? "rgba(255,255,255,0.15)" : "var(--pascal-ink)",
                 color: "#fff",
                 border: "none",
                 borderRadius: 999,
@@ -195,7 +195,7 @@ const FooterColumn = ({ title, items }) => (
             fontSize: 16, color: "var(--pascal-ink)", textDecoration: "none",
             transition: "color 160ms ease",
           }}
-          onMouseEnter={(e) => e.currentTarget.style.color = "var(--pascal-emerald)"}
+          onMouseEnter={(e) => e.currentTarget.style.color = "var(--pascal-ink)"}
           onMouseLeave={(e) => e.currentTarget.style.color = "var(--pascal-ink)"}
           >{it}</a>
         </li>
@@ -214,9 +214,9 @@ const SocialIcon = ({ href, label, children }) => (
     transition: "all 200ms ease",
   }}
   onMouseEnter={(e) => {
-    e.currentTarget.style.background = "var(--pascal-emerald)";
+    e.currentTarget.style.background = "var(--pascal-ink)";
     e.currentTarget.style.color = "#fff";
-    e.currentTarget.style.borderColor = "var(--pascal-emerald)";
+    e.currentTarget.style.borderColor = "var(--pascal-ink)";
   }}
   onMouseLeave={(e) => {
     e.currentTarget.style.background = "transparent";

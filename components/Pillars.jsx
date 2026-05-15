@@ -86,23 +86,22 @@ const Pillars = () => {
         <div style={{ textAlign: "center", marginBottom: 48 }}>
           <span style={{
             display: "inline-flex", alignItems: "center", gap: 10,
-            fontSize: 12, fontWeight: 500,
-            letterSpacing: "0.18em", textTransform: "uppercase",
-            color: "var(--pascal-emerald)",
+            fontSize: 11, fontWeight: 500,
+            letterSpacing: "0.12em", textTransform: "uppercase",
+            color: "var(--pascal-dark-muted)",
           }}>
-            <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }} />
+            <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }} />
             Introducing Pascal AI
           </span>
           <h2 style={{
             marginTop: 18,
-            fontSize: 48, fontWeight: 700,
+            fontSize: 48, fontWeight: 600,
             fontFamily: "var(--font-display)",
             color: "var(--pascal-dark-text)",
-            lineHeight: 1.05, letterSpacing: "-0.025em",
+            lineHeight: 1.05, letterSpacing: "-0.04em",
             maxWidth: 800, marginInline: "auto",
           }}>
-            The Pascal research stack,{" "}
-            <span style={{ color: "var(--pascal-emerald)" }}>from data layer to first-draft memo.</span>
+            The Pascal research stack, from data layer to first-draft memo.
           </h2>
         </div>
 
@@ -111,9 +110,9 @@ const Pillars = () => {
             <button key={it.key} onClick={() => switchTo(i)} style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               padding: "12px 22px", borderRadius: 999,
-              border: "1px solid " + (i === active ? "var(--pascal-emerald)" : "rgba(255,255,255,0.18)"),
-              background: i === active ? "var(--pascal-emerald)" : "rgba(255,255,255,0.04)",
-              color: i === active ? "#fff" : "rgba(255,255,255,0.78)",
+              border: "1px solid " + (i === active ? "#fafafa" : "rgba(255,255,255,0.15)"),
+              background: i === active ? "#fafafa" : "rgba(255,255,255,0.04)",
+              color: i === active ? "#171717" : "rgba(255,255,255,0.7)",
               fontSize: 14, fontWeight: 500,
               cursor: "pointer", transition: "all 200ms ease",
               fontFamily: "inherit",
@@ -136,7 +135,7 @@ const Pillars = () => {
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               padding: "6px 12px", borderRadius: 999,
-              background: "rgba(39,156,123,0.14)", color: "var(--pascal-emerald)",
+              background: "#e5e5e5", color: "var(--pascal-emerald)",
               fontSize: 12, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
               marginBottom: 22,
             }}>
@@ -155,7 +154,7 @@ const Pillars = () => {
             <div style={{ display: "flex", gap: 24, marginBottom: 36, flexWrap: "wrap" }}>
               {p.stats.map((s, i) => (
                 <div key={i}>
-                  <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--pascal-emerald)" }}>{s.v}</div>
+                  <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--pascal-dark-text)" }}>{s.v}</div>
                   <div style={{ fontSize: 13, color: "var(--pascal-dark-muted)", marginTop: 2 }}>{s.l}</div>
                 </div>
               ))}
@@ -163,9 +162,9 @@ const Pillars = () => {
 
             <a href={p.href} style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              color: "var(--pascal-emerald)", fontSize: 15, fontWeight: 600,
+              color: "rgba(255,255,255,0.85)", fontSize: 15, fontWeight: 600,
               textDecoration: "none", paddingBottom: 6,
-              borderBottom: "1px solid var(--pascal-emerald)",
+              borderBottom: "1px solid rgba(255,255,255,0.3)",
               transition: "gap 160ms ease",
             }}
             onMouseEnter={(e) => e.currentTarget.style.gap = "12px"}
@@ -188,7 +187,7 @@ const BrowserWrap = ({ children, title }) => (
   <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 32px 80px -12px rgba(0,0,0,0.55)", border: "1px solid rgba(255,255,255,0.08)" }}>
     <div style={{ background: "#1E1E1E", padding: "10px 14px", display: "flex", alignItems: "center", gap: 10 }}>
       <span style={{ display: "flex", gap: 5 }}>
-        {["#FF5F57","#FEBC2E","#28C840"].map(c => (
+        {["#FF5F57","#FEBC2E","#8C8C8C"].map(c => (
           <span key={c} style={{ width: 10, height: 10, borderRadius: "50%", background: c }} />
         ))}
       </span>
@@ -212,7 +211,7 @@ const WorkspaceVisual = () => (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5px 8px", marginBottom: 10 }}>
             {[[false,"Auto Select"],[true,"Annual Report"],[true,"Earnings Pres."],[true,"Earnings Trans."],[true,"Quarterly Rpt"],[true,"DRHP"],[true,"Ops & Biz Upd."]].map(([checked, label]) => (
               <label key={label} style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10.5, color: "#374151", cursor: "pointer" }}>
-                <span style={{ width: 12, height: 12, borderRadius: 3, flex: "none", border: checked ? "none" : "1.5px solid #D1D5DB", background: checked ? "#279C7B" : "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ width: 12, height: 12, borderRadius: 3, flex: "none", border: checked ? "none" : "1.5px solid #D1D5DB", background: checked ? "#171717" : "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   {checked && <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4 L3 5.5 L6.5 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>}
                 </span>
                 {label}
@@ -220,12 +219,12 @@ const WorkspaceVisual = () => (
             ))}
           </div>
           <label style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10.5, color: "#374151", marginBottom: 10 }}>
-            <span style={{ width: 12, height: 12, borderRadius: 3, background: "#279C7B", flex: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ width: 12, height: 12, borderRadius: 3, background: "#171717", flex: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1.5 4 L3 5.5 L6.5 2" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/></svg>
             </span>
             Search web for additional info
           </label>
-          <div style={{ background: "#F0FDF4", border: "1px solid #BBF7D0", borderRadius: 6, padding: "6px 8px", fontSize: 10, color: "#15803D", marginBottom: 10 }}>Available Documents · 0 company, 5 doc types &rsaquo;</div>
+          <div style={{ background: "#f5f5f5", border: "1px solid #e5e5e5", borderRadius: 6, padding: "6px 8px", fontSize: 10, color: "#171717", marginBottom: 10 }}>Available Documents · 0 company, 5 doc types &rsaquo;</div>
           <div style={{ fontSize: 10.5, fontWeight: 600, color: "#374151", marginBottom: 5 }}>Integrations</div>
           <label style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10.5, color: "#9CA3AF" }}>
             <span style={{ width: 12, height: 12, borderRadius: 3, border: "1.5px solid #D1D5DB", background: "#fff", flex: "none" }} />
@@ -237,24 +236,24 @@ const WorkspaceVisual = () => (
         </div>
         <div style={{ padding: "10px 14px", borderTop: "1px solid #E5E7EB", display: "flex", gap: 6 }}>
           <button style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "1px solid #D1D5DB", background: "#fff", fontSize: 11, fontWeight: 500, color: "#374151", cursor: "pointer" }}>Clear All</button>
-          <button style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "none", background: "#279C7B", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer" }}>Add to Query</button>
+          <button style={{ flex: 1, padding: "7px 0", borderRadius: 6, border: "none", background: "#171717", fontSize: 11, fontWeight: 600, color: "#fff", cursor: "pointer" }}>Add to Query</button>
         </div>
       </div>
       <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, gap: 16 }}>
-        <div style={{ fontSize: 15, fontWeight: 700, color: "#279C7B", textAlign: "center" }}>Start researching smarter with Pascal.</div>
+        <div style={{ fontSize: 15, fontWeight: 700, color: "#171717", textAlign: "center" }}>Start researching smarter with Pascal.</div>
         <div style={{ width: "100%", border: "1.5px solid #D1D5DB", borderRadius: 10, background: "#fff", overflow: "hidden" }}>
           <div style={{ padding: "10px 12px", fontSize: 11, color: "#9CA3AF", borderBottom: "1px solid #F3F4F6" }}>Press @ to add companies. Pascal chooses the best source to answer your query.</div>
           <div style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 10px", flexWrap: "wrap" }}>
             {["@","+"].map(s => (<button key={s} style={{ width: 26, height: 26, borderRadius: 6, border: "1px solid #E5E7EB", background: "#F9FAFB", fontSize: 12, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{s}</button>))}
             <div style={{ flex: 1 }} />
             {["Filings","Web"].map(l => (<span key={l} style={{ padding: "4px 9px", borderRadius: 6, border: "1px solid #E5E7EB", fontSize: 10.5, fontWeight: 500, color: "#374151", background: "#fff" }}>{l}</span>))}
-            <span style={{ padding: "4px 9px", borderRadius: 6, background: "#279C7B", fontSize: 10.5, fontWeight: 600, color: "#fff", display: "flex", alignItems: "center", gap: 3 }}>Auto Mode<svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M2 3 L4 5 L6 3" stroke="#fff" strokeWidth="1.2" strokeLinecap="round"/></svg></span>
+            <span style={{ padding: "4px 9px", borderRadius: 6, background: "#171717", fontSize: 10.5, fontWeight: 600, color: "#fff", display: "flex", alignItems: "center", gap: 3 }}>Auto Mode<svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M2 3 L4 5 L6 3" stroke="#fff" strokeWidth="1.2" strokeLinecap="round"/></svg></span>
           </div>
         </div>
         <div style={{ width: "100%", background: "#fff", border: "1px solid #E5E7EB", borderRadius: 10, overflow: "hidden" }}>
           {[{ label: "Auto Mode", desc: "Research on filings and web.", active: true },{ label: "Claude-4.7", desc: "Strong long-form reasoning and writing." },{ label: "GPT-5.5", desc: "Fast general-purpose chat and coding." },{ label: "Gemini-3.1", desc: "Multimodal-friendly general chat." }].map((m, i) => (
-            <div key={m.label} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", background: m.active ? "#F0FDF4" : "#fff", borderBottom: i < 3 ? "1px solid #F3F4F6" : "none" }}>
-              <span style={{ width: 16, height: 16, borderRadius: "50%", background: m.active ? "#279C7B" : "#E5E7EB", flex: "none" }} />
+            <div key={m.label} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 12px", background: m.active ? "#f5f5f5" : "#fff", borderBottom: i < 3 ? "1px solid #F3F4F6" : "none" }}>
+              <span style={{ width: 16, height: 16, borderRadius: "50%", background: m.active ? "#171717" : "#E5E7EB", flex: "none" }} />
               <div><div style={{ fontSize: 11, fontWeight: 600, color: "#111" }}>{m.label}</div><div style={{ fontSize: 10, color: "#6B7280" }}>{m.desc}</div></div>
             </div>
           ))}
@@ -284,7 +283,7 @@ const AgentsVisual = () => {
         </div>
         <div style={{ display: "flex", gap: 6, padding: "10px 18px", background: "#fff", borderBottom: "1px solid #E5E7EB" }}>
           {["View All","Earnings","Company Research","Competition","News & Events"].map((t, i) => (
-            <span key={t} style={{ padding: "4px 10px", borderRadius: 999, fontSize: 11, fontWeight: 500, background: i === 0 ? "#279C7B" : "transparent", color: i === 0 ? "#fff" : "#374151", border: i === 0 ? "none" : "1px solid #D1D5DB", cursor: "pointer" }}>{t}</span>
+            <span key={t} style={{ padding: "4px 10px", borderRadius: 999, fontSize: 11, fontWeight: 500, background: i === 0 ? "#171717" : "transparent", color: i === 0 ? "#fff" : "#374151", border: i === 0 ? "none" : "1px solid #D1D5DB", cursor: "pointer" }}>{t}</span>
           ))}
         </div>
         <div style={{ flex: 1, overflowY: "auto", padding: "12px 18px" }}>
@@ -293,7 +292,7 @@ const AgentsVisual = () => {
             {workflows.map((w) => (
               <div key={w.title} style={{ background: "#fff", border: "1.5px solid #E5E7EB", borderRadius: 10, padding: "12px 14px", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div style={{ flex: 1 }}><div style={{ fontSize: 11.5, fontWeight: 600, color: "#111", marginBottom: 4, lineHeight: 1.3 }}>{w.title}</div><div style={{ fontSize: 10, color: "#6B7280", lineHeight: 1.4 }}>{w.desc}</div></div>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ flex: "none", marginLeft: 6, marginTop: 2 }}><polygon points="5 3 19 12 5 21 5 3" fill="#279C7B"/></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ flex: "none", marginLeft: 6, marginTop: 2 }}><polygon points="5 3 19 12 5 21 5 3" fill="#171717"/></svg>
               </div>
             ))}
           </div>
@@ -321,7 +320,7 @@ const SecureVisual = () => {
           <div style={{ padding: "14px 14px 10px", borderBottom: "1px solid #E5E7EB", fontWeight: 700, fontSize: 13, color: "#111" }}>My Vault</div>
           <div style={{ padding: "8px 6px", flex: 1 }}>
             {[{ label: "Uploaded Files", icon: "folder" },{ label: "Generated Results", icon: "file" },{ label: "Connectors", icon: "plus", active: true }].map((item) => (
-              <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", borderRadius: 7, background: item.active ? "#F0F4F0" : "transparent", color: item.active ? "#279C7B" : "#374151", fontWeight: item.active ? 600 : 400, fontSize: 11.5, cursor: "pointer", marginBottom: 2 }}>
+              <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 8, padding: "8px 10px", borderRadius: 7, background: item.active ? "#F0F4F0" : "transparent", color: item.active ? "#171717" : "#374151", fontWeight: item.active ? 600 : 400, fontSize: 11.5, cursor: "pointer", marginBottom: 2 }}>
                 <i data-lucide={item.icon} style={{ width: 14, height: 14 }} />{item.label}
               </div>
             ))}
@@ -351,9 +350,9 @@ const CoreVisual = () => (
   <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 18, padding: 22, minHeight: 460, backdropFilter: "blur(6px)" }}>
     <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
       {[
-        { k: "Lattice", d: "The firm-specific knowledge graph",        icon: "git-branch", c: "#7ABE9C" },
-        { k: "Prism",   d: "Document intelligence at 99.9% accuracy", icon: "scan-text",  c: "#2E9B6A" },
-        { k: "Shell",   d: "Permission-aware access control",         icon: "key-round",  c: "#279C7B" },
+        { k: "Lattice", d: "The firm-specific knowledge graph",        icon: "git-branch", c: "rgba(255,255,255,0.12)" },
+        { k: "Prism",   d: "Document intelligence at 99.9% accuracy", icon: "scan-text",  c: "rgba(255,255,255,0.12)" },
+        { k: "Shell",   d: "Permission-aware access control",         icon: "key-round",  c: "rgba(255,255,255,0.12)" },
       ].map((row) => (
         <div key={row.k} style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 12, padding: 18, display: "flex", gap: 14, alignItems: "center" }}>
           <span style={{ width: 44, height: 44, borderRadius: 10, background: row.c, color: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
@@ -363,11 +362,11 @@ const CoreVisual = () => (
             <div style={{ fontWeight: 700, color: "#fff", fontSize: 18, letterSpacing: "-0.01em" }}>{row.k}</div>
             <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{row.d}</div>
           </div>
-          <i data-lucide="check-circle-2" style={{ width: 18, height: 18, color: "var(--pascal-emerald)" }} />
+          <i data-lucide="check-circle-2" style={{ width: 18, height: 18, color: "rgba(255,255,255,0.5)" }} />
         </div>
       ))}
       <div style={{ marginTop: 4, padding: "14px 16px", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, fontSize: 13, color: "rgba(255,255,255,0.78)" }}>
-        <i data-lucide="layers-3" style={{ width: 18, height: 18, color: "var(--pascal-emerald)" }} />
+        <i data-lucide="layers-3" style={{ width: 18, height: 18, color: "rgba(255,255,255,0.5)" }} />
         Sovereign Data Fabric · Multi-model orchestration
       </div>
     </div>

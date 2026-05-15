@@ -42,7 +42,7 @@ const PlatformSketch = () => (
       gap: 10,
     }}>
       <span style={{ display: "flex", gap: 6 }}>
-        {["#F96057","#F8C543","#57BD50"].map(c => (
+        {["#F96057","#F8C543","#8C8C8C"].map(c => (
           <span key={c} style={{ width: 10, height: 10, borderRadius: "50%", background: c }} />
         ))}
       </span>
@@ -71,7 +71,7 @@ const PlatformSketch = () => (
             width: 28,
             height: 28,
             borderRadius: 7,
-            background: i === 0 ? "var(--pascal-emerald)" : "var(--pascal-line)",
+            background: i === 0 ? "var(--pascal-ink)" : "var(--pascal-line)",
           }} />
         ))}
       </div>
@@ -83,10 +83,10 @@ const PlatformSketch = () => (
               borderRadius: 10,
               border: "1px solid var(--pascal-line)",
               padding: "14px 16px",
-              background: i === 0 ? "rgba(39,156,123,0.06)" : "var(--pascal-paper)",
+              background: i === 0 ? "#f5f5f5" : "var(--pascal-paper)",
             }}>
               <div style={{ width: 40, height: 8, borderRadius: 4, background: "var(--pascal-line)", marginBottom: 10 }} />
-              <div style={{ width: 72, height: 20, borderRadius: 6, background: i === 0 ? "rgba(39,156,123,0.20)" : "var(--pascal-line)" }} />
+              <div style={{ width: 72, height: 20, borderRadius: 6, background: i === 0 ? "#e5e5e5" : "var(--pascal-line)" }} />
             </div>
           ))}
         </div>
@@ -101,7 +101,7 @@ const PlatformSketch = () => (
         ))}
 
         <div style={{ display: "flex", gap: 8, marginTop: 4 }}>
-          {["var(--pascal-mint)","var(--pascal-line)","var(--pascal-line)"].map((bg, i) => (
+          {["var(--pascal-paper-soft)","var(--pascal-line)","var(--pascal-line)"].map((bg, i) => (
             <div key={i} style={{
               height: 22,
               width: [52, 68, 44][i],
@@ -138,8 +138,8 @@ const ModuleCard = ({ name, tag, icon }) => {
       <span style={{
         flex: "none",
         width: 40, height: 40, borderRadius: 10,
-        background: hover ? "var(--pascal-emerald)" : "var(--pascal-mint)",
-        color: hover ? "#fff" : "var(--pascal-emerald)",
+        background: hover ? "var(--pascal-ink)" : "var(--pascal-paper-soft)",
+        color: hover ? "#fff" : "var(--pascal-ink)",
         display: "inline-flex", alignItems: "center", justifyContent: "center",
         transition: "background 200ms ease",
       }}>
@@ -198,10 +198,10 @@ const Product = () => (
           <a href="product.html" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             marginTop: 24,
-            color: "var(--pascal-emerald)", fontSize: 15, fontWeight: 600,
+            color: "var(--pascal-ink)", fontSize: 15, fontWeight: 600,
             textDecoration: "none",
             paddingBottom: 5,
-            borderBottom: "1px solid var(--pascal-emerald)",
+            borderBottom: "1px solid var(--pascal-ink)",
           }}>
             Explore the platform
             <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
@@ -217,8 +217,8 @@ const Product = () => (
                 <span style={{
                   flex: "none",
                   width: 44, height: 44, borderRadius: 10,
-                  background: "var(--pascal-mint)",
-                  color: "var(--pascal-emerald)",
+                  background: "var(--pascal-paper-soft)",
+                  color: "var(--pascal-ink)",
                   display: "inline-flex", alignItems: "center", justifyContent: "center",
                 }}>
                   <i data-lucide={f.icon} style={{ width: 22, height: 22 }} />

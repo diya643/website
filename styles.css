@@ -19,12 +19,12 @@
   --fs-small:   14px;
   --fs-xs:      12px;
 
-  /* Brand palette — primary teal (kept as brand hint) */
-  --pascal-emerald:       #279C7B;
-  --pascal-emerald-2:     #1C8672;
-  --pascal-emerald-light: #137068;
-  --pascal-mint:          rgba(39, 156, 123, 0.08);
-  --pascal-mint-2:        rgba(39, 156, 123, 0.12);
+  /* Remapped: emerald → ink, mint → subtle grey (Vercel palette) */
+  --pascal-emerald:       #171717;
+  --pascal-emerald-2:     #0a0a0a;
+  --pascal-emerald-light: #404040;
+  --pascal-mint:          #f5f5f5;
+  --pascal-mint-2:        #ebebeb;
 
   /* Light surfaces — Vercel color system */
   --pascal-ink:           #171717;
@@ -90,13 +90,13 @@ a { border-bottom: none; }
 .pbtn:active { transform: translateY(1px); }
 
 .pbtn-primary {
-  background: var(--pascal-emerald);
-  color: #fff;
+  background: var(--pascal-ink);
+  color: #fafafa;
   padding: 13px 24px;
   font-size: var(--fs-small);
   font-weight: 600;
 }
-.pbtn-primary:hover { background: var(--pascal-emerald-2); }
+.pbtn-primary:hover { background: var(--pascal-ink-2); }
 
 .pbtn-outline {
   background: transparent;
@@ -134,11 +134,11 @@ h3 { letter-spacing: -0.025em; font-weight: 600; }
 h4 { letter-spacing: -0.015em; font-weight: 600; }
 
 .eyebrow {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--pascal-emerald);
+  color: var(--pascal-fg-muted);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -148,7 +148,7 @@ h4 { letter-spacing: -0.015em; font-weight: 600; }
   display: inline-block;
   width: 20px;
   height: 1px;
-  background: var(--pascal-emerald);
+  background: var(--pascal-line-strong);
 }
 
 .section { padding: 120px 0; }

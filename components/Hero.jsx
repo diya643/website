@@ -47,7 +47,7 @@ const Hero = () => (
           margin: 0,
         }}>
           Context driven AI for{" "}
-          <span style={{ color: "var(--pascal-emerald)" }}>Institutional Finance</span>
+          <span style={{ color: "var(--pascal-ink)" }}>Institutional Finance</span>
         </h1>
 
         {/* Subtext */}

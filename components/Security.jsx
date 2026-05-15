@@ -116,45 +116,32 @@ const Security = () => (
     overflow: "hidden",
     isolation: "isolate",
   }}>
-    {/* Subtle grid backdrop */}
+    {/* Subtle dot grid */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: -1,
-      backgroundImage: [
-        "linear-gradient(rgba(81,152,114,0.04) 1px, transparent 1px)",
-        "linear-gradient(90deg, rgba(81,152,114,0.04) 1px, transparent 1px)",
-      ].join(", "),
-      backgroundSize: "60px 60px",
-    }} />
-
-    {/* Green glow top-right, blue glow bottom-left */}
-    <div aria-hidden="true" style={{
-      position: "absolute", inset: 0, zIndex: -1,
-      background: [
-        "radial-gradient(700px 500px at 100% 0%, rgba(81,152,114,0.12), transparent 60%)",
-        "radial-gradient(500px 400px at 0% 100%, rgba(40,80,200,0.08), transparent 60%)",
-      ].join(", "),
+      backgroundImage: "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)",
+      backgroundSize: "28px 28px",
     }} />
 
     <div className="container" style={{ position: "relative" }}>
       <div style={{ maxWidth: 760 }}>
         <span style={{
           display: "inline-flex", alignItems: "center", gap: 10,
-          fontSize: 12, fontWeight: 500,
-          letterSpacing: "0.18em", textTransform: "uppercase",
-          color: "var(--pascal-emerald)",
+          fontSize: 11, fontWeight: 500,
+          letterSpacing: "0.12em", textTransform: "uppercase",
+          color: "var(--pascal-dark-muted)",
           marginBottom: 22,
         }}>
-          <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }}/>
+          <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }}/>
           Trust &amp; Compliance
         </span>
         <h2 style={{
-          fontSize: 60, fontWeight: 700,
+          fontSize: 60, fontWeight: 600,
           color: "var(--pascal-dark-text)",
-          letterSpacing: "-0.03em", lineHeight: 1.02,
+          letterSpacing: "-0.04em", lineHeight: 1.02,
           marginBottom: 24,
         }}>
-          Security cleared for{" "}
-          <span style={{ color: "var(--pascal-emerald)" }}>institutional finance.</span>
+          Security cleared for institutional finance.
         </h2>
         <p style={{
           fontSize: 19, lineHeight: 1.55,
@@ -164,7 +151,16 @@ const Security = () => (
         }}>
           SOC 2 Type II, ISO 27001, ISO 9001, GDPR, TÜV SÜD. Audited by independent third parties. Built for the firms that get reviewed every quarter.
         </p>
-        <a href="#" className="pbtn pbtn-primary" style={{ background: "var(--pascal-emerald)" }}>
+        <a href="#" style={{
+          display: "inline-flex", alignItems: "center", gap: 8,
+          padding: "12px 22px", borderRadius: 999,
+          background: "#fafafa", color: "#171717",
+          fontSize: 14, fontWeight: 600, textDecoration: "none",
+          transition: "background 140ms ease",
+        }}
+        onMouseEnter={(e) => e.currentTarget.style.background = "#e5e5e5"}
+        onMouseLeave={(e) => e.currentTarget.style.background = "#fafafa"}
+        >
           Trust Center
           <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
         </a>
