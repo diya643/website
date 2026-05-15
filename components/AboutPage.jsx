@@ -13,8 +13,8 @@ const AboutHero = () => (
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 0,
       backgroundImage: [
-        "linear-gradient(rgba(81,152,114,0.05) 1px, transparent 1px)",
-        "linear-gradient(90deg, rgba(81,152,114,0.05) 1px, transparent 1px)",
+        "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
+        "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
       ].join(", "),
       backgroundSize: "72px 72px",
     }} />
@@ -22,10 +22,7 @@ const AboutHero = () => (
     {/* Ambient glows */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 0,
-      background: [
-        "radial-gradient(900px 600px at 80% -5%, rgba(81,152,114,0.18), transparent 55%)",
-        "radial-gradient(500px 400px at 10% 100%, rgba(81,152,114,0.10), transparent 55%)",
-      ].join(", "),
+      background: "none",
     }} />
 
     <div className="container" style={{ position: "relative", zIndex: 1 }}>
@@ -110,14 +107,14 @@ const AboutMission = () => {
                 <div aria-hidden="true" style={{
                   position: "absolute", top: 0, right: 0,
                   width: 300, height: 300,
-                  background: "radial-gradient(circle, rgba(81,152,114,0.18), transparent 70%)",
+                  background: "radial-gradient(circle, rgba(0,0,0,0.09), transparent 70%)",
                   pointerEvents: "none",
                 }} />
               )}
               <div style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
                 padding: "5px 12px", borderRadius: 999,
-                background: i === 0 ? "rgba(81,152,114,0.15)" : "var(--pascal-mint)",
+                background: i === 0 ? "rgba(0,0,0,0.07)" : "var(--pascal-mint)",
                 marginBottom: 24,
               }}>
                 <i data-lucide={c.icon} style={{ width: 13, height: 13, color: "var(--pascal-emerald)" }} />
@@ -298,7 +295,7 @@ const AboutPedigree = () => (
   }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "radial-gradient(800px 500px at 50% 0%, rgba(81,152,114,0.08), transparent 60%)",
+      background: "radial-gradient(800px 500px at 50% 0%, rgba(0,0,0,0.04), transparent 60%)",
       pointerEvents: "none",
     }} />
 
@@ -346,13 +343,13 @@ const AboutCTA = () => (
   }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "radial-gradient(700px 500px at 50% 50%, rgba(81,152,114,0.14), transparent 65%)",
+      background: "radial-gradient(700px 500px at 50% 50%, rgba(0,0,0,0.07), transparent 65%)",
       pointerEvents: "none",
     }} />
     {/* Subtle dot grid */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      backgroundImage: "radial-gradient(rgba(81,152,114,0.12) 1px, transparent 1px)",
+      backgroundImage: "radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px)",
       backgroundSize: "36px 36px",
       pointerEvents: "none",
     }} />

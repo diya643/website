@@ -90,7 +90,7 @@ const CustomerCard = ({ name, abbr, color, position, public: isPublic }) => (
       fontWeight: 600,
       color: "var(--pascal-emerald)",
     }}>
-      <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--pascal-emerald)", boxShadow: "0 0 0 3px rgba(39,156,123,0.18)" }} />
+      <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--pascal-emerald)", boxShadow: "0 0 0 3px rgba(0,0,0,0.10)" }} />
       Live in production
     </div>
   </div>

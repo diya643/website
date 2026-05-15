@@ -53,7 +53,7 @@ const SolutionTestimonial = ({ pageKey }) => {
     <section style={{ position: "relative", overflow: "hidden", padding: "100px 0", background: "var(--pascal-dark)" }}>
       <div aria-hidden="true" style={{
         position: "absolute", inset: 0,
-        background: "radial-gradient(900px 600px at 50% 50%, rgba(81,152,114,0.07), transparent 65%)",
+        background: "radial-gradient(900px 600px at 50% 50%, rgba(0,0,0,0.04), transparent 65%)",
       }} />
       <div className="container" style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
         <div style={{ fontSize: 48, color: "var(--pascal-emerald)", opacity: 0.5, lineHeight: 1, marginBottom: 28, fontFamily: "Georgia, serif" }}>"</div>
@@ -65,7 +65,7 @@ const SolutionTestimonial = ({ pageKey }) => {
           {SHARED_TESTIMONIAL_QUOTE}
         </blockquote>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-          <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
+          <div style={{ width: 48, height: 1, background: "rgba(0,0,0,0.15)" }} />
           <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>{attr.role}</div>
           <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>{attr.org}</div>
           {attr.badge && (
@@ -84,10 +84,10 @@ const SolutionFinalCTA = () => (
   <section style={{
     padding: "72px 0",
     background: "linear-gradient(135deg, var(--pascal-dark) 0%, #0d1e0d 50%, var(--pascal-dark) 100%)",
-    borderTop: "1px solid rgba(81,152,114,0.15)",
+    borderTop: "1px solid rgba(0,0,0,0.07)",
     position: "relative", overflow: "hidden",
   }}>
-    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
+    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(0,0,0,0.05), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28, maxWidth: 720, margin: "0 auto 28px" }}>
         {FINAL_CTA_HEADLINE}
@@ -97,7 +97,7 @@ const SolutionFinalCTA = () => (
         padding: "14px 36px", borderRadius: 999,
         background: "var(--pascal-emerald)", color: "#fff",
         fontSize: 15, fontWeight: 600, textDecoration: "none",
-        boxShadow: "0 8px 32px -8px rgba(81,152,114,0.5)",
+        boxShadow: "0 8px 32px -8px rgba(0,0,0,0.20)",
       }}>
         {BOOK_DEMO}
       </a>

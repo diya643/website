@@ -12,17 +12,14 @@ const DemoHero = () => (
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
       backgroundImage: [
-        "linear-gradient(rgba(81,152,114,0.05) 1px, transparent 1px)",
-        "linear-gradient(90deg, rgba(81,152,114,0.05) 1px, transparent 1px)",
+        "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
+        "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
       ].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: [
-        "radial-gradient(800px 500px at 80% -10%, rgba(81,152,114,0.16), transparent 55%)",
-        "radial-gradient(500px 400px at 10% 110%, rgba(81,152,114,0.10), transparent 55%)",
-      ].join(", "),
+      background: "none",
     }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <span style={{
@@ -104,7 +101,7 @@ const ValueProp = ({ icon, headline, body }) => (
     <span style={{
       flex: "none",
       width: 44, height: 44, borderRadius: 10,
-      background: "rgba(81,152,114,0.14)",
+      background: "rgba(0,0,0,0.07)",
       color: "var(--pascal-emerald)",
       display: "inline-flex", alignItems: "center", justifyContent: "center",
     }}>

@@ -34,7 +34,7 @@ const CompsHeroVisual = () => {
           <div style={{ fontSize: 11, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Sources: Bloomberg · FactSet · Last updated 2 min ago</div>
         </div>
         <div style={{ display: "flex", gap: 6 }}>
-          <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.25)", cursor: "pointer" }}>↻ Refresh</span>
+          <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)", cursor: "pointer" }}>↻ Refresh</span>
           <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "var(--pascal-paper-soft)", color: "var(--pascal-fg-muted)", border: "1px solid var(--pascal-line)", cursor: "pointer" }}>Export ↑</span>
         </div>
       </div>
@@ -48,7 +48,7 @@ const CompsHeroVisual = () => {
         </thead>
         <tbody>
           {rows.map(r => (
-            <tr key={r.tick} style={{ background: r.hi ? "rgba(81,152,114,0.04)" : "transparent" }}>
+            <tr key={r.tick} style={{ background: r.hi ? "rgba(0,0,0,0.03)" : "transparent" }}>
               <td style={{ padding: "8px 8px", fontWeight: 700, color: "var(--pascal-emerald)", borderBottom: "1px solid var(--pascal-line)", textAlign: "right" }}>{r.tick}</td>
               <td style={{ padding: "8px 8px", color: "var(--pascal-ink)", borderBottom: "1px solid var(--pascal-line)", textAlign: "left" }}>{r.name}</td>
               <td style={{ padding: "8px 8px", color: "var(--pascal-ink)", borderBottom: "1px solid var(--pascal-line)", textAlign: "right", fontVariantNumeric: "tabular-nums" }}>{r.evRev}</td>
@@ -80,7 +80,7 @@ const IBHero = () => (
   <section style={{ position: "relative", overflow: "hidden", background: "var(--pascal-dark)", padding: "100px 0 0" }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      backgroundImage: ["linear-gradient(rgba(81,152,114,0.04) 1px, transparent 1px)", "linear-gradient(90deg, rgba(81,152,114,0.04) 1px, transparent 1px)"].join(", "),
+      backgroundImage: ["linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)", "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)"].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div className="container" style={{ position: "relative" }}>
@@ -118,7 +118,7 @@ const IBHero = () => (
               fontSize: 15, fontWeight: 500, textDecoration: "none",
               transition: "all 180ms ease",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(81,152,114,0.5)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.20)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(228,237,216,0.25)"; }}>
               Explore the Platform
             </a>
@@ -149,9 +149,9 @@ const PitchBuilderVis = () => (
           <div key={s.label} style={{
             padding: "6px 7px", borderRadius: 5, cursor: "pointer",
             background: s.active ? "var(--pascal-mint)" : "var(--pascal-paper-soft)",
-            border: `1px solid ${s.active ? "rgba(81,152,114,0.3)" : "var(--pascal-line)"}`,
+            border: `1px solid ${s.active ? "rgba(0,0,0,0.12)" : "var(--pascal-line)"}`,
           }}>
-            <div style={{ width: "100%", height: 28, borderRadius: 3, background: s.active ? "rgba(81,152,114,0.15)" : "var(--pascal-line)", marginBottom: 4 }} />
+            <div style={{ width: "100%", height: 28, borderRadius: 3, background: s.active ? "rgba(0,0,0,0.07)" : "var(--pascal-line)", marginBottom: 4 }} />
             <div style={{ fontSize: 8.5, color: s.active ? "var(--pascal-emerald)" : "var(--pascal-fg-muted)", fontWeight: s.active ? 600 : 400, lineHeight: 1.2 }}>{s.label}</div>
           </div>
         ))}
@@ -163,7 +163,7 @@ const PitchBuilderVis = () => (
             <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 3 }}>Project Thunder · Confidential</div>
             <div style={{ fontSize: 13.5, fontWeight: 700, color: "var(--pascal-ink)", lineHeight: 1.2 }}>Executive Summary</div>
           </div>
-          <span style={{ padding: "2px 7px", borderRadius: 999, fontSize: 9.5, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>Auto-draft</span>
+          <span style={{ padding: "2px 7px", borderRadius: 999, fontSize: 9.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Auto-draft</span>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           {[["Transaction Value", "$2.4B"], ["EV / EBITDA", "14.2x"], ["Premium to 30D VWAP", "38%"]].map(([k, v]) => (
@@ -205,7 +205,7 @@ const IBCompsVis = () => {
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
         <div style={{ fontSize: 11.5, fontWeight: 700, color: "var(--pascal-ink)" }}>Agentic Table · Precedent Transactions</div>
         <div style={{ display: "flex", gap: 6 }}>
-          <span style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>+ Add Column</span>
+          <span style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>+ Add Column</span>
           <span style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10, fontWeight: 600, background: "var(--pascal-paper-soft)", color: "var(--pascal-fg-muted)", border: "1px solid var(--pascal-line)" }}>Export ↑</span>
         </div>
       </div>
@@ -252,11 +252,11 @@ const EquityResearchVis = () => (
   <IBShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
       <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>Equity Research Memo — Cloudflare (NET)</div>
-      <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.25)" }}>Export ↑</span>
+      <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 12 }}>
       {["10-K FY24", "Earnings Call Q4", "Sector Report"].map(s => (
-        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{s}</span>
+        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
     {[
@@ -313,8 +313,8 @@ const IBCustomWFVis = () => (
           {i < 3 && (
             <div style={{ display: "flex", justifyContent: "center", padding: "4px 0" }}>
               <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
-                <path d="M6 2 L6 12" stroke="rgba(81,152,114,0.4)" strokeWidth="1.5" strokeLinecap="round"/>
-                <path d="M3 10 L6 14 L9 10" stroke="rgba(81,152,114,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 2 L6 12" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M3 10 L6 14 L9 10" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
           )}
@@ -372,7 +372,7 @@ const IBAgentCarousel = () => {
               color: active === i ? "#fff" : "var(--pascal-fg-muted)",
               fontSize: 13.5, fontWeight: active === i ? 600 : 500,
               cursor: "pointer", transition: "all 180ms ease",
-              boxShadow: active === i ? "0 4px 14px -4px rgba(81,152,114,0.4)" : "none",
+              boxShadow: active === i ? "0 4px 14px -4px rgba(0,0,0,0.15)" : "none",
             }}>{t.label}</button>
           ))}
         </div>
@@ -473,11 +473,11 @@ const IBTestimonial = () => (
   <section style={{ position: "relative", overflow: "hidden", padding: "100px 0", background: "var(--pascal-dark)" }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "radial-gradient(900px 600px at 50% 50%, rgba(81,152,114,0.07), transparent 65%)",
+      background: "radial-gradient(900px 600px at 50% 50%, rgba(0,0,0,0.04), transparent 65%)",
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      backgroundImage: ["linear-gradient(rgba(81,152,114,0.03) 1px, transparent 1px)", "linear-gradient(90deg, rgba(81,152,114,0.03) 1px, transparent 1px)"].join(", "),
+      backgroundImage: ["linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)", "linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)"].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div className="container" style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
@@ -493,7 +493,7 @@ const IBTestimonial = () => (
         Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-        <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
+        <div style={{ width: 48, height: 1, background: "rgba(0,0,0,0.15)" }} />
         <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>Head of Equity Research &amp; Technology</div>
         <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Global Investment Bank</div>
       </div>
@@ -581,7 +581,7 @@ const IBWhyPascal = () => (
         <a href="demo.html" style={{
           display: "inline-flex", alignItems: "center", gap: 8,
           padding: "13px 32px", borderRadius: 999,
-          border: "1px solid rgba(81,152,114,0.45)", color: "var(--pascal-emerald)",
+          border: "1px solid rgba(0,0,0,0.18)", color: "var(--pascal-emerald)",
           fontSize: 14.5, fontWeight: 600, textDecoration: "none",
           transition: "all 180ms ease",
         }}
@@ -602,10 +602,10 @@ const IBFinalCTA = () => (
   <section style={{
     padding: "72px 0",
     background: "linear-gradient(135deg, var(--pascal-dark) 0%, #0d1e0d 50%, var(--pascal-dark) 100%)",
-    borderTop: "1px solid rgba(81,152,114,0.15)",
+    borderTop: "1px solid rgba(0,0,0,0.07)",
     position: "relative", overflow: "hidden",
   }}>
-    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
+    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(0,0,0,0.05), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
         Run your first Pascal workflow inside your firm in two weeks.
@@ -615,11 +615,11 @@ const IBFinalCTA = () => (
         padding: "14px 36px", borderRadius: 999,
         background: "var(--pascal-emerald)", color: "#fff",
         fontSize: 15, fontWeight: 600, textDecoration: "none",
-        boxShadow: "0 8px 32px -8px rgba(81,152,114,0.5)",
+        boxShadow: "0 8px 32px -8px rgba(0,0,0,0.20)",
         transition: "all 180ms ease",
       }}
-      onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(81,152,114,0.5)"; }}
-      onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(81,152,114,0.5)"; }}>
+      onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(0,0,0,0.20)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(0,0,0,0.20)"; }}>
         Watch a Demo
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
           <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>

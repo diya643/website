@@ -44,7 +44,7 @@ const EVENTS = [
 ];
 
 const TYPE_COLORS = {
-  Webinar:    { text: "#279C7B", bg: "rgba(39,156,123,0.12)" },
+  Webinar:    { text: "#279C7B", bg: "rgba(0,0,0,0.06)" },
   Conference: { text: "#3B82F6", bg: "rgba(59,130,246,0.12)" },
   Roundtable: { text: "#F59E0B", bg: "rgba(245,158,11,0.12)" },
 };
@@ -262,7 +262,7 @@ const EventsPage = () => {
                   fontSize: "var(--fs-small)", fontWeight: active ? 600 : 500,
                   fontFamily: "inherit", cursor: "pointer",
                   transition: "all 160ms ease",
-                  boxShadow: active ? "0 4px 14px -4px rgba(39,156,123,0.35)" : "none",
+                  boxShadow: active ? "0 4px 14px -4px rgba(0,0,0,0.14)" : "none",
                 }}>{f}</button>
               );
             })}
@@ -271,7 +271,7 @@ const EventsPage = () => {
           {/* No upcoming events banner */}
           <div style={{
             background: "var(--pascal-mint)",
-            border: "1px solid rgba(39,156,123,0.20)",
+            border: "1px solid rgba(0,0,0,0.10)",
             borderRadius: 12,
             padding: "14px 20px",
             display: "flex", alignItems: "center", gap: 10,

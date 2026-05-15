@@ -29,7 +29,7 @@ const DealRoomVisual = () => (
 
     <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
       {["CIM_v3.pdf", "Financials_FY24", "Contracts ×12"].map(s => (
-        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{s}</span>
+        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
 
@@ -67,7 +67,7 @@ const PEHero = () => (
   <section style={{ position: "relative", overflow: "hidden", background: "var(--pascal-dark)", padding: "100px 0 0" }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      backgroundImage: ["linear-gradient(rgba(81,152,114,0.04) 1px, transparent 1px)", "linear-gradient(90deg, rgba(81,152,114,0.04) 1px, transparent 1px)"].join(", "),
+      backgroundImage: ["linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)", "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)"].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div className="container" style={{ position: "relative" }}>
@@ -105,7 +105,7 @@ const PEHero = () => (
               fontSize: 15, fontWeight: 500, textDecoration: "none",
               transition: "all 180ms ease",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(81,152,114,0.5)"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.20)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(228,237,216,0.25)"; }}>
               Explore the Platform
             </a>
@@ -154,11 +154,11 @@ const PEICMemoVis = () => (
   <PEShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
       <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>IC Memo — Project Atlas</div>
-      <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.25)" }}>Export ↑</span>
+      <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
       {["CIM_v3.pdf", "Financials_FY24", "Market Research"].map(s => (
-        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{s}</span>
+        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
     {[
@@ -206,13 +206,13 @@ const PEPortfolioVis = () => (
         </div>
         <span style={{
           fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 999,
-          background: r.level === "danger" ? "rgba(220,38,38,0.08)" : r.level === "warning" ? "rgba(245,158,11,0.08)" : "rgba(81,152,114,0.08)",
+          background: r.level === "danger" ? "rgba(220,38,38,0.08)" : r.level === "warning" ? "rgba(245,158,11,0.08)" : "rgba(0,0,0,0.04)",
           color: r.level === "danger" ? "#dc2626" : r.level === "warning" ? "#d97706" : "var(--pascal-emerald)",
-          border: `1px solid ${r.level === "danger" ? "rgba(220,38,38,0.2)" : r.level === "warning" ? "rgba(245,158,11,0.2)" : "rgba(81,152,114,0.2)"}`,
+          border: `1px solid ${r.level === "danger" ? "rgba(220,38,38,0.2)" : r.level === "warning" ? "rgba(245,158,11,0.2)" : "rgba(0,0,0,0.12)"}`,
         }}>{r.alert}</span>
       </div>
     ))}
-    <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "rgba(81,152,114,0.07)", border: "1px solid rgba(81,152,114,0.2)" }}>
+    <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.12)" }}>
       <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>Auto-Monitoring Active</div>
       <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>Filings, news, KPI reports — flagged in real time with source citations.</div>
     </div>
@@ -245,8 +245,8 @@ const PECustomWFVis = () => (
           {i < 3 && (
             <div style={{ display: "flex", justifyContent: "center", padding: "4px 0" }}>
               <svg width="12" height="18" viewBox="0 0 12 18" fill="none">
-                <path d="M6 2 L6 12" stroke="rgba(81,152,114,0.4)" strokeWidth="1.5" strokeLinecap="round"/>
-                <path d="M3 10 L6 14 L9 10" stroke="rgba(81,152,114,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 2 L6 12" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeLinecap="round"/>
+                <path d="M3 10 L6 14 L9 10" stroke="rgba(0,0,0,0.15)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
           )}
@@ -304,7 +304,7 @@ const PEAgentCarousel = () => {
               color: active === i ? "#fff" : "var(--pascal-fg-muted)",
               fontSize: 13.5, fontWeight: active === i ? 600 : 500,
               cursor: "pointer", transition: "all 180ms ease",
-              boxShadow: active === i ? "0 4px 14px -4px rgba(81,152,114,0.4)" : "none",
+              boxShadow: active === i ? "0 4px 14px -4px rgba(0,0,0,0.15)" : "none",
             }}>{t.label}</button>
           ))}
         </div>
@@ -434,11 +434,11 @@ const PEDemoFeatures = () => (
           padding: "14px 36px", borderRadius: 999,
           background: "var(--pascal-emerald)", color: "#fff",
           fontSize: 15, fontWeight: 600, textDecoration: "none",
-          boxShadow: "0 8px 24px -8px rgba(81,152,114,0.4)",
+          boxShadow: "0 8px 24px -8px rgba(0,0,0,0.15)",
           transition: "all 180ms ease",
         }}
-        onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 32px -8px rgba(81,152,114,0.45)"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 24px -8px rgba(81,152,114,0.4)"; }}>
+        onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 32px -8px rgba(0,0,0,0.18)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 24px -8px rgba(0,0,0,0.15)"; }}>
           Book a Demo
         </a>
       </div>
@@ -451,11 +451,11 @@ const PETestimonial = () => (
   <section style={{ position: "relative", overflow: "hidden", padding: "100px 0", background: "var(--pascal-dark)" }}>
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: "radial-gradient(900px 600px at 50% 50%, rgba(81,152,114,0.07), transparent 65%)",
+      background: "radial-gradient(900px 600px at 50% 50%, rgba(0,0,0,0.04), transparent 65%)",
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      backgroundImage: ["linear-gradient(rgba(81,152,114,0.03) 1px, transparent 1px)", "linear-gradient(90deg, rgba(81,152,114,0.03) 1px, transparent 1px)"].join(", "),
+      backgroundImage: ["linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px)", "linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px)"].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div className="container" style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
@@ -471,7 +471,7 @@ const PETestimonial = () => (
         Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-        <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
+        <div style={{ width: 48, height: 1, background: "rgba(0,0,0,0.15)" }} />
         <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>Partner &amp; Head of Technology</div>
         <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Private Markets Firm</div>
       </div>
@@ -643,7 +643,7 @@ const PEWhyPascal = () => (
         <a href="demo.html" style={{
           display: "inline-flex", alignItems: "center", gap: 8,
           padding: "13px 32px", borderRadius: 999,
-          border: "1px solid rgba(81,152,114,0.45)", color: "var(--pascal-emerald)",
+          border: "1px solid rgba(0,0,0,0.18)", color: "var(--pascal-emerald)",
           fontSize: 14.5, fontWeight: 600, textDecoration: "none",
           transition: "all 180ms ease",
         }}
@@ -664,10 +664,10 @@ const PEFinalCTA = () => (
   <section style={{
     padding: "72px 0",
     background: "linear-gradient(135deg, var(--pascal-dark) 0%, #0d1e0d 50%, var(--pascal-dark) 100%)",
-    borderTop: "1px solid rgba(81,152,114,0.15)",
+    borderTop: "1px solid rgba(0,0,0,0.07)",
     position: "relative", overflow: "hidden",
   }}>
-    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
+    <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(0,0,0,0.05), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
         Run your first Pascal workflow inside your firm in two weeks.
@@ -677,11 +677,11 @@ const PEFinalCTA = () => (
         padding: "14px 36px", borderRadius: 999,
         background: "var(--pascal-emerald)", color: "#fff",
         fontSize: 15, fontWeight: 600, textDecoration: "none",
-        boxShadow: "0 8px 32px -8px rgba(81,152,114,0.5)",
+        boxShadow: "0 8px 32px -8px rgba(0,0,0,0.20)",
         transition: "all 180ms ease",
       }}
-      onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(81,152,114,0.5)"; }}
-      onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(81,152,114,0.5)"; }}>
+      onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(0,0,0,0.20)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(0,0,0,0.20)"; }}>
         Book a Demo
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
           <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>

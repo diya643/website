@@ -175,14 +175,14 @@ const NewsroomPage = () => {
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0,
           backgroundImage: [
-            "linear-gradient(rgba(39,156,123,0.05) 1px, transparent 1px)",
-            "linear-gradient(90deg, rgba(39,156,123,0.05) 1px, transparent 1px)",
+            "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
+            "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
           ].join(", "),
           backgroundSize: "64px 64px",
         }} />
         <div aria-hidden="true" style={{
           position: "absolute", inset: 0,
-          background: "radial-gradient(600px 360px at 55% 0%, rgba(39,156,123,0.14), transparent 65%)",
+          background: "radial-gradient(600px 360px at 55% 0%, rgba(0,0,0,0.07), transparent 65%)",
         }} />
 
         <div className="container" style={{ position: "relative", maxWidth: 760, textAlign: "center" }}>
@@ -291,7 +291,7 @@ const NewsroomPage = () => {
       <section style={{
         background: "var(--pascal-dark)",
         padding: "72px 0",
-        borderTop: "1px solid rgba(39,156,123,0.15)",
+        borderTop: "1px solid rgba(0,0,0,0.07)",
       }}>
         <div className="container" style={{ textAlign: "center", maxWidth: 560 }}>
           <h2 style={{

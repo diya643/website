@@ -10,18 +10,14 @@ const ProductHero = () => (
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
       backgroundImage: [
-        "linear-gradient(rgba(81,152,114,0.04) 1px, transparent 1px)",
-        "linear-gradient(90deg, rgba(81,152,114,0.04) 1px, transparent 1px)",
+        "linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px)",
+        "linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)",
       ].join(", "),
       backgroundSize: "72px 72px",
     }} />
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0,
-      background: [
-        "radial-gradient(900px 600px at 50% -5%, rgba(81,152,114,0.20), transparent 60%)",
-        "radial-gradient(400px 300px at 15% 100%, rgba(81,152,114,0.07), transparent 55%)",
-        "radial-gradient(400px 300px at 85% 100%, rgba(81,152,114,0.07), transparent 55%)",
-      ].join(", "),
+      background: "none",
     }} />
     <div className="container" style={{ position: "relative" }}>
       <span style={{
@@ -176,7 +172,7 @@ const InteractiveTwoCol = ({ id, theme = "light", eyebrow, title, subtitle, bloc
               <div key={i} onClick={() => setActive(i)} style={{
                 padding: "22px 26px", borderRadius: 12, cursor: "pointer",
                 borderLeft: `3px solid ${i === active ? "var(--pascal-emerald)" : (dark ? "rgba(255,255,255,0.08)" : "var(--pascal-line)")}`,
-                background: i === active ? (dark ? "rgba(81,152,114,0.08)" : "rgba(81,152,114,0.05)") : "transparent",
+                background: i === active ? (dark ? "rgba(0,0,0,0.04)" : "rgba(0,0,0,0.03)") : "transparent",
                 transition: "all 220ms ease",
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: i === active ? 11 : 0 }}>
@@ -259,7 +255,7 @@ const SourceSelectorVisual = () => (
         <span style={{ fontSize: 13, color: checked ? "var(--pascal-ink)" : "var(--pascal-fg-muted)" }}>{label}</span>
       </div>
     ))}
-    <div style={{ marginTop: 18, padding: "14px 12px", borderRadius: 9, border: "1.5px dashed rgba(81,152,114,0.4)", background: "rgba(81,152,114,0.04)", textAlign: "center" }}>
+    <div style={{ marginTop: 18, padding: "14px 12px", borderRadius: 9, border: "1.5px dashed rgba(0,0,0,0.15)", background: "rgba(0,0,0,0.03)", textAlign: "center" }}>
       <div style={{ fontSize: 18, marginBottom: 5 }}>📁</div>
       <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>My Vault</div>
       <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>Drop files or browse to upload</div>
@@ -271,7 +267,7 @@ const ArchitectureVisual = () => {
   const Box = ({ label, sub, accent }) => (
     <div style={{
       padding: "9px 12px", borderRadius: 9, flex: 1, textAlign: "center",
-      background: accent ? "rgba(81,152,114,0.10)" : "var(--pascal-paper-soft)",
+      background: accent ? "rgba(0,0,0,0.05)" : "var(--pascal-paper-soft)",
       border: `1.5px solid ${accent ? "var(--pascal-emerald)" : "var(--pascal-line)"}`,
     }}>
       <div style={{ fontSize: 12.5, fontWeight: 600, color: accent ? "var(--pascal-emerald)" : "var(--pascal-ink)" }}>{label}</div>
@@ -281,8 +277,8 @@ const ArchitectureVisual = () => {
   const Arrow = () => (
     <div style={{ display: "flex", justifyContent: "center", padding: "5px 0" }}>
       <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
-        <path d="M7 2 L7 14" stroke="rgba(81,152,114,0.5)" strokeWidth="1.6" strokeLinecap="round"/>
-        <path d="M3.5 11 L7 16 L10.5 11" stroke="rgba(81,152,114,0.5)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 2 L7 14" stroke="rgba(0,0,0,0.20)" strokeWidth="1.6" strokeLinecap="round"/>
+        <path d="M3.5 11 L7 16 L10.5 11" stroke="rgba(0,0,0,0.20)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     </div>
   );
@@ -331,8 +327,8 @@ const ModelDropdownVisual = () => {
           <div key={label} onClick={() => setSel(label)} style={{
             display: "flex", alignItems: "center", justifyContent: "space-between",
             padding: "10px 14px", borderRadius: 9, cursor: "pointer",
-            background: sel === label ? "rgba(81,152,114,0.07)" : "var(--pascal-paper-soft)",
-            border: `1px solid ${sel === label ? "rgba(81,152,114,0.35)" : "var(--pascal-line)"}`,
+            background: sel === label ? "rgba(0,0,0,0.04)" : "var(--pascal-paper-soft)",
+            border: `1px solid ${sel === label ? "rgba(0,0,0,0.14)" : "var(--pascal-line)"}`,
             transition: "all 140ms ease",
           }}>
             <div>
@@ -436,13 +432,13 @@ const AuditOutputVisual = () => (
       </div>
       <span style={{
         padding: "4px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600,
-        background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)",
-        border: "1px solid rgba(81,152,114,0.25)",
+        background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)",
+        border: "1px solid rgba(0,0,0,0.12)",
       }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap" }}>
       {["Bloomberg", "SEBI Filing", "Internal Notes"].map(src => (
-        <span key={src} style={{ padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 500, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{src}</span>
+        <span key={src} style={{ padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 500, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{src}</span>
       ))}
     </div>
     {[
@@ -460,7 +456,7 @@ const AuditOutputVisual = () => (
     ))}
     <div style={{ display: "flex", gap: 8, marginTop: 14, flexWrap: "wrap" }}>
       {["✓ Source Cited", "✓ Audit Trail", "✓ Compliance Ready"].map(tag => (
-        <span key={tag} style={{ padding: "4px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(81,152,114,0.08)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{tag}</span>
+        <span key={tag} style={{ padding: "4px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.04)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{tag}</span>
       ))}
     </div>
   </BrowserShell>
@@ -521,8 +517,8 @@ const AllAgentsVisual = () => {
             </div>
             <span style={{
               padding: "4px 12px", borderRadius: 999, fontSize: 11.5, fontWeight: 600,
-              background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)",
-              border: "1px solid rgba(81,152,114,0.25)", cursor: "pointer", whiteSpace: "nowrap",
+              background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)",
+              border: "1px solid rgba(0,0,0,0.12)", cursor: "pointer", whiteSpace: "nowrap",
             }}>Run →</span>
           </div>
         ))}
@@ -566,7 +562,7 @@ const WorkflowsVisual = () => {
               <div style={{ fontSize: 13, fontWeight: 600, color: "var(--pascal-ink)" }}>{wf.name}</div>
               <div style={{ fontSize: 11, color: "var(--pascal-fg-muted)" }}>{wf.duration}</div>
             </div>
-            <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 11, background: "rgba(81,152,114,0.08)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)", cursor: "pointer" }}>Run</span>
+            <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 11, background: "rgba(0,0,0,0.04)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)", cursor: "pointer" }}>Run</span>
           </div>
         ))}
       </div>
@@ -657,8 +653,8 @@ const ChatVisual = () => (
       {/* Main */}
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <div style={{
-          flex: 1, borderRadius: 9, border: "1.5px dashed rgba(81,152,114,0.4)",
-          background: "rgba(81,152,114,0.03)", display: "flex", flexDirection: "column",
+          flex: 1, borderRadius: 9, border: "1.5px dashed rgba(0,0,0,0.15)",
+          background: "rgba(0,0,0,0.02)", display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center", gap: 6, padding: 16,
         }}>
           <div style={{ fontSize: 22 }}>📂</div>
@@ -721,7 +717,7 @@ const DossierVisual = () => (
     <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
       <span style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)" }}>Sources:</span>
       {["BSE Filing", "Annual Report 2024", "Broker Notes"].map(s => (
-        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{s}</span>
+        <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
   </BrowserShell>
@@ -740,7 +736,7 @@ const AgenticTableVisual = () => {
     <BrowserShell>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-ink)" }}>Agentic Table — Banking Sector</div>
-        <span style={{ padding: "4px 10px", borderRadius: 999, fontSize: 11, fontWeight: 600, background: "rgba(81,152,114,0.10)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.25)", cursor: "pointer" }}>+ Add Column</span>
+        <span style={{ padding: "4px 10px", borderRadius: 999, fontSize: 11, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)", cursor: "pointer" }}>+ Add Column</span>
       </div>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
@@ -767,7 +763,7 @@ const AgenticTableVisual = () => {
       <div style={{ marginTop: 10, display: "flex", alignItems: "center", gap: 6 }}>
         <span style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)" }}>All values sourced from</span>
         {["10-K filings", "Earnings releases"].map(s => (
-          <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(81,152,114,0.2)" }}>{s}</span>
+          <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
         ))}
       </div>
     </BrowserShell>
@@ -929,7 +925,7 @@ const ApiSDKSection = () => (
 
 const DeploymentDiagram = () => {
   const QUADRANTS = [
-    { icon: "☁️",  title: "Pascal Cloud",    sub: "Managed service",     pts: ["Auto-scaling", "SOC 2 verified", "Zero-config deploy"],    tint: "rgba(81,152,114,0.10)",  border: "rgba(81,152,114,0.28)" },
+    { icon: "☁️",  title: "Pascal Cloud",    sub: "Managed service",     pts: ["Auto-scaling", "SOC 2 verified", "Zero-config deploy"],    tint: "rgba(0,0,0,0.05)",  border: "rgba(0,0,0,0.12)" },
     { icon: "🔒", title: "Private Cloud",   sub: "VPC / Private",       pts: ["Your cloud env", "Customer-managed keys", "Single-tenant"], tint: "rgba(59,130,246,0.09)",  border: "rgba(59,130,246,0.24)" },
     { icon: "🏢", title: "On-Premise",      sub: "Full control",        pts: ["Air-gapped option", "On-prem compute", "Custom deploy"],    tint: "rgba(245,158,11,0.09)",  border: "rgba(245,158,11,0.24)" },
     { icon: "🛡️", title: "Single Tenant",   sub: "Maximum isolation",   pts: ["Dedicated infra", "Zero data sharing", "Dedicated SLA"],   tint: "rgba(139,92,246,0.09)",  border: "rgba(139,92,246,0.24)" },
@@ -988,7 +984,7 @@ const SovereignSection = () => (
               "SOC 2 Type II · ISO 27001 certified",
             ].map(item => (
               <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: "50%", flex: "none", marginTop: 2, background: "rgba(81,152,114,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ width: 18, height: 18, borderRadius: "50%", flex: "none", marginTop: 2, background: "rgba(0,0,0,0.07)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
                     <path d="M1.5 4.5 L3.5 6.5 L7.5 2.5" stroke="var(--pascal-emerald)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -1082,7 +1078,7 @@ const ProductCerts = () => {
       badge: () => (
         <svg viewBox="0 0 64 64" width="52" height="52">
           <path d="M32 4 L60 18 L60 46 L32 60 L4 46 L4 18 Z" fill="none" stroke="rgba(228,237,216,0.25)" strokeWidth="1.5"/>
-          <path d="M32 12 L52 22 L52 42 L32 52 L12 42 L12 22 Z" fill="rgba(81,152,114,0.15)" stroke="var(--pascal-emerald)" strokeWidth="1.2"/>
+          <path d="M32 12 L52 22 L52 42 L32 52 L12 42 L12 22 Z" fill="rgba(0,0,0,0.07)" stroke="var(--pascal-emerald)" strokeWidth="1.2"/>
           <text x="32" y="34" textAnchor="middle" fill="var(--pascal-emerald)" fontSize="8" fontWeight="700" fontFamily="inherit">AICPA</text>
         </svg>
       ),
