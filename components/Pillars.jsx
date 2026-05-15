@@ -88,9 +88,9 @@ const Pillars = () => {
             display: "inline-flex", alignItems: "center", gap: 10,
             fontSize: 11, fontWeight: 500,
             letterSpacing: "0.12em", textTransform: "uppercase",
-            color: "var(--pascal-dark-muted)",
+            color: "var(--pascal-accent)",
           }}>
-            <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }} />
+            <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.15)" }} />
             Introducing Pascal AI
           </span>
           <h2 style={{
@@ -135,7 +135,7 @@ const Pillars = () => {
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               padding: "6px 12px", borderRadius: 999,
-              background: "#e5e5e5", color: "var(--pascal-ink)",
+              background: "#e5e5e5", color: "var(--pascal-accent)",
               fontSize: 12, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
               marginBottom: 22,
             }}>
@@ -162,9 +162,9 @@ const Pillars = () => {
 
             <a href={p.href} style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              color: "rgba(255,255,255,0.85)", fontSize: 15, fontWeight: 600,
+              color: "var(--pascal-accent)", fontSize: 15, fontWeight: 600,
               textDecoration: "none", paddingBottom: 6,
-              borderBottom: "1px solid rgba(255,255,255,0.3)",
+              borderBottom: "1px solid var(--pascal-accent)",
               transition: "gap 160ms ease",
             }}
             onMouseEnter={(e) => e.currentTarget.style.gap = "12px"}

@@ -129,10 +129,10 @@ const Security = () => (
           display: "inline-flex", alignItems: "center", gap: 10,
           fontSize: 11, fontWeight: 500,
           letterSpacing: "0.12em", textTransform: "uppercase",
-          color: "var(--pascal-dark-muted)",
+          color: "var(--pascal-accent)",
           marginBottom: 22,
         }}>
-          <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }}/>
+          <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.15)" }}/>
           Trust &amp; Compliance
         </span>
         <h2 style={{

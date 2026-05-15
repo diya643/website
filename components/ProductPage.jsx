@@ -27,18 +27,18 @@ const ProductHero = () => (
       <span style={{
         display: "inline-flex", alignItems: "center", gap: 10,
         fontSize: 11.5, fontWeight: 500, letterSpacing: "0.18em",
-        textTransform: "uppercase", color: "var(--pascal-emerald)", marginBottom: 28,
+        textTransform: "uppercase", color: "var(--pascal-accent)", marginBottom: 28,
       }}>
-        <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }} />
+        <span style={{ width: 24, height: 1, background: "rgba(255,255,255,0.2)" }} />
         THE PASCAL PLATFORM
-        <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }} />
+        <span style={{ width: 24, height: 1, background: "rgba(255,255,255,0.2)" }} />
       </span>
       <h1 style={{
         fontSize: "clamp(38px, 5.5vw, 70px)", fontWeight: 700,
         letterSpacing: "-0.04em", color: "var(--pascal-dark-text)",
         lineHeight: 1.06, maxWidth: 860, margin: "0 auto 28px",
       }}>
-        The agentic research platform for<br /><span style={{ color: "var(--pascal-emerald)" }}>institutional investors.</span>
+        The agentic research platform for<br /><span style={{ color: "var(--pascal-dark-text)" }}>institutional investors.</span>
       </h1>
       <p style={{
         fontSize: 17, lineHeight: 1.7, color: "var(--pascal-dark-muted)",
@@ -49,14 +49,13 @@ const ProductHero = () => (
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 9,
         padding: "14px 34px", borderRadius: 999,
-        background: "rgba(81,152,114,0.14)",
-        border: "1px solid rgba(81,152,114,0.50)",
-        backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+        background: "var(--pascal-accent)",
+        border: "1px solid var(--pascal-accent)",
         color: "#fff", fontSize: 15, fontWeight: 600,
         textDecoration: "none", transition: "all 200ms ease",
       }}
-      onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.borderColor = "var(--pascal-emerald)"; }}
-      onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(81,152,114,0.14)"; e.currentTarget.style.borderColor = "rgba(81,152,114,0.50)"; }}>
+      onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-accent-hover)"; e.currentTarget.style.borderColor = "var(--pascal-accent-hover)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.background = "var(--pascal-accent)"; e.currentTarget.style.borderColor = "var(--pascal-accent)"; }}>
         Request Demo
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>

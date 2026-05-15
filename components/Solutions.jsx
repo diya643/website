@@ -145,9 +145,9 @@ const Solutions = () => {
 
             <a href={SOLUTION_HREFS[s.key] || "#"} style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              color: "var(--pascal-ink)", fontSize: 15, fontWeight: 600,
+              color: "var(--pascal-accent)", fontSize: 15, fontWeight: 600,
               textDecoration: "none", paddingBottom: 6,
-              borderBottom: "1px solid var(--pascal-ink)",
+              borderBottom: "1px solid var(--pascal-accent)",
               alignSelf: "flex-start",
             }}>
               Learn more about {s.label}
