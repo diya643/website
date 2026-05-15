@@ -1,4 +1,4 @@
-// Nav.jsx — Scroll-aware: dark over hero, white frosted on scroll
+// Nav.jsx — Always-white frosted glass nav
 
 const NAV_ITEMS = [
   { label: "Product", href: "product.html", solo: true },
@@ -36,33 +36,29 @@ const Nav = () => {
   const enter = (label) => { clearTimeout(closeTimer.current); setOpen(label); };
   const leave = () => { closeTimer.current = setTimeout(() => setOpen(null), 120); };
 
-  const linkColor = scrolled ? "var(--pascal-ink)" : "#E4EDD8";
-  const activeLinkColor = "var(--pascal-emerald)";
-
   return (
     <nav id="top" style={{
       position: "sticky",
       top: 0,
       zIndex: 100,
-      background: scrolled
-        ? "rgba(255,255,255,0.93)"
-        : "rgba(12, 16, 8, 0.55)",
+      background: "rgba(253,253,253,0.95)",
       backdropFilter: "blur(16px)",
       WebkitBackdropFilter: "blur(16px)",
       borderBottom: scrolled
         ? "1px solid var(--pascal-line)"
-        : "1px solid rgba(228,237,216,0.08)",
-      transition: "background 200ms ease, border-color 200ms ease",
+        : "1px solid var(--pascal-line)",
+      transition: "box-shadow 200ms ease",
+      boxShadow: scrolled ? "0 1px 0 0 var(--pascal-line)" : "none",
     }}>
       <div className="container" style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        height: 76,
+        height: 72,
       }}>
-        <Logo size={30} color={scrolled ? "var(--pascal-ink)" : "#E4EDD8"}/>
+        <Logo size={28} color="var(--pascal-ink)"/>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 2 }}>
           {NAV_ITEMS.map((it) => (
             <div
               key={it.label}
@@ -76,22 +72,24 @@ const Nav = () => {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 5,
-                  padding: "10px 14px",
-                  fontSize: 14.5,
+                  padding: "9px 13px",
+                  fontSize: 14,
                   fontWeight: 500,
-                  color: open === it.label ? activeLinkColor : linkColor,
+                  color: open === it.label ? "var(--pascal-ink)" : "var(--pascal-fg-muted)",
                   textDecoration: "none",
                   borderRadius: 8,
-                  transition: "color 160ms ease",
+                  transition: "color 160ms ease, background 160ms ease",
                   cursor: "pointer",
                 }}
+                onMouseEnter={(e) => { if (it.solo) e.currentTarget.style.color = "var(--pascal-ink)"; }}
+                onMouseLeave={(e) => { if (it.solo) e.currentTarget.style.color = open === it.label ? "var(--pascal-ink)" : "var(--pascal-fg-muted)"; }}
               >
                 {it.label}
                 {!it.solo && (
                   <svg width="11" height="11" viewBox="0 0 12 12" fill="none" style={{
                     transition: "transform 160ms ease",
                     transform: open === it.label ? "rotate(180deg)" : "none",
-                    opacity: 0.7,
+                    opacity: 0.5,
                   }}>
                     <path d="M3 4.5 L6 7.5 L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -110,9 +108,9 @@ const Nav = () => {
                     background: "var(--pascal-paper)",
                     border: "1px solid var(--pascal-line)",
                     borderRadius: 14,
-                    boxShadow: "0 18px 50px -12px rgba(26,36,20,0.18)",
-                    padding: 10,
-                    minWidth: 320,
+                    boxShadow: "0 12px 32px -8px rgba(0,0,0,0.12)",
+                    padding: 8,
+                    minWidth: 300,
                     display: "grid",
                     gap: 2,
                   }}>
@@ -120,27 +118,27 @@ const Nav = () => {
                     <a key={sub.label} href={sub.href || "#"} style={{
                       display: "flex",
                       gap: 12,
-                      padding: "12px 12px",
-                      borderRadius: 10,
+                      padding: "11px 12px",
+                      borderRadius: 9,
                       textDecoration: "none",
                       color: "var(--pascal-ink)",
-                      transition: "background 160ms ease",
+                      transition: "background 140ms ease",
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.background = "var(--pascal-paper-soft)"}
                     onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
                     >
                       <span style={{
                         flex: "none",
-                        width: 36, height: 36, borderRadius: 8,
-                        background: "var(--pascal-mint)",
+                        width: 34, height: 34, borderRadius: 8,
+                        background: "var(--pascal-paper-card)",
                         color: "var(--pascal-emerald)",
                         display: "inline-flex", alignItems: "center", justifyContent: "center",
                       }}>
-                        <i data-lucide={sub.icon} style={{ width: 18, height: 18 }}/>
+                        <i data-lucide={sub.icon} style={{ width: 16, height: 16 }}/>
                       </span>
                       <span style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                        <span style={{ fontWeight: 600, fontSize: 14.5, color: "var(--pascal-ink)" }}>{sub.label}</span>
-                        <span style={{ fontSize: 13, color: "var(--pascal-fg-muted)", lineHeight: 1.4 }}>{sub.desc}</span>
+                        <span style={{ fontWeight: 600, fontSize: 14, color: "var(--pascal-ink)" }}>{sub.label}</span>
+                        <span style={{ fontSize: 12.5, color: "var(--pascal-fg-muted)", lineHeight: 1.4 }}>{sub.desc}</span>
                       </span>
                     </a>
                   ))}
@@ -154,19 +152,19 @@ const Nav = () => {
           display: "inline-flex", alignItems: "center", gap: 6,
           padding: "9px 18px",
           borderRadius: 999,
-          border: scrolled ? "1px solid var(--pascal-emerald)" : "1px solid rgba(228,237,216,0.35)",
+          border: "1px solid var(--pascal-ink)",
           background: "transparent",
-          color: scrolled ? "var(--pascal-ink)" : "#E4EDD8",
-          fontSize: 14, fontWeight: 500,
+          color: "var(--pascal-ink)",
+          fontSize: 13.5, fontWeight: 500,
           textDecoration: "none",
           transition: "all 200ms ease",
           cursor: "pointer",
         }}
-        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.borderColor = "var(--pascal-emerald)"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = scrolled ? "var(--pascal-ink)" : "#E4EDD8"; e.currentTarget.style.borderColor = scrolled ? "var(--pascal-emerald)" : "rgba(228,237,216,0.35)"; }}
+        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-ink)"; e.currentTarget.style.color = "#fff"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--pascal-ink)"; }}
         >
           Contact Us
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
             <path d="M3 11 L11 3 M5 3 L11 3 L11 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </a>

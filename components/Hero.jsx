@@ -1,31 +1,21 @@
-// Hero.jsx — Dark editorial hero, centered single CTA
+// Hero.jsx — Light editorial hero, centered single CTA
 
 const Hero = () => (
   <section style={{
     position: "relative",
     overflow: "hidden",
-    paddingTop: 130,
-    paddingBottom: 140,
-    background: "var(--pascal-dark)",
+    paddingTop: 140,
+    paddingBottom: 160,
+    background: "var(--pascal-paper)",
+    borderBottom: "1px solid var(--pascal-line)",
   }}>
-    {/* Ambient green glow */}
-    <div aria-hidden="true" style={{
-      position: "absolute",
-      inset: 0,
-      background: [
-        "radial-gradient(900px 600px at 70% -10%, rgba(39,156,123,0.18), transparent 60%)",
-        "radial-gradient(600px 400px at 5% 90%, rgba(39,156,123,0.10), transparent 55%)",
-        "radial-gradient(400px 300px at 50% 110%, rgba(40,80,180,0.07), transparent 60%)",
-      ].join(", "),
-      pointerEvents: "none",
-    }} />
 
     <div className="container" style={{ position: "relative" }}>
       <div style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 36,
+        gap: 32,
         textAlign: "center",
         maxWidth: 860,
         margin: "0 auto",
@@ -33,31 +23,27 @@ const Hero = () => (
 
         {/* Eyebrow pill */}
         <span style={{
-          display: "inline-flex", alignItems: "center", gap: 10,
-          padding: "8px 18px",
-          border: "1px solid rgba(228,237,216,0.14)",
+          display: "inline-flex", alignItems: "center", gap: 8,
+          padding: "7px 16px",
+          border: "1px solid var(--pascal-line-strong)",
           borderRadius: 999,
-          background: "rgba(228,237,216,0.06)",
-          fontSize: 13,
+          background: "var(--pascal-paper-card)",
+          fontSize: 12.5,
           fontWeight: 500,
-          color: "var(--pascal-dark-text)",
+          letterSpacing: "0.04em",
+          color: "var(--pascal-fg-muted)",
         }}>
-          <span style={{
-            width: 7, height: 7, borderRadius: "50%",
-            background: "var(--pascal-emerald)",
-            boxShadow: "0 0 0 4px rgba(39,156,123,0.22)",
-          }} />
           Enterprise AI Platform · Built for Finance
         </span>
 
         {/* Headline */}
         <h1 style={{
           fontFamily: "var(--font-display)",
-          fontSize: "clamp(52px, 7vw, 92px)",
-          lineHeight: 1.02,
+          fontSize: "clamp(48px, 6.5vw, 84px)",
+          lineHeight: 1.03,
           letterSpacing: "-0.038em",
           fontWeight: 700,
-          color: "var(--pascal-dark-text)",
+          color: "var(--pascal-ink)",
           margin: 0,
         }}>
           Context driven AI for{" "}
@@ -66,22 +52,30 @@ const Hero = () => (
 
         {/* Subtext */}
         <p style={{
-          fontSize: 20,
-          lineHeight: 1.5,
-          color: "var(--pascal-dark-muted)",
+          fontSize: 19,
+          lineHeight: 1.55,
+          color: "var(--pascal-fg-muted)",
           margin: 0,
-          maxWidth: 560,
+          maxWidth: 520,
         }}>
           AI agents to turn your enterprise data into investment alpha.
         </p>
 
-        {/* CTA */}
-        <a href="demo.html" className="pbtn pbtn-primary">
-          Schedule a Demo
-          <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-            <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
+        {/* CTA row */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+          <a href="demo.html" className="pbtn pbtn-primary">
+            Schedule a Demo
+            <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+              <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+          <a href="product.html" className="pbtn pbtn-ghost" style={{ color: "var(--pascal-fg-muted)", fontSize: 15 }}>
+            See the platform
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
+        </div>
 
       </div>
     </div>

@@ -100,11 +100,11 @@ a { border-bottom: none; }
 .pbtn-outline {
   background: transparent;
   color: var(--pascal-ink);
-  border-color: var(--pascal-emerald);
+  border-color: var(--pascal-ink);
   padding: 11px 21px;
   font-size: var(--fs-small);
 }
-.pbtn-outline:hover { background: var(--pascal-emerald); color: #fff; }
+.pbtn-outline:hover { background: var(--pascal-ink); color: #fff; }
 
 .pbtn-ghost {
   background: transparent;

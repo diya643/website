@@ -73,7 +73,7 @@ const FAQ = () => {
                   }}>
                   <span style={{
                     fontSize: 19, fontWeight: 600, letterSpacing: "-0.01em",
-                    color: isOpen ? "var(--pascal-emerald)" : "var(--pascal-ink)",
+                    color: "var(--pascal-ink)",
                     transition: "color 200ms ease",
                   }}>
                     {f.q}
@@ -82,7 +82,7 @@ const FAQ = () => {
                     flex: "none",
                     width: 36, height: 36, borderRadius: "50%",
                     border: "1px solid var(--pascal-line)",
-                    background: isOpen ? "var(--pascal-emerald)" : "transparent",
+                    background: isOpen ? "var(--pascal-ink)" : "transparent",
                     color: isOpen ? "#fff" : "var(--pascal-ink)",
                     display: "inline-flex", alignItems: "center", justifyContent: "center",
                     transition: "all 200ms ease",

@@ -81,14 +81,6 @@ const Pillars = () => {
       position: "relative",
       overflow: "hidden",
     }}>
-      <div aria-hidden="true" style={{
-        position: "absolute", inset: 0,
-        background: [
-          "radial-gradient(700px 380px at 20% 0%, rgba(39,156,123,0.12), transparent 60%)",
-          "radial-gradient(700px 380px at 100% 100%, rgba(39,156,123,0.07), transparent 60%)",
-        ].join(", "),
-        pointerEvents: "none",
-      }} />
 
       <div className="container" style={{ position: "relative" }}>
         <div style={{ textAlign: "center", marginBottom: 48 }}>

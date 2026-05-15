@@ -87,12 +87,11 @@ const Solutions = () => {
           {SOLUTIONS.map((it, i) => (
             <button key={it.key} onClick={() => switchTo(i)} style={{
               padding: "12px 22px", borderRadius: 999,
-              border: "1px solid " + (i === active ? "var(--pascal-emerald)" : "var(--pascal-line-strong)"),
-              background: i === active ? "var(--pascal-emerald)" : "var(--pascal-paper-card)",
-              color: i === active ? "#fff" : "var(--pascal-ink)",
+              border: "1px solid " + (i === active ? "var(--pascal-ink)" : "var(--pascal-line-strong)"),
+              background: i === active ? "var(--pascal-ink)" : "var(--pascal-paper-card)",
+              color: i === active ? "#fff" : "var(--pascal-fg-muted)",
               fontSize: 14.5, fontWeight: 500, cursor: "pointer",
               transition: "all 200ms ease", fontFamily: "inherit",
-              boxShadow: i === active ? "0 8px 24px -8px rgba(39,156,123,0.50)" : "none",
             }}>
               {it.label}
             </button>

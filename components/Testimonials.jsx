@@ -95,8 +95,8 @@ const Testimonials = () => {
 
   return (
     <section className="section" style={{
-      background: "linear-gradient(180deg, var(--pascal-paper) 0%, var(--pascal-mint) 100%)",
-      position: "relative"
+      background: "var(--pascal-paper)",
+      borderTop: "1px solid var(--pascal-line)",
     }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -125,8 +125,8 @@ const Testimonials = () => {
             padding: "10px 22px",
             borderRadius: 999,
             border: "none",
-            background: i === active ? "var(--pascal-emerald)" : "transparent",
-            color: i === active ? "#fff" : "var(--pascal-ink)",
+            background: i === active ? "var(--pascal-ink)" : "transparent",
+            color: i === active ? "#fff" : "var(--pascal-fg-muted)",
             fontSize: 14, fontWeight: 600, cursor: "pointer",
             transition: "all 200ms ease",
             fontFamily: "inherit"
@@ -165,7 +165,7 @@ const Testimonials = () => {
 
             {/* Quote body */}
             <div style={{ padding: 48, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <svg width="38" height="28" viewBox="0 0 38 28" fill="none" style={{ marginBottom: 18, color: "var(--pascal-emerald)" }}>
+              <svg width="38" height="28" viewBox="0 0 38 28" fill="none" style={{ marginBottom: 18, color: "var(--pascal-line-strong)" }}>
                 <path d="M0 28 L0 14 C0 6 6 0 14 0 L14 6 C10 6 6 10 6 14 L14 14 L14 28 Z" fill="currentColor" />
                 <path d="M22 28 L22 14 C22 6 28 0 36 0 L36 6 C32 6 28 10 28 14 L36 14 L36 28 Z" fill="currentColor" />
               </svg>
@@ -177,9 +177,10 @@ const Testimonials = () => {
               <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 22, borderTop: "1px solid var(--pascal-line)" }}>
                 <span style={{
                   width: 50, height: 50, borderRadius: "50%",
-                  background: "var(--pascal-mint)", color: "var(--pascal-emerald)",
+                  background: "var(--pascal-paper-card)", color: "var(--pascal-ink)",
                   display: "inline-flex", alignItems: "center", justifyContent: "center",
-                  fontWeight: 700, fontSize: 18
+                  fontWeight: 700, fontSize: 18,
+                  border: "1px solid var(--pascal-line)",
                 }}>{q.person.split(" ").map((n) => n[0]).join("")}</span>
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 16, color: "var(--pascal-ink)" }}>{q.person}</div>
