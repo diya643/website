@@ -86,7 +86,7 @@ const Footer = () => {
                 }}
               />
               <button type="submit" style={{
-                background: subbed ? "rgba(39,156,123,0.5)" : "var(--pascal-accent)",
+                background: subbed ? "rgba(255,255,255,0.15)" : "var(--pascal-accent)",
                 color: "#fff",
                 border: "none",
                 borderRadius: 999,

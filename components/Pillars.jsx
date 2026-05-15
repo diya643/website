@@ -90,7 +90,7 @@ const Pillars = () => {
             letterSpacing: "0.12em", textTransform: "uppercase",
             color: "var(--pascal-dark-muted)",
           }}>
-            <span style={{ width: 20, height: 2, borderRadius: 99, background: "var(--pascal-accent)" }} />
+            <span style={{ width: 20, height: 1, background: "rgba(255,255,255,0.2)" }} />
             Introducing Pascal AI
           </span>
           <h2 style={{
@@ -135,7 +135,7 @@ const Pillars = () => {
             <div style={{
               display: "inline-flex", alignItems: "center", gap: 10,
               padding: "6px 12px", borderRadius: 999,
-              background: "#e5e5e5", color: "var(--pascal-emerald)",
+              background: "#e5e5e5", color: "var(--pascal-ink)",
               fontSize: 12, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase",
               marginBottom: 22,
             }}>
@@ -154,7 +154,7 @@ const Pillars = () => {
             <div style={{ display: "flex", gap: 24, marginBottom: 36, flexWrap: "wrap" }}>
               {p.stats.map((s, i) => (
                 <div key={i}>
-                  <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--pascal-accent)" }}>{s.v}</div>
+                  <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.02em", color: "var(--pascal-dark-text)" }}>{s.v}</div>
                   <div style={{ fontSize: 13, color: "var(--pascal-dark-muted)", marginTop: 2 }}>{s.l}</div>
                 </div>
               ))}
@@ -162,9 +162,9 @@ const Pillars = () => {
 
             <a href={p.href} style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              color: "var(--pascal-accent)", fontSize: 15, fontWeight: 600,
+              color: "rgba(255,255,255,0.85)", fontSize: 15, fontWeight: 600,
               textDecoration: "none", paddingBottom: 6,
-              borderBottom: "1px solid var(--pascal-accent)",
+              borderBottom: "1px solid rgba(255,255,255,0.3)",
               transition: "gap 160ms ease",
             }}
             onMouseEnter={(e) => e.currentTarget.style.gap = "12px"}
@@ -362,11 +362,11 @@ const CoreVisual = () => (
             <div style={{ fontWeight: 700, color: "#fff", fontSize: 18, letterSpacing: "-0.01em" }}>{row.k}</div>
             <div style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", marginTop: 2 }}>{row.d}</div>
           </div>
-          <i data-lucide="check-circle-2" style={{ width: 18, height: 18, color: "var(--pascal-accent)" }} />
+          <i data-lucide="check-circle-2" style={{ width: 18, height: 18, color: "rgba(255,255,255,0.45)" }} />
         </div>
       ))}
       <div style={{ marginTop: 4, padding: "14px 16px", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 12, display: "flex", alignItems: "center", gap: 12, fontSize: 13, color: "rgba(255,255,255,0.78)" }}>
-        <i data-lucide="layers-3" style={{ width: 18, height: 18, color: "var(--pascal-accent)" }} />
+        <i data-lucide="layers-3" style={{ width: 18, height: 18, color: "rgba(255,255,255,0.45)" }} />
         Sovereign Data Fabric · Multi-model orchestration
       </div>
     </div>

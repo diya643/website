@@ -198,10 +198,10 @@ const Product = () => (
           <a href="product.html" style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             marginTop: 24,
-            color: "var(--pascal-accent)", fontSize: 15, fontWeight: 600,
+            color: "var(--pascal-ink)", fontSize: 15, fontWeight: 600,
             textDecoration: "none",
             paddingBottom: 5,
-            borderBottom: "1px solid var(--pascal-accent)",
+            borderBottom: "1px solid var(--pascal-ink)",
           }}>
             Explore the platform
             <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
