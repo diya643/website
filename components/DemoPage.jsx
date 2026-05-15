@@ -46,7 +46,7 @@ const DemoHero = () => (
         color: "var(--pascal-dark-muted)",
         maxWidth: 640, width: "100%", margin: "0 auto",
       }}>
-        Talk to a Pascal expert about your investment workflows, data environment, and AI roadmap. Complete the form and we'll be in touch within one business day.
+        Tell us about your workflows, data environment, and AI roadmap. We respond within one business day.
       </p>
     </div>
   </section>
@@ -194,7 +194,7 @@ const DemoMain = () => {
           }}>
             <div style={{ marginBottom: 28 }}>
               <div style={{ fontSize: 18, fontWeight: 700, color: "var(--pascal-dark-text)", marginBottom: 4 }}>Tell us about your team</div>
-              <div style={{ fontSize: 13.5, color: "var(--pascal-dark-muted)" }}>We'll prepare a session tailored to your workflows.</div>
+              <div style={{ fontSize: 13.5, color: "var(--pascal-dark-muted)" }}>The demo is tailored to your data and workflows before the call.</div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 16px" }}>
@@ -248,9 +248,6 @@ const DemoMain = () => {
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald-2)"; e.currentTarget.style.transform = "translateY(-1px)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.transform = "none"; }}>
               Get Started
-              <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </button>
 
             <p style={{ fontSize: 11.5, color: "rgba(255,255,255,0.28)", textAlign: "center", marginTop: 14, width: "100%" }}>
@@ -262,20 +259,20 @@ const DemoMain = () => {
           <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
             <ValueProp
               icon="layers"
-              headline="Cut research orchestration time"
-              body="Stop losing analyst hours to context-switching between Bloomberg, broker reports, RMS, and internal notes. Pascal links your sources into one context graph — so research compounds instead of restarting every Monday."
+              headline="Compress the research cycle from 60 hours to 20"
+              body="Bloomberg, broker reports, RMS, internal notes — linked through one context graph. Research compounds instead of restarting."
             />
             <div style={{ height: 1, background: "var(--pascal-dark-line)" }} />
             <ValueProp
               icon="shield-check"
               headline="Deploy inside your perimeter"
-              body="Sovereign deployment on-prem or in your private cloud. SOC 2 Type II and ISO 27001 certified, zero data retention, AES-256 encryption. Your privileged data never leaves your environment, never trains a model."
+              body="On-prem or in your VPC. SOC 2 Type II, ISO 27001, AES-256. Zero data retention. Never trains a model."
             />
             <div style={{ height: 1, background: "var(--pascal-dark-line)" }} />
             <ValueProp
               icon="file-check"
-              headline="Every output cited to source"
-              body="No black boxes. Every answer, memo, and agent output traces back to the underlying filing, transcript, broker note, or internal document — built for SEBI tech risk reviews and internal audit from day one."
+              headline="Citations on every output, no exceptions"
+              body="Every answer, memo, and agent output traces to the underlying filing or transcript. SEBI tech-risk-ready from day one."
             />
 
             {/* Client logos */}
@@ -308,31 +305,31 @@ const LINKS = [
   {
     icon: "book-open",
     title: "Documentation",
-    body: "Explore our developer Docs for technical depth on the Cognitive Engine, agents, and MCP integration.",
+    body: "Developer docs for the Cognitive Engine, agents, and MCP integration.",
     href: "#",
   },
   {
     icon: "headphones",
     title: "Contact Support",
-    body: "Existing customer? Our support engineers are available through your dedicated channel or at support@pascalailabs.com.",
+    body: "Existing customers: reach support via your dedicated channel or support@pascalailabs.com.",
     href: "mailto:support@pascalailabs.com",
   },
   {
     icon: "building-2",
     title: "About Us",
-    body: "Learn more about Pascal's mission, founders, and the firms building the future of investing with us.",
+    body: "Pascal's mission, founders, and the firms running on us.",
     href: "about.html",
   },
   {
     icon: "user-plus",
     title: "Join Our Team",
-    body: "Interested in building the context layer for institutional finance? See open roles on our Careers page.",
+    body: "Open engineering, product, and field roles.",
     href: "#",
   },
   {
     icon: "mail",
     title: "General Contact",
-    body: "For press, partnerships, or any other questions, write to hello@pascalailabs.com.",
+    body: "Press, partnerships, anything else: hello@pascalailabs.com.",
     href: "mailto:hello@pascalailabs.com",
   },
 ];
@@ -396,7 +393,7 @@ const DemoLinks = () => (
         <p style={{
           fontSize: 16, color: "var(--pascal-fg-muted)",
           maxWidth: 520, width: "100%", margin: "0 auto",
-        }}>Explore more of Pascal — our product, our research, and the teams running on us.</p>
+        }}>Documentation, support, careers, and press contacts.</p>
       </div>
 
       <div style={{

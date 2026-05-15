@@ -3,27 +3,27 @@
 const FAQS = [
   {
     q: "How does Pascal manage my data?",
-    a: "Your data is protected by enterprise-grade security measures including AES-256 encryption in transit and at rest. Our infrastructure is hosted in SOC 2 Type 2 certified data centers with regular third-party security audits. We maintain strict access controls and comprehensive audit logs.",
+    a: "AES-256 encryption in transit and at rest. SOC 2 Type II infrastructure. Strict access controls and audit logs on every action.",
   },
   {
     q: "Can I upload my own data to Pascal?",
-    a: "Yes. You can connect your own data — including PDFs, Excel sheets, presentations, Word documents, and images. Our AI system automatically extracts and analyzes information while preserving original structure.",
+    a: "Yes. PDFs, Excel, presentations, Word, images. Pascal extracts and analyses while preserving original structure.",
   },
   {
     q: "How does Pascal integrate with existing investment workflows?",
-    a: "Pascal connects with the tools you already use (Excel, PowerPoint, etc.), enabling you to 10x your productivity without changing your core habits.",
+    a: "Pascal connects to Excel, PowerPoint, Word, email, and the browser. Analysts keep their existing habits.",
   },
   {
     q: "How does Pascal use my data?",
-    a: "Pascal does NOT use your prompts or data for model training. Your data is exclusively used to provide services to your team.",
+    a: "Pascal does not use your prompts or data for model training. Your data only serves your team.",
   },
   {
     q: "How quickly can my team get started with Pascal?",
-    a: "Most teams are up and running within 24–48 hours. Enterprise deployments with custom integrations typically take 1–2 weeks.",
+    a: "Most teams are live in 24–48 hours. Enterprise deployments with custom integrations: 1–2 weeks.",
   },
   {
     q: "What kind of accuracy can I expect from Pascal's insights?",
-    a: "High accuracy through verified data sources, multiple validation layers, and mandatory source citations for every output. You can audit any insight back to its original source.",
+    a: "Mandatory source citations on every output. Every claim is auditable back to its filing, transcript, or document of origin.",
   },
 ];
 
@@ -41,7 +41,7 @@ const FAQ = () => {
             Frequently<br/>asked questions.
           </h2>
           <p style={{ marginTop: 22, fontSize: 16, lineHeight: 1.6, color: "var(--pascal-fg-muted)", marginBottom: 28 }}>
-            The most common questions from CIOs, compliance teams, and investment heads as they evaluate Pascal.
+            The questions CIOs, compliance teams, and heads of research ask before signing.
           </p>
           <a href="demo.html" className="pbtn pbtn-outline">
             Talk to our team

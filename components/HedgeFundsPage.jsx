@@ -108,7 +108,7 @@ const HFHero = () => (
             Pascal AI for<br /><span style={{ color: "var(--pascal-emerald)" }}>Hedge Funds</span>
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.72, color: "var(--pascal-dark-muted)", maxWidth: 520, width: "100%", marginBottom: 36 }}>
-            Accelerate alpha generation, compress earnings season, and embed source-cited intelligence inside every analyst and PM workflow — with agentic AI built for the realities of long/short, event-driven, and multi-strategy funds.
+            Source-cited research agents inside your VPC. Built for long/short, event-driven, and multi-strategy funds.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="demo.html" style={{
@@ -292,28 +292,28 @@ const CAROUSEL_TABS = [
   {
     id: "earnings", label: "Earnings Synthesis",
     headline: "Earnings Synthesis",
-    body: "Cut earnings-season analyst load by up to 60%. Pascal auto-fetches transcripts, presentations, and filings the moment they drop, flags actuals diverging from consensus, and drafts variance notes your analyst edits instead of writing from scratch.",
+    body: "Transcripts, presentations, and filings auto-fetched on release. Variance vs consensus flagged. Drafts ready for analyst review.",
     cta: "Learn More →",
     Visual: EarningsVis,
   },
   {
     id: "memo", label: "IC Memo Builder",
     headline: "IC Memo Builder",
-    body: "Compress IC prep from days to hours. Pulls together filings, broker research, internal theses, and management calls into a structured memo on your firm's template. Every claim is cited to source.",
+    body: "Filings, broker research, internal theses, and management calls pulled into your firm's IC template. Every claim cited.",
     cta: "Learn More →",
     Visual: ICMemoVis,
   },
   {
     id: "rfp", label: "RFP / DDQ Response",
     headline: "RFP / DDQ Response",
-    body: "Cut response time by up to 85%. Pascal's agent retrieves answers from your firm's approved Answer Library and drafts responses ready for review. Stop re-answering the same questions across funds.",
+    body: "Answers retrieved from your approved Answer Library. Drafts ready for review. The same questions stop being answered twice.",
     cta: "Learn More →",
     Visual: RFPVis,
   },
   {
     id: "custom", label: "Build Custom Workflows",
     headline: "Build Custom Workflows",
-    body: "Design workflows tailored to your firm with no engineering required. Connect to Bloomberg, FactSet, and your RMS. Combine these with Pascal's agents for end-to-end auditability.",
+    body: "Workflows tailored to your firm without engineering. Connects to Bloomberg, FactSet, your RMS. End-to-end audit trail.",
     cta: "Book a Demo →",
     Visual: CustomWFVis,
   },
@@ -329,7 +329,7 @@ const AgentCarousel = () => {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Recommended Agents</span>
           <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1 }}>
-            The agents your team needs, ready on day one.
+            The hedge fund research agents Pascal ships with.
           </h2>
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 52, flexWrap: "wrap" }}>
@@ -373,25 +373,18 @@ const SDKSection = () => (
             Build Your Own Agents with the Pascal SDK
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.72, color: "var(--pascal-dark-muted)", marginBottom: 32, width: "100%" }}>
-            Use the Pascal SDK to co-develop agents tailored to your firm's exact workflows.
+            Python and TypeScript SDKs built on Pascal's Cognitive Engine. For in-house teams shipping proprietary workflows.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
             {[
-              { label: "Full Customization", body: "Access Python and TypeScript SDKs to build on top of the Cognitive Engine." },
-              { label: "Enterprise Integration", body: "Plug directly into your RMS, OMS, and proprietary databases." },
-              { label: "Production-Grade Document Handling", body: "Ingest and reason over PDFs, scanned filings, and analyst decks." },
-              { label: "Developer-Friendly, Sovereign-Ready", body: "Rapid prototyping with zero data retention enforced." },
+              { label: "Customizable", body: "Python and TypeScript SDKs on the Cognitive Engine." },
+              { label: "Stack-native", body: "Plugs into your RMS, OMS, and proprietary databases." },
+              { label: "Document-grade", body: "Reasons over PDFs, scanned filings, and analyst decks." },
+              { label: "Sovereign by default", body: "Zero data retention, enforced at the infrastructure layer." },
             ].map(({ label, body }) => (
-              <div key={label} style={{ display: "flex", gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(81,152,114,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", marginTop: 2 }}>
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <path d="M1.5 4.5 L3.5 6.5 L7.5 2.5" stroke="var(--pascal-emerald)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
-                  <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)" }}> — {body}</span>
-                </div>
+              <div key={label} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: 12, alignItems: "start" }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
+                <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)", lineHeight: 1.6 }}>{body}</span>
               </div>
             ))}
           </div>
@@ -454,14 +447,14 @@ const DemoFeatures = () => (
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Live Demo</span>
         <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 14 }}>Book a Product Demo</h2>
         <p style={{ fontSize: 16, color: "var(--pascal-fg-muted)", maxWidth: 500, width: "100%", margin: "0 auto" }}>
-          See Pascal's workflows live — and cut research effort by up to 80%.
+          See Pascal's workflows live, on your firm's data.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 48 }}>
         {[
-          { icon: "📊", title: "Turn Filings Into Structured Research", body: "Ingest filings and produce cited earnings summaries or KPI tables across any company set, in minutes." },
-          { icon: "🤝", title: "Collaborate Across the Investment Team", body: "Share research firm-wide. Review, annotate, and vote in a secure environment with full attribution." },
-          { icon: "✍️", title: "Own the Final Output", body: "Edit and verify inline. Every cell shows its source, compounding institutional memory across every deal and holding." },
+          { icon: "📊", title: "Turn Filings Into Structured Research", body: "Filings to cited earnings summaries and KPI tables across any company set, in minutes." },
+          { icon: "🤝", title: "Collaborate Across the Investment Team", body: "Share, review, annotate, and vote firm-wide. Full attribution on every action." },
+          { icon: "✍️", title: "Own the Final Output", body: "Edit and verify inline. Every cell shows its source. Institutional memory compounds with every deal." },
         ].map(panel => (
           <div key={panel.title} style={{
             padding: "32px 28px", borderRadius: 16,
@@ -507,11 +500,11 @@ const Testimonial = () => (
     <div className="container" style={{ position: "relative", maxWidth: 820, margin: "0 auto", textAlign: "center" }}>
       <div style={{ fontSize: 48, color: "var(--pascal-emerald)", opacity: 0.5, lineHeight: 1, marginBottom: 28, fontFamily: "Georgia, serif" }}>"</div>
       <blockquote style={{
-        fontSize: "clamp(17px, 2vw, 22px)", lineHeight: 1.75,
+        fontSize: "clamp(16px, 2vw, 18px)", lineHeight: 1.75,
         color: "var(--pascal-dark-text)", fontStyle: "italic",
         letterSpacing: "-0.01em", marginBottom: 40, fontWeight: 400,
       }}>
-        Rather than adding another point solution, Pascal gave us a platform we could shape to our process — sitting inside our perimeter, citing every output to source, and integrating with the systems our team already runs on.
+        Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
@@ -547,7 +540,7 @@ const Integrations = () => (
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Integrations</span>
         <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 14 }}>Connect to the Stack You Already Run On</h2>
         <p style={{ fontSize: 15.5, color: "var(--pascal-fg-muted)", maxWidth: 520, width: "100%", margin: "0 auto" }}>
-          Pascal connects to the data subscriptions, document stores, and internal systems your team uses every day.
+          Bloomberg, FactSet, Capital IQ, SharePoint, Snowflake, your CRM. Connected through one MCP Hub.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12, marginBottom: 36 }}>
@@ -585,10 +578,10 @@ const CaseStudy = () => {
           <div>
             <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 16 }}>Case Study</span>
             <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.15, marginBottom: 16 }}>
-              Download the ICICI Prudential AMC Case Study
+              ICICI Prudential AMC: how India's largest agentic-research deployment went live.
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.72, color: "var(--pascal-fg-muted)", marginBottom: 28, width: "100%" }}>
-              How one of India's largest asset managers deployed Pascal's agentic research infrastructure inside their governance perimeter.
+              Deployed inside ICICI Prudential's governance perimeter. IC memos from days to hours. Zero data sent to third-party LLMs.
             </p>
             <div style={{ padding: "24px", borderRadius: 16, border: "1px solid var(--pascal-line)", background: "#fff" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
@@ -599,7 +592,7 @@ const CaseStudy = () => {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {["60% reduction in earnings-season analyst hours", "Full deployment inside private cloud perimeter", "IC memos generated in 2 hours vs. 2 days", "Zero data sent to third-party LLM providers"].map(kpi => (
+                {["60% fewer analyst hours during earnings season", "Deployed inside ICICI's private cloud perimeter", "IC memo cycle time: days → hours", "Zero data sent to third-party LLM providers"].map(kpi => (
                   <div key={kpi} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                     <span style={{ color: "var(--pascal-emerald)", fontWeight: 700, fontSize: 14, flex: "none", marginTop: 1 }}>✓</span>
                     <span style={{ fontSize: 13, color: "var(--pascal-fg-muted)", lineHeight: 1.5 }}>{kpi}</span>
@@ -668,14 +661,14 @@ const WhyPascal = () => (
       <div style={{ textAlign: "center", marginBottom: 64 }}>
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Why Pascal</span>
         <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.1 }}>
-          Why Leading Asset Managers Choose Pascal
+          Why Leading Hedge Funds Choose Pascal
         </h2>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 56 }}>
         {[
-          { icon: "🛡️", title: "Sovereignty", body: "Data never leaves your perimeter. On-prem or private cloud options with zero data retention enforced at the infrastructure layer." },
-          { icon: "📋", title: "Accuracy", body: "Every output cites its source — filing, transcript, or internal note. Built for SEBI tech risk reviews and internal audit from day one." },
-          { icon: "🤝", title: "Partnership", body: "We work as an extension of your team, co-developing workflows, templates, and integrations tailored to your exact investment process." },
+          { icon: "🛡️", title: "Sovereignty", body: "Data stays on-prem or in your VPC. Zero retention, enforced at the infrastructure layer." },
+          { icon: "📋", title: "Accuracy", body: "Every output cites its source — page, line, filing. Audit-ready for SEBI tech risk and internal review." },
+          { icon: "🤝", title: "Partnership", body: "We co-develop with your team. Workflows, templates, integrations — shaped to how your firm actually runs research." },
         ].map(pillar => (
           <div key={pillar.title} style={{
             padding: "36px 32px", borderRadius: 16,
@@ -718,7 +711,7 @@ const FinalCTA = () => (
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
-        Talk to a Pascal expert about your<br />firm's research workflows.
+        Run your first Pascal workflow inside your firm in two weeks.
       </h2>
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 8,

@@ -94,7 +94,7 @@ const IBHero = () => (
             Pascal AI for<br /><span style={{ color: "var(--pascal-emerald)" }}>Investment Banking</span>
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.72, color: "var(--pascal-dark-muted)", maxWidth: 520, width: "100%", marginBottom: 36 }}>
-            Accelerate pitch creation, compress comparable analysis, and embed source-cited intelligence inside every coverage workflow — with agentic AI built for the realities of M&A advisory, ECM, DCM, and equity research.
+            Source-cited research agents inside your VPC. Built for M&A advisory, ECM, DCM, and equity research.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="demo.html" style={{
@@ -328,25 +328,25 @@ const IB_CAROUSEL_TABS = [
   {
     id: "pitch", label: "Pitch Builder",
     headline: "Pitch Builder",
-    body: "Cut pitch turnaround by up to 70%. Ingests prior decks, sector positioning, and live market data to draft tailored pitchbooks — company overviews, transaction rationale, comparable transactions, valuation footballs, and credentials slides. Every page built on your house template.",
+    body: "Prior decks, sector positioning, and live market data drafted into pitchbooks on your house template. Every page cited.",
     Visual: PitchBuilderVis,
   },
   {
     id: "comps", label: "Comparable Analysis",
     headline: "Comparable Analysis",
-    body: "Build trading comps and precedent transactions in minutes. Pascal extracts financials, multiples, and deal terms from filings, S-1s, and merger proxies — populating your house template with citations on every cell.",
+    body: "Trading comps and precedent transactions built in minutes. Multiples, deal terms, and financials cited from filings and S-1s.",
     Visual: IBCompsVis,
   },
   {
     id: "research", label: "Equity Research Memo",
     headline: "Equity Research Memo",
-    body: "Compress research note production from days to hours. Pulls filings, management commentary, and sector data into structured initiation reports and thematic notes on your firm's template. Every claim cited to source.",
+    body: "Initiation reports and thematic notes from filings, management commentary, and sector data — on your house template. Every claim cited.",
     Visual: EquityResearchVis,
   },
   {
     id: "custom", label: "Build Custom Workflows",
     headline: "Build Custom Workflows",
-    body: "Design and automate workflows tailored to your coverage team. Connect to Bloomberg, FactSet, S&P Capital IQ, Refinitiv, and your CRM. Run end-to-end coverage workflows with sovereign deployment and full auditability.",
+    body: "Coverage workflows tailored to your firm. Connects to Bloomberg, FactSet, Capital IQ, Refinitiv, your CRM. Sovereign deployment, full audit trail.",
     Visual: IBCustomWFVis,
   },
 ];
@@ -361,7 +361,7 @@ const IBAgentCarousel = () => {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Recommended Agents</span>
           <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1 }}>
-            The agents your coverage team needs, ready on day one.
+            The coverage and execution agents Pascal ships with.
           </h2>
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 52, flexWrap: "wrap" }}>
@@ -411,16 +411,9 @@ const IBSDKSection = () => (
               { label: "Production-Grade Document Handling", body: "Reason over S-1s, merger proxies, and complex financial models." },
               { label: "Developer-Friendly, Sovereign-Ready", body: "Chinese-wall enforcement and zero data retention by default." },
             ].map(({ label, body }) => (
-              <div key={label} style={{ display: "flex", gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(81,152,114,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", marginTop: 2 }}>
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <path d="M1.5 4.5 L3.5 6.5 L7.5 2.5" stroke="var(--pascal-emerald)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
-                  <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)" }}> — {body}</span>
-                </div>
+              <div key={label} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: 12, alignItems: "start" }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
+                <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)", lineHeight: 1.6 }}>{body}</span>
               </div>
             ))}
           </div>
@@ -497,7 +490,7 @@ const IBTestimonial = () => (
         color: "var(--pascal-dark-text)", fontStyle: "italic",
         letterSpacing: "-0.01em", marginBottom: 40, fontWeight: 400,
       }}>
-        "Pascal gave us a platform we could shape to our coverage process — sitting inside our perimeter, citing every output to source, and integrating with the systems our bankers already run on. It meets our security and chinese-wall requirements."
+        Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
@@ -615,7 +608,7 @@ const IBFinalCTA = () => (
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
-        Talk to a Pascal expert about your bank's<br />coverage and execution workflows.
+        Run your first Pascal workflow inside your firm in two weeks.
       </h2>
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 8,

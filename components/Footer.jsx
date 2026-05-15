@@ -51,7 +51,7 @@ const Footer = () => {
                 fontSize: 36, fontWeight: 700, color: "#fff",
                 letterSpacing: "-0.025em", lineHeight: 1.1,
               }}>
-                Inside enterprise AI for finance — every two weeks.
+                Inside enterprise AI for finance. Every two weeks.
               </h3>
               <p style={{
                 marginTop: 12, fontSize: 15, color: "rgba(255,255,255,0.65)",

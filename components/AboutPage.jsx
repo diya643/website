@@ -49,8 +49,7 @@ const AboutHero = () => (
           color: "var(--pascal-dark-text)",
           marginBottom: 28,
         }}>
-          Creating the Cognitive Edge<br />
-          <span style={{ color: "var(--pascal-emerald)" }}>in Institutional Finance.</span>
+          Building the agentic research infrastructure institutional investors run on.
         </h1>
 
         <p style={{
@@ -61,7 +60,7 @@ const AboutHero = () => (
           width: "100%",
           margin: "0 auto",
         }}>
-          Our mission is to pioneer the most accurate, auditable, and sovereign AI infrastructure for the world's investment teams — built in partnership with leading asset managers, banks, and insurers.
+          Pascal AI Labs builds sovereign, source-cited AI for AMCs, banks, and hedge funds. Founded 2024. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
         </p>
       </div>
     </div>
@@ -74,14 +73,14 @@ const AboutMission = () => {
     {
       eyebrow: "Mission",
       icon: "target",
-      headline: "The Investment OS for the Next Decade",
-      body: "We believe the next decade of investing will be defined by the firms that get AI architecture right, not the ones that get AI tools first. Our mission is to build the Investment OS for that decade — sovereign, auditable, source-cited — alongside the asset managers, banks, and insurers willing to set the standard for the rest of the industry.",
+      headline: "The infrastructure layer for buy-side research.",
+      body: "The next decade of investing will be defined by the firms that get AI architecture right, not the ones that get AI tools first. Pascal builds the layer underneath.",
     },
     {
       eyebrow: "Why We Exist",
       icon: "lightbulb",
-      headline: "Built to Fix a Specific Problem",
-      body: "Pascal was started to fix a specific problem: investment teams have more AI tools than ever, and cognitive burnout is at an all-time high. We build the context layer underneath — the connective tissue across research, models, and institutional memory — so the firms running on us aren't just adding another copilot, they're rebuilding how research compounds.",
+      headline: "The 60-hour due diligence becomes 20.",
+      body: "Most AI tools sit next to the research process. Pascal sits underneath it — handling the prep work so analysts can spend the saved 40 hours on primary research that actually moves alpha.",
     },
   ];
 
@@ -145,7 +144,7 @@ const AboutMission = () => {
 };
 
 /* ─── Founders ─── */
-const FounderCard = ({ initials, name, title, bio, accent }) => {
+const FounderCard = ({ photo, initials, name, title, bio, accent }) => {
   const [hover, setHover] = React.useState(false);
   return (
     <div
@@ -160,47 +159,37 @@ const FounderCard = ({ initials, name, title, bio, accent }) => {
         boxShadow: hover ? "0 24px 60px -12px rgba(26,36,20,0.14)" : "none",
         transform: hover ? "translateY(-4px)" : "none",
       }}>
-      {/* Portrait placeholder */}
       <div style={{
-        height: 280,
-        background: `linear-gradient(145deg, ${accent}22 0%, var(--pascal-dark) 100%)`,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        position: "relative", overflow: "hidden",
+        height: 320,
+        position: "relative",
+        overflow: "hidden",
+        background: `linear-gradient(145deg, ${accent}18 0%, var(--pascal-dark) 100%)`,
       }}>
-        {/* Subtle grid */}
+        {photo ? (
+          <img
+            src={photo}
+            alt={name.split("—")[0].trim()}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center 20%",
+              display: "block",
+            }}
+          />
+        ) : (
+          <div style={{
+            height: "100%",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}>
+            <span style={{ fontSize: 32, fontWeight: 700, color: accent }}>{initials}</span>
+          </div>
+        )}
         <div style={{
           position: "absolute", inset: 0,
-          backgroundImage: [
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
-            "linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          ].join(", "),
-          backgroundSize: "32px 32px",
+          background: "linear-gradient(180deg, transparent 55%, rgba(15,14,12,0.3) 100%)",
+          pointerEvents: "none",
         }} />
-        {/* Glow */}
-        <div style={{
-          position: "absolute", inset: 0,
-          background: `radial-gradient(circle at 50% 60%, ${accent}30, transparent 65%)`,
-        }} />
-        {/* Avatar circle */}
-        <div style={{
-          width: 100, height: 100, borderRadius: "50%",
-          border: `2px solid ${accent}66`,
-          background: `${accent}18`,
-          display: "flex", alignItems: "center", justifyContent: "center",
-          zIndex: 1,
-        }}>
-          <span style={{
-            fontSize: 32, fontWeight: 700,
-            color: accent, letterSpacing: "-0.02em",
-          }}>{initials}</span>
-        </div>
-        {/* "Photo coming soon" label */}
-        <span style={{
-          position: "absolute", bottom: 16, left: "50%",
-          transform: "translateX(-50%)",
-          fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase",
-          color: "rgba(255,255,255,0.28)",
-        }}>Portrait placeholder</span>
       </div>
 
       {/* Content */}
@@ -230,16 +219,18 @@ const AboutFounders = () => (
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
         <FounderCard
+          photo="assets/founders/vibhav.jpg"
           initials="VV"
           accent="#519872"
           name="Vibhav Viswanathan — Co-founder & CEO"
-          bio="Vibhav leads Pascal's vision, partnerships, and go-to-market. Before Pascal, he worked across capital markets and technology with India's leading asset managers and banks. He started Pascal after seeing the same pattern at every fund: more AI tools, more dashboards, and analysts still drowning in context-switching."
+          bio="Vibhav leads Pascal's vision and partnerships. Before Pascal, he worked across capital markets and technology with India's leading AMCs and banks."
         />
         <FounderCard
+          photo="assets/founders/mithun.jpg"
           initials="MM"
           accent="#3F7A5B"
           name="Mithun M S — Co-founder & CTO"
-          bio="Mithun leads engineering, architecture, and product. His background spans data infrastructure, ML systems, and the security and audit plumbing that makes AI work in regulated environments. He architected Pascal's Cognitive Engine and Sovereign Data Fabric — the layers that let agentic AI run inside an AMC's perimeter, not outside it."
+          bio="Mithun leads engineering and product. His background spans data infrastructure, ML systems, and the audit plumbing that makes AI work in regulated environments. He architected Pascal's Cognitive Engine."
         />
       </div>
     </div>
@@ -326,11 +317,11 @@ const AboutPedigree = () => (
           fontSize: "clamp(28px, 3vw, 42px)", fontWeight: 700,
           color: "var(--pascal-dark-text)", letterSpacing: "-0.025em",
           lineHeight: 1.1, marginBottom: 16,
-        }}>Built by experts from the world's<br />top institutions.</h2>
+        }}>Built by people who came from the firms we sell to.</h2>
         <p style={{
           fontSize: 16, color: "var(--pascal-dark-muted)",
           maxWidth: 560, width: "100%", margin: "0 auto",
-        }}>Our team brings experience from top global financial services, consulting firms, technology companies, and academic institutions.</p>
+        }}>JPMorgan, HSBC, Capital Group, BCG, AWS, Harvard, Oxford, IIT, IIM. The team has shipped enterprise software inside the firms Pascal sells to.</p>
       </div>
 
       <div style={{
@@ -382,7 +373,7 @@ const AboutCTA = () => (
         fontSize: "clamp(36px, 4.5vw, 64px)", fontWeight: 700,
         color: "var(--pascal-dark-text)", letterSpacing: "-0.03em",
         lineHeight: 1.05, marginBottom: 40,
-      }}>Ready to set the standard?</h2>
+      }}>Run your first Pascal workflow in two weeks.</h2>
 
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 10,

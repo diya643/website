@@ -30,7 +30,7 @@ const ProductHero = () => (
         textTransform: "uppercase", color: "var(--pascal-emerald)", marginBottom: 28,
       }}>
         <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }} />
-        The Investment OS
+        THE PASCAL PLATFORM
         <span style={{ width: 24, height: 1, background: "var(--pascal-emerald)" }} />
       </span>
       <h1 style={{
@@ -38,15 +38,13 @@ const ProductHero = () => (
         letterSpacing: "-0.04em", color: "var(--pascal-dark-text)",
         lineHeight: 1.06, maxWidth: 860, margin: "0 auto 28px",
       }}>
-        Sovereign Data.<br />
-        Modular Architecture.<br />
-        <span style={{ color: "var(--pascal-emerald)" }}>Source-Cited AI.</span>
+        The agentic research platform for<br /><span style={{ color: "var(--pascal-emerald)" }}>institutional investors.</span>
       </h1>
       <p style={{
         fontSize: 17, lineHeight: 1.7, color: "var(--pascal-dark-muted)",
         maxWidth: 680, width: "100%", margin: "0 auto 44px",
       }}>
-        Pascal's agentic Investment OS plugs into the systems your investment team already runs — Bloomberg, FactSet, your RMS, your data lake, your LLM of choice. Deploy the full OS, or layer in just the modules that upgrade what you have.
+        Pascal plugs into Bloomberg, FactSet, your RMS, your data lake, and your LLM of choice. Deploy the full platform or layer in the components you need.
       </p>
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 9,
@@ -361,13 +359,13 @@ const AgentControlCenter = () => (
   <InteractiveTwoCol
     id="agent-control"
     theme="light"
-    eyebrow="The Heart of the OS"
+    eyebrow="Orchestration"
     title="Agent Control Center"
-    subtitle="The unified orchestration layer that governs every query, every agent, and every data flow — all inside your perimeter."
+    subtitle="One orchestration layer for every agent, every query, every data flow — all inside your perimeter."
     blocks={[
-      { num: "01", title: "Manage Sources and Permissions", body: "Control exactly which filings, transcripts, internal documents, and data subscriptions each agent and each user can access. Scope queries by company, document type, integration, or analyst's private vault — with full audit and role-based governance on every action." },
-      { num: "02", title: "Secure Workflow Routing", body: "Pascal orchestrates how queries move between agents, sources, and models — keeping every step inside your governance perimeter. Audit logs, source citations, and compliance guardrails are built in, not bolted on." },
-      { num: "03", title: "Choose Any Model", body: "Pascal is model-agnostic by design. Route research to Claude for long-form reasoning, GPT for fast synthesis, Gemini for multimodal inputs — or let Auto Mode pick the right model for the task." },
+      { num: "01", title: "Manage Sources and Permissions", body: "Scope every query by company, document type, integration, or private vault. RBAC and audit logs enforced on every action." },
+      { num: "02", title: "Secure Workflow Routing", body: "Queries move between agents, sources, and models without leaving your perimeter. Audit logs and citations are built in." },
+      { num: "03", title: "Choose Any Model", body: "Route research to Claude, GPT, or Gemini per task. Auto Mode picks the right model when you don't." },
     ]}
     visuals={[SourceSelectorVisual, ArchitectureVisual, ModelDropdownVisual]}
   />
@@ -474,11 +472,11 @@ const MCPConnectors = () => (
     id="mcp-connectors"
     theme="dark"
     eyebrow="Finance Ready MCP Connectors"
-    title="Your entire research stack, connected."
-    subtitle="Enterprise-grade connectors built for the data infrastructure investment firms already run — not retrofitted consumer tools."
+    title="The data stack your investment team already pays for, connected."
+    subtitle="Connectors built for institutional finance data — Bloomberg, FactSet, SharePoint, Snowflake, your CRM. Not retrofitted from consumer tools."
     blocks={[
-      { num: "01", title: "Ready Integrations Out of the Box", body: "Instantly connect Pascal to your firm's research stack — SharePoint, OneDrive, Google Drive, Box, Snowflake, Databricks, Deal Cloud, Notion, and the data subscriptions you already pay for. No bespoke pipelines, no rip-and-replace." },
-      { num: "02", title: "Purpose-Built for Financial Workflows", body: "Every connector is engineered for the work investment teams actually do — KYC dossiers, source-of-wealth verification, due diligence, portfolio updates, earnings synthesis, and IC memo prep." },
+      { num: "01", title: "Ready Integrations Out of the Box", body: "SharePoint, OneDrive, Google Drive, Box, Snowflake, Databricks, DealCloud, Notion — connected out of the box. No bespoke pipelines." },
+      { num: "02", title: "Purpose-Built for Financial Workflows", body: "Built for the workflows investment teams actually run: KYC, source-of-wealth, due diligence, portfolio updates, earnings, IC memo prep." },
     ]}
     visuals={[ConnectionsVisual, AuditOutputVisual]}
   />
@@ -622,12 +620,12 @@ const FinancialAgents = () => (
     id="financial-agents"
     theme="light"
     eyebrow="Financial Agents"
-    title="Agents and workflows built for investment teams."
-    subtitle="Start with pre-built agents, compose custom workflows, and stay ahead of every market catalyst — all within your governance perimeter."
+    title="25+ research agents purpose-built for institutional investors."
+    subtitle="Pre-built agents, composable workflows, real-time catalyst tracking. All inside your governance perimeter."
     blocks={[
-      { num: "01", title: "Run Pre-Built Investment Agents", body: "Start instantly with Pascal's library of agents built for the work investment teams actually do — extracting KPIs from filings, generating research memos on your firm's template, and running generative matrices across filtered company sets.", cta: "Explore Agent Library" },
-      { num: "02", title: "Compose Workflows for Every Research Cadence", body: "Build task-specific workflows for earnings season, company research, competitive analysis, and event tracking. Pascal's library spans dozens of pre-built workflows including Earnings Summary, IPO Prospectus Analysis, and Bull-Bear Analysis.", cta: "Browse Workflows" },
-      { num: "03", title: "Stay Ahead of Every Catalyst", body: "Pascal's earnings and event calendar tracks every company on your watchlist — auto-fetching filings, transcripts, and investor presentations the moment they drop.", cta: "See Earnings Console" },
+      { num: "01", title: "Run Pre-Built Investment Agents", body: "KPI extraction, research memos on your house template, generative matrices across company sets. Live on day one.", cta: "Explore Agent Library" },
+      { num: "02", title: "Compose Workflows for Every Research Cadence", body: "Earnings Summary, IPO Prospectus Analysis, Bull-Bear, Company Research Pack, KYC Dossier. Run them as-is or compose your own.", cta: "Browse Workflows" },
+      { num: "03", title: "Stay Ahead of Every Catalyst", body: "Pascal's calendar auto-fetches filings, transcripts, and investor decks the moment they drop.", cta: "See Earnings Console" },
     ]}
     visuals={[AllAgentsVisual, WorkflowsVisual, EarningsCalendarVisual]}
   />
@@ -782,12 +780,12 @@ const PascalFrontEnd = () => (
     id="frontend"
     theme="dark"
     eyebrow="Pascal AI Front End"
-    title="One workspace for every research workflow."
-    subtitle="From raw filings to polished IC memos — Pascal reshapes its output for the work in front of you, with every answer traced to source."
+    title="The workspace where analysts run every Pascal agent."
+    subtitle="From raw filings to polished IC memos. Every output reshapes to the workflow and traces back to source."
     blocks={[
-      { num: "01", title: "Chat With Any File or Data Source", body: "Bring filings, transcripts, broker reports, internal memos, and spreadsheets into one secure workspace. Pascal indexes your firm's documents alongside live data subscriptions, returning answers with full source citations." },
-      { num: "02", title: "Adapt the View to the Workflow", body: "Pascal automatically reshapes its output for the work in front of you. Run the same query as a structured dossier for a KYC review, a plain-text memo for an IC briefing, or a verified data table for a portfolio update." },
-      { num: "03", title: "Analyze Data with the Agentic Table", body: "Pascal's Agentic Table turns any company set into an interactive analysis surface. Add columns like ROE, revenue growth, CET1, or cost-to-income, and Pascal extracts each value from filings with citations underneath." },
+      { num: "01", title: "Chat With Any File or Data Source", body: "Filings, transcripts, broker reports, internal memos. Indexed alongside live data feeds, every answer cited." },
+      { num: "02", title: "Adapt the View to the Workflow", body: "The same query becomes a KYC dossier, an IC memo, or an agentic table. Pascal reshapes the output to the task." },
+      { num: "03", title: "Analyze Data with the Agentic Table", body: "Add columns — ROE, revenue growth, CET1, cost-to-income. Pascal extracts each value from filings, with the citation underneath." },
     ]}
     visuals={[ChatVisual, DossierVisual, AgenticTableVisual]}
   />

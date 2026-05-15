@@ -7,7 +7,7 @@ const EVENTS = [
     title: "How GenAI Is Used By Top Investment Firms",
     speaker: "Vibhav Viswanathan",
     date: "July 14, 2025",
-    desc: "A live session on how leading hedge funds and asset managers are deploying generative AI for alpha research, IC memos, and portfolio monitoring.",
+    desc: "How leading hedge funds and AMCs deploy generative AI for alpha research, IC memos, and portfolio monitoring.",
     hasAccess: true,
     gradient: "linear-gradient(135deg, #0C595A 0%, #137068 50%, #279C7B 100%)",
   },
@@ -17,7 +17,7 @@ const EVENTS = [
     title: "Deploying Agentic AI Inside the Investment Perimeter",
     speaker: "Pascal AI Team",
     date: "March 12, 2025",
-    desc: "Architecture decisions behind sovereign AI deployment — and live Q&A with CIOs from leading fund houses.",
+    desc: "The architecture decisions behind sovereign AI deployment. Live Q&A with CIOs from leading fund houses.",
     hasAccess: true,
     gradient: "linear-gradient(135deg, #07434A 0%, #0C595A 50%, #1C8672 100%)",
   },
@@ -37,7 +37,7 @@ const EVENTS = [
     title: "AI & the Future of Investment Research",
     speaker: "Invite-only",
     date: "January 28, 2025",
-    desc: "An invite-only session with CIOs and heads of research from leading hedge funds discussing AI adoption and data governance.",
+    desc: "Invite-only session with CIOs and heads of research from leading hedge funds. AI adoption, data governance.",
     hasAccess: false,
     gradient: "linear-gradient(135deg, #052A2E 0%, #07434A 50%, #0C595A 100%)",
   },
@@ -232,7 +232,7 @@ const EventsPage = () => {
             lineHeight: 1.05,
             marginBottom: 16,
           }}>
-            Pascal Events
+            Pascal events and field appearances.
           </h1>
 
           <p style={{
@@ -241,7 +241,7 @@ const EventsPage = () => {
             lineHeight: 1.6,
             maxWidth: 540,
           }}>
-            Webinars, roundtables, and industry conferences from the Pascal AI Labs team.
+            Webinars, CIO roundtables, and industry conferences where Pascal shows up.
           </p>
         </div>
       </section>
@@ -287,7 +287,7 @@ const EventsPage = () => {
               whiteSpace: "nowrap",
               display: "inline-flex", alignItems: "center", gap: 4,
             }}>
-              Book a private demo instead →
+              Book a private session →
             </a>
           </div>
 
@@ -345,7 +345,7 @@ const EventsPage = () => {
             color: "var(--pascal-dark-muted)",
             marginBottom: 32,
           }}>
-            Be the first to know when new webinars and conferences are announced.
+            Webinars, roundtables, and conference appearances — straight to your inbox.
           </p>
           <form onSubmit={(e) => e.preventDefault()} style={{
             display: "flex", gap: 10, justifyContent: "center",

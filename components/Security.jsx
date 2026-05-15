@@ -153,8 +153,8 @@ const Security = () => (
           letterSpacing: "-0.03em", lineHeight: 1.02,
           marginBottom: 24,
         }}>
-          Security Without{" "}
-          <span style={{ color: "var(--pascal-emerald)" }}>Compromise.</span>
+          Security cleared for{" "}
+          <span style={{ color: "var(--pascal-emerald)" }}>institutional finance.</span>
         </h2>
         <p style={{
           fontSize: 19, lineHeight: 1.55,
@@ -162,7 +162,7 @@ const Security = () => (
           marginBottom: 36,
           maxWidth: 620,
         }}>
-          Modern data practices, encryption standards, AI governance, and independent audits keep your financial operations compliant and protected.
+          SOC 2 Type II, ISO 27001, ISO 9001, GDPR, TÜV SÜD. Audited by independent third parties. Built for the firms that get reviewed every quarter.
         </p>
         <a href="#" className="pbtn pbtn-primary" style={{ background: "var(--pascal-emerald)" }}>
           Trust Center

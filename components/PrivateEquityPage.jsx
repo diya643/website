@@ -81,7 +81,7 @@ const PEHero = () => (
             Pascal AI for<br /><span style={{ color: "var(--pascal-emerald)" }}>Private Markets</span>
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.72, color: "var(--pascal-dark-muted)", maxWidth: 520, width: "100%", marginBottom: 36 }}>
-            Accelerate deal evaluation, compress due diligence, and strengthen LP relations — with agentic AI built for the realities of private equity, venture, private credit, and infrastructure investing.
+            Source-cited diligence agents inside your VPC. Built for PE, venture, private credit, and infrastructure.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="demo.html" style={{
@@ -260,25 +260,25 @@ const PE_CAROUSEL_TABS = [
   {
     id: "dd", label: "Due Diligence",
     headline: "Due Diligence",
-    body: "Compress deal evaluation by up to 70%. Pascal's Due Diligence agent ingests data rooms — CIMs, financials, contracts — and surfaces risks and red flags. Compares opportunities against prior deals and predicts IC questions.",
+    body: "CIMs, financials, and contracts ingested from the data room. Risks and red flags surfaced. IC questions predicted from prior deals.",
     Visual: PEDDVis,
   },
   {
     id: "icmemo", label: "IC Memo Builder",
     headline: "IC Memo Builder",
-    body: "Take a deal from data room to IC-ready memo in hours. Pulls together financials, market sizing, and comps into a structured template. Every claim cited to source; inherits firm pattern recognition.",
+    body: "Data room to IC-ready memo in hours. Financials, market sizing, and comps in your firm's template. Every claim cited.",
     Visual: PEICMemoVis,
   },
   {
     id: "portfolio", label: "Portfolio Monitoring",
     headline: "Portfolio Monitoring",
-    body: "Stay ahead of portfolio companies without drowning in board decks. Monitors filings, news, and KPI reports — flagging material developments and tracking covenant compliance automatically.",
+    body: "Filings, news, KPI reports monitored across the portfolio. Material developments flagged. Covenant compliance tracked automatically.",
     Visual: PEPortfolioVis,
   },
   {
     id: "custom", label: "Build Custom Workflows",
     headline: "Build Custom Workflows",
-    body: "Design workflows tailored to your firm. Connect to CRMs, data room providers (Datasite, Intralinks), and market data (PitchBook, Preqin). Combine with Pascal's agents for end-to-end deal processes.",
+    body: "Workflows tailored to your firm. Connects to Datasite, Intralinks, PitchBook, Preqin, your CRM. End-to-end deal lifecycle.",
     Visual: PECustomWFVis,
   },
 ];
@@ -293,7 +293,7 @@ const PEAgentCarousel = () => {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Recommended Agents</span>
           <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1 }}>
-            The agents your deal team needs, ready on day one.
+            The deal and diligence agents Pascal ships with.
           </h2>
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 52, flexWrap: "wrap" }}>
@@ -338,21 +338,14 @@ const PESDKSection = () => (
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
             {[
-              { label: "Full Customization", body: "Python and TypeScript SDKs to build on the Cognitive Engine." },
+              { label: "Customizable", body: "Python and TypeScript SDKs on the Cognitive Engine." },
               { label: "Enterprise Integration", body: "Plug into CRMs, data rooms, and portfolio systems." },
               { label: "Production-Grade Document Handling", body: "Parse CIMs, contracts, and board decks at scale." },
               { label: "Developer-Friendly, Sovereign-Ready", body: "Rapid prototyping with zero data retention." },
             ].map(({ label, body }) => (
-              <div key={label} style={{ display: "flex", gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(81,152,114,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", marginTop: 2 }}>
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <path d="M1.5 4.5 L3.5 6.5 L7.5 2.5" stroke="var(--pascal-emerald)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
-                  <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)" }}> — {body}</span>
-                </div>
+              <div key={label} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: 12, alignItems: "start" }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
+                <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)", lineHeight: 1.6 }}>{body}</span>
               </div>
             ))}
           </div>
@@ -475,7 +468,7 @@ const PETestimonial = () => (
         color: "var(--pascal-dark-text)", fontStyle: "italic",
         letterSpacing: "-0.01em", marginBottom: 40, fontWeight: 400,
       }}>
-        "Rather than another point solution, Pascal gave us a platform we could shape to our diligence process — sitting inside our perimeter, citing every output to source, and integrating with the data rooms and systems our deal team already runs on..."
+        Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
@@ -506,7 +499,7 @@ const PEIntegrations = () => (
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Integrations</span>
         <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 14 }}>Connect to the Stack You Already Run On</h2>
         <p style={{ fontSize: 15.5, color: "var(--pascal-fg-muted)", maxWidth: 520, width: "100%", margin: "0 auto" }}>
-          Pascal connects to the data subscriptions, document stores, and internal systems your team uses every day.
+          Bloomberg, FactSet, Capital IQ, SharePoint, Snowflake, your CRM. Connected through one MCP Hub.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, maxWidth: 680, margin: "0 auto 36px" }}>
@@ -544,10 +537,10 @@ const PECaseStudy = () => {
           <div>
             <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 16 }}>Case Study</span>
             <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.15, marginBottom: 16 }}>
-              Download the Private Markets Case Study
+              How a leading private markets firm runs Pascal across diligence and monitoring.
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.72, color: "var(--pascal-fg-muted)", marginBottom: 28, width: "100%" }}>
-              How a leading private markets firm deployed Pascal across deal evaluation, IC prep, and portfolio monitoring.
+              Deployed across deal evaluation, IC prep, and portfolio monitoring. Inside the firm's private cloud perimeter.
             </p>
             <div style={{ padding: "24px", borderRadius: 16, border: "1px solid var(--pascal-line)", background: "#fff" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
@@ -558,7 +551,7 @@ const PECaseStudy = () => {
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {["70% reduction in CIM review time", "IC memos from data room in under 4 hours", "Full deployment inside private cloud perimeter", "Zero data sent to third-party LLM providers"].map(kpi => (
+                {["70% less time on CIM review", "IC memos from data room in under 4 hours", "Deployed inside the firm's private cloud perimeter", "Zero data sent to third-party LLM providers"].map(kpi => (
                   <div key={kpi} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                     <span style={{ color: "var(--pascal-emerald)", fontWeight: 700, fontSize: 14, flex: "none", marginTop: 1 }}>✓</span>
                     <span style={{ fontSize: 13, color: "var(--pascal-fg-muted)", lineHeight: 1.5 }}>{kpi}</span>
@@ -677,7 +670,7 @@ const PEFinalCTA = () => (
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
-        Talk to a Pascal expert about your firm's<br />deal and portfolio workflows.
+        Run your first Pascal workflow inside your firm in two weeks.
       </h2>
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 8,

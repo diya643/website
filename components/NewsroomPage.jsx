@@ -206,7 +206,7 @@ const NewsroomPage = () => {
             lineHeight: 1.05,
             marginBottom: 20,
           }}>
-            Pascal Updates
+            The Pascal Brief
           </h1>
 
           <p style={{
@@ -216,7 +216,7 @@ const NewsroomPage = () => {
             maxWidth: 520,
             margin: "0 auto",
           }}>
-            Thoughts, deep-dives, and company news from the Pascal AI Labs team.
+            Deep-dives on AI in institutional finance. Product launches. Customer announcements.
           </p>
         </div>
       </section>
@@ -264,7 +264,7 @@ const NewsroomPage = () => {
       <div id="blogs" style={{ background: "var(--pascal-paper-soft)" }}>
         <NewsSection
           title="Blogs"
-          desc="In-depth articles on AI in institutional finance, product deep-dives, and team perspectives."
+          desc="Long-form on AI architecture, buy-side research, and the work that compounds."
           posts={BLOG_POSTS}
           accent="var(--pascal-emerald)"
           icon="pen-line"
@@ -279,7 +279,7 @@ const NewsroomPage = () => {
       <div id="announcements" style={{ background: "var(--pascal-paper)" }}>
         <NewsSection
           title="Announcements"
-          desc="Company news, product launches, funding updates, and official press releases."
+          desc="Product launches, customer deployments, funding, and official press releases."
           posts={ANNOUNCEMENT_POSTS}
           accent="#3B82F6"
           icon="megaphone"
@@ -302,14 +302,14 @@ const NewsroomPage = () => {
             color: "var(--pascal-dark-text)",
             marginBottom: 12,
           }}>
-            Stay ahead of AI in finance.
+            Subscribe to the Pascal Brief.
           </h2>
           <p style={{
             fontSize: "var(--fs-body)",
             color: "var(--pascal-dark-muted)",
             marginBottom: 32,
           }}>
-            New articles and product updates — delivered to your inbox.
+            Field notes from the world's top investment teams. Every two weeks.
           </p>
           <form onSubmit={(e) => e.preventDefault()} style={{
             display: "flex", gap: 10, justifyContent: "center", maxWidth: 420, margin: "0 auto",

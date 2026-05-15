@@ -170,8 +170,8 @@ const Testimonials = () => {
                 <path d="M22 28 L22 14 C22 6 28 0 36 0 L36 6 C32 6 28 10 28 14 L36 14 L36 28 Z" fill="currentColor" />
               </svg>
               <p style={{
-                fontSize: 21, lineHeight: 1.55,
-                color: "var(--pascal-ink)", letterSpacing: "-0.005em",
+                fontSize: 16, lineHeight: 1.75,
+                color: "var(--pascal-fg-muted)", letterSpacing: "-0.005em",
                 fontWeight: 400, marginBottom: 28
               }}>{q.quote}</p>
               <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 22, borderTop: "1px solid var(--pascal-line)" }}>

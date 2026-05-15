@@ -88,7 +88,7 @@ const AMHero = () => (
             Pascal AI for<br /><span style={{ color: "var(--pascal-emerald)" }}>Asset Management</span>
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.72, color: "var(--pascal-dark-muted)", maxWidth: 520, width: "100%", marginBottom: 36 }}>
-            Accelerate investment research, compress earnings season, and embed source-cited intelligence inside every analyst and PM workflow — with agentic AI built for the realities of regulated asset management.
+            Source-cited research agents inside your VPC. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="demo.html" style={{
@@ -292,25 +292,25 @@ const AM_CAROUSEL_TABS = [
   {
     id: "earnings", label: "Earnings Synthesis",
     headline: "Earnings Synthesis",
-    body: "Cut earnings-season analyst load by up to 60%. Pascal auto-fetches transcripts, presentations, and filings the moment they drop, flags actuals diverging from consensus, and drafts variance notes. Save two to three days per analyst per quarter.",
+    body: "Transcripts, presentations, and filings auto-fetched on release. Variance vs consensus flagged. Two to three days saved per analyst per quarter.",
     Visual: AMEarningsVis,
   },
   {
     id: "memo", label: "IC Memo Builder",
     headline: "IC Memo Builder",
-    body: "Compress IC prep from days to hours. Pascal pulls together filings, broker research, internal theses, and recent management calls into a structured memo on your firm's house template. Every claim cited to source.",
+    body: "Filings, broker research, internal theses, management calls — pulled into your house IC template. Every claim cited.",
     Visual: AMICMemoVis,
   },
   {
     id: "primer", label: "Company Primer",
     headline: "Company Primer",
-    body: "Build a research-grade primer on any company in under an hour. Includes business model, segment economics, competitive position, and management quality — all cited to the underlying filing or broker note.",
+    body: "Research-grade primer on any company in under an hour. Business model, segment economics, competitive position, management quality — all cited.",
     Visual: CompanyPrimerVis,
   },
   {
     id: "custom", label: "Build Custom Workflows",
     headline: "Build Custom Workflows",
-    body: "Design and automate workflows tailored to your firm. Connect to Bloomberg, FactSet, S&P Capital IQ, and your RMS. Run end-to-end processes from research to reporting with full auditability.",
+    body: "Workflows tailored to your firm. Connects to Bloomberg, FactSet, Capital IQ, your RMS. End-to-end audit trail.",
     Visual: AMCustomWFVis,
   },
 ];
@@ -325,7 +325,7 @@ const AMAgentCarousel = () => {
         <div style={{ textAlign: "center", marginBottom: 52 }}>
           <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Recommended Agents</span>
           <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1 }}>
-            The agents your investment team needs, ready on day one.
+            The asset management research agents Pascal ships with.
           </h2>
         </div>
         <div style={{ display: "flex", justifyContent: "center", gap: 4, marginBottom: 52, flexWrap: "wrap" }}>
@@ -375,16 +375,9 @@ const AMSDKSection = () => (
               { label: "Production-Grade Document Handling", body: "Reason over PDFs, scanned filings, and broker research at scale." },
               { label: "Developer-Friendly, Sovereign-Ready", body: "Audit logging and zero data retention enforced by default." },
             ].map(({ label, body }) => (
-              <div key={label} style={{ display: "flex", gap: 12 }}>
-                <span style={{ width: 18, height: 18, borderRadius: "50%", background: "rgba(81,152,114,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flex: "none", marginTop: 2 }}>
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <path d="M1.5 4.5 L3.5 6.5 L7.5 2.5" stroke="var(--pascal-emerald)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
-                <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
-                  <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)" }}> — {body}</span>
-                </div>
+              <div key={label} style={{ display: "grid", gridTemplateColumns: "140px 1fr", gap: 12, alignItems: "start" }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "var(--pascal-dark-text)" }}>{label}</span>
+                <span style={{ fontSize: 14, color: "var(--pascal-dark-muted)", lineHeight: 1.6 }}>{body}</span>
               </div>
             ))}
           </div>
@@ -397,7 +390,7 @@ const AMSDKSection = () => (
           }}
           onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
           onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
-            Book a Demo
+            Watch a Demo
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
               <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -446,7 +439,7 @@ const AMDemoFeatures = () => (
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Live Demo</span>
         <h2 style={{ fontSize: "clamp(28px, 3.5vw, 46px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 14 }}>Watch a Product Demo</h2>
         <p style={{ fontSize: 16, color: "var(--pascal-fg-muted)", maxWidth: 500, width: "100%", margin: "0 auto" }}>
-          See Pascal's workflows live — and cut research effort by up to 80%.
+          See Pascal's workflows live, on your firm's data.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 48 }}>
@@ -503,12 +496,12 @@ const AMTestimonial = () => (
         color: "var(--pascal-dark-text)", fontStyle: "italic",
         letterSpacing: "-0.01em", marginBottom: 40, fontWeight: 400,
       }}>
-        "Pascal gave us a platform we could shape to our process — sitting inside our perimeter, citing every output to source, and integrating with the systems our team already runs on. It meets our security, governance, and infrastructure requirements."
+        Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.
       </blockquote>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(81,152,114,0.4)" }} />
         <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>Head of Research &amp; Technology</div>
-        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Asset Manager</div>
+        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>ICICI Prudential AMC</div>
         <div style={{ marginTop: 8, display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ width: 28, height: 28, borderRadius: 6, background: "#F47920", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#fff" }}>IP</span>
           <span style={{ fontSize: 12, fontWeight: 600, color: "var(--pascal-dark-muted)" }}>ICICI Prudential AMC</span>
@@ -538,7 +531,7 @@ const AMIntegrations = () => (
         <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 14 }}>Integrations</span>
         <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 14 }}>Connect to the Stack You Already Run On</h2>
         <p style={{ fontSize: 15.5, color: "var(--pascal-fg-muted)", maxWidth: 520, width: "100%", margin: "0 auto" }}>
-          Pascal connects to the data subscriptions, document stores, and internal systems your team uses every day.
+          Bloomberg, FactSet, Capital IQ, SharePoint, Snowflake, your CRM. Connected through one MCP Hub.
         </p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, maxWidth: 680, margin: "0 auto 36px" }}>
@@ -623,7 +616,7 @@ const AMFinalCTA = () => (
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(700px 400px at 50% 50%, rgba(81,152,114,0.10), transparent 65%)" }} />
     <div className="container" style={{ position: "relative", textAlign: "center" }}>
       <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-dark-text)", lineHeight: 1.15, marginBottom: 28 }}>
-        Talk to a Pascal expert about your<br />firm's research workflows.
+        Run your first Pascal workflow inside your firm in two weeks.
       </h2>
       <a href="demo.html" style={{
         display: "inline-flex", alignItems: "center", gap: 8,
