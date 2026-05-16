@@ -162,7 +162,6 @@ const Security = () => (
         onMouseLeave={(e) => e.currentTarget.style.background = "#fafafa"}
         >
           Trust Center
-          <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
         </a>
       </div>
 

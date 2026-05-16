@@ -40,8 +40,8 @@ const PARTNERS = [
   { name: "Google Cloud",      tech: true },
   { name: "Weaviate",          tech: true },
   { name: "Quatr",             color: "#519872", abbr: "QT" },
-  { name: "ICICI Prudential",  color: "#F47920", abbr: "IP" },
-  { name: "Kotak AMC",         color: "#D2232A", abbr: "KO" },
+  { name: "Citadel",           color: "#0047AB", abbr: "CT" },
+  { name: "Two Sigma",         color: "#1E3A5F", abbr: "TS" },
 ];
 
 const PartnerLogo = ({ partner }) => {

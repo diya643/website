@@ -94,9 +94,6 @@ const PEHero = () => (
             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
               Book a Demo
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
             <a href="product.html" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -313,7 +310,7 @@ const PEAgentCarousel = () => {
             <h3 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.025em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 20 }}>{tab.headline}</h3>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--pascal-fg-muted)", maxWidth: 480, width: "100%", marginBottom: 28 }}>{tab.body}</p>
             <a href="demo.html" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
-              Learn More →
+              Learn More
             </a>
           </div>
           <Visual />
@@ -359,9 +356,6 @@ const PESDKSection = () => (
           onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
           onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
             Book a Demo
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </a>
         </div>
         <div style={{ borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)", background: "#1e1e2e", boxShadow: "0 28px 72px -18px rgba(0,0,0,0.5)", fontFamily: "Menlo, Monaco, 'Courier New', monospace" }}>
@@ -520,7 +514,7 @@ const PEIntegrations = () => (
       </div>
       <div style={{ textAlign: "center" }}>
         <a href="product.html#mcp-connectors" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
-          See All Integrations →
+          See All Integrations
         </a>
       </div>
     </div>
@@ -650,9 +644,6 @@ const PEWhyPascal = () => (
         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.color = "#fff"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--pascal-emerald)"; }}>
           Contact Us
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-            <path d="M3 11 L11 3 M5 3 L11 3 L11 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -683,9 +674,6 @@ const PEFinalCTA = () => (
       onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(0,0,0,0.20)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(0,0,0,0.20)"; }}>
         Book a Demo
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </a>
     </div>
   </section>

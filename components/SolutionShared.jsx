@@ -1,6 +1,6 @@
 // SolutionShared.jsx — shared copy for HF, AM, IB, PE solution pages
 
-const BOOK_DEMO = "Book a demo →";
+const BOOK_DEMO = "Book a Demo";
 
 const SHARED_SDK_BODY =
   "Python and TypeScript SDKs built on Pascal's Cognitive Engine. For in-house teams shipping proprietary workflows.";
@@ -22,8 +22,8 @@ const SHARED_TESTIMONIAL_QUOTE =
   "Pascal sits inside our perimeter. Every output cites its source. Our team runs research on it daily — not as another tool, as the infrastructure underneath.";
 
 const TESTIMONIAL_ATTRIBUTIONS = {
-  hf: { role: "Head of Research & Technology", org: "Leading Indian Asset Management Company", badge: "IP", badgeLabel: "ICICI Prudential AMC", badgeColor: "#F47920" },
-  am: { role: "Head of Research & Technology", org: "ICICI Prudential AMC", badge: "IP", badgeLabel: "ICICI Prudential AMC", badgeColor: "#F47920" },
+  hf: { role: "Head of Research & Technology", org: "Leading Global Asset Management Firm" },
+  am: { role: "Head of Research & Technology", org: "Leading Institutional Asset Manager" },
   ib: { role: "Head of Equity Research & Technology", org: "Leading Global Investment Bank" },
   pe: { role: "Partner & Head of Technology", org: "Leading Private Markets Firm" },
 };

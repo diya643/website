@@ -116,8 +116,8 @@ const ValueProp = ({ icon, headline, body }) => (
 
 /* ─── Client logo ─── */
 const DEMO_CLIENTS = [
-  { name: "Kotak AMC",        abbr: "KO",  color: "#D2232A" },
-  { name: "ICICI Prudential", abbr: "IP",  color: "#F47920" },
+  { name: "Two Sigma",          abbr: "TS",  color: "#1E3A5F" },
+  { name: "Citadel LLC",         abbr: "CT",  color: "#0047AB" },
   { name: "Kalaari Capital",  abbr: "KC",  color: "#1D3461" },
   { name: "Infoedge",         abbr: "IE",  color: "#E8431F" },
   { name: "MS Capital",       abbr: "MS",  color: "#003087" },
@@ -269,7 +269,7 @@ const DemoMain = () => {
             <ValueProp
               icon="file-check"
               headline="Citations on every output, no exceptions"
-              body="Every answer, memo, and agent output traces to the underlying filing or transcript. SEBI tech-risk-ready from day one."
+              body="Every answer, memo, and agent output traces to the underlying filing or transcript. Regulatory-ready for SEC, FINRA, and internal audit from day one."
             />
 
             {/* Client logos */}
@@ -369,9 +369,6 @@ const LinkCard = ({ icon, title, body, href }) => {
         marginTop: "auto", transition: "color 200ms ease",
       }}>
         Learn more
-        <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </div>
     </a>
   );

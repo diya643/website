@@ -126,7 +126,7 @@ const PortfolioBrowser = () => {
         }}>
           <i data-lucide="book-open" style={{ width: 14, height: 14, color: "var(--pascal-emerald)" }} />
           Sourced from FactSet · Internal positions · Updated 2 min ago
-          <span style={{ marginLeft: "auto", color: "var(--pascal-emerald)", fontWeight: 600 }}>View 14 citations →</span>
+          <span style={{ marginLeft: "auto", color: "var(--pascal-emerald)", fontWeight: 600 }}>View 14 citations</span>
         </div>
       </div>
     </div>);

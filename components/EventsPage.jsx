@@ -167,9 +167,6 @@ const EventCard = ({ event }) => {
               color: "var(--pascal-emerald)", textDecoration: "none",
             }}>
               Get Access
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
           ) : (
             <span style={{
@@ -287,7 +284,7 @@ const EventsPage = () => {
               whiteSpace: "nowrap",
               display: "inline-flex", alignItems: "center", gap: 4,
             }}>
-              Book a private session →
+              Book a private session
             </a>
           </div>
 

@@ -17,7 +17,7 @@ const NAV_ITEMS = [
     items: [
       { label: "Newsroom", desc: "Press, announcements, and media", icon: "newspaper", href: "newsroom.html" },
       { label: "Events", desc: "Webinars and industry events", icon: "calendar-days", href: "events.html" },
-      { label: "Trust Center", desc: "Security, compliance, certifications", icon: "shield-check" },
+      { label: "Trust Center", desc: "Security, compliance, certifications", icon: "shield-check", href: "trust-center.html" },
     ],
   },
 ];
@@ -108,7 +108,7 @@ const Nav = () => {
                     background: "var(--pascal-paper)",
                     border: "1px solid var(--pascal-line)",
                     borderRadius: 14,
-                    boxShadow: "rgba(23,25,28,0.06) 0px 12px 16px 0px, rgba(23,25,28,0.12) 0px 5px 32px 0px",
+                    boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.12) 0px 0px 0px 1px, rgba(0,0,0,0.08) 0px 8px 24px 0px",
                     padding: 8,
                     minWidth: 300,
                     display: "grid",

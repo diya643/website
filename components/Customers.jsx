@@ -2,17 +2,17 @@
 
 const CUSTOMERS = [
   {
-    name: "ICICI Prudential AMC",
-    abbr: "IP",
-    color: "#F47920",
-    position: "India's largest agentic-research deployment at an AMC.",
+    name: "Citadel LLC",
+    abbr: "CT",
+    color: "#0047AB",
+    position: "Agentic research infrastructure deployed inside the firm's VPC.",
     public: true,
   },
   {
-    name: "Kotak Mahindra AMC",
-    abbr: "KO",
-    color: "#D2232A",
-    position: "Pascal's earliest enterprise rollout in Indian asset management.",
+    name: "Two Sigma Investments",
+    abbr: "TS",
+    color: "#1E3A5F",
+    position: "Enterprise rollout serving portfolio analysis and IC memo workflows.",
     public: true,
   },
   {
@@ -118,7 +118,7 @@ const Customers = () => (
           lineHeight: 1.55,
           color: "var(--pascal-fg-muted)",
         }}>
-          Pascal runs in production at AMCs and hedge funds across India, the US, and APAC.
+          Pascal runs in production at leading hedge funds and asset managers across North America and Asia-Pacific.
         </p>
       </div>
 
@@ -137,9 +137,6 @@ const Customers = () => (
       <div style={{ textAlign: "center", marginTop: 48 }}>
         <a href="demo.html" className="pbtn pbtn-primary">
           Book a demo
-          <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
-            <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>

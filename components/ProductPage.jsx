@@ -53,21 +53,131 @@ const ProductHero = () => (
       onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-accent-hover)"; e.currentTarget.style.borderColor = "var(--pascal-accent-hover)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.background = "var(--pascal-accent)"; e.currentTarget.style.borderColor = "var(--pascal-accent)"; }}>
         Request Demo
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </a>
+    </div>
+  </section>
+);
+
+/* ─── Who This Is For (Personas) ─── */
+const PERSONAS = [
+  {
+    icon: "bar-chart-2",
+    role: "Portfolio Manager",
+    headline: "Run your morning pack before markets open.",
+    body: "Overnight macro, earnings surprises, and portfolio alerts — assembled automatically and cited to the source. Your conviction call, not someone else's summary.",
+    tags: ["Morning Packs", "Catalyst Alerts", "Portfolio Monitor"],
+    accent: "#76a9fa",
+  },
+  {
+    icon: "search",
+    role: "Research Analyst",
+    headline: "First-draft IC memo in the time it takes to read a filing.",
+    body: "Pascal reads the 10-K, the transcript, four broker notes, and your internal thesis — and returns a structured memo with every claim pinned to a source line.",
+    tags: ["Earnings Synthesis", "IC Memos", "Company Primers"],
+    accent: "#34d399",
+  },
+  {
+    icon: "cpu",
+    role: "CTO / Head of Technology",
+    headline: "Deploy enterprise AI without touching your data perimeter.",
+    body: "On-prem or VPC-native. SOC 2 certified. Model-agnostic. Pascal plugs into Bloomberg, Snowflake, and your RMS without requiring a single API key to leave your network.",
+    tags: ["SOC 2 Type II", "VPC Deployment", "MCP Native"],
+    accent: "#f59e0b",
+  },
+  {
+    icon: "shield",
+    role: "Chief Compliance Officer",
+    headline: "Every output is auditable, attributed, and regulator-ready.",
+    body: "Full citation trails on every research output. RBAC enforced at the infrastructure layer. Audit logs exportable for SEC, FINRA, and MRM review — with zero manual effort.",
+    tags: ["Audit Trail", "RBAC", "Source Citations"],
+    accent: "#c4b5fd",
+  },
+];
+
+const PersonasSection = () => (
+  <section style={{
+    background: "var(--pascal-paper-soft)",
+    borderTop: "1px solid var(--pascal-line)",
+    borderBottom: "1px solid var(--pascal-line)",
+    padding: "80px 0",
+  }}>
+    <div className="container">
+      <div style={{ textAlign: "center", marginBottom: 52 }}>
+        <span style={{
+          display: "inline-flex", alignItems: "center", gap: 10,
+          fontSize: 11, fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase",
+          color: "var(--pascal-accent)", marginBottom: 18,
+        }}>
+          <span style={{ width: 20, height: 1, background: "var(--pascal-accent)", opacity: 0.5 }} />
+          Who This Is For
+          <span style={{ width: 20, height: 1, background: "var(--pascal-accent)", opacity: 0.5 }} />
+        </span>
+        <h2 style={{
+          fontSize: "clamp(28px, 3.5vw, 44px)", fontWeight: 700,
+          letterSpacing: "-0.03em", color: "var(--pascal-ink)",
+          lineHeight: 1.1, margin: "0 auto",
+        }}>
+          Built for every stakeholder in the investment process.
+        </h2>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+        {PERSONAS.map((p) => (
+          <div key={p.role} style={{
+            background: "var(--pascal-paper-card)",
+            border: "1px solid var(--pascal-line)",
+            borderRadius: 16,
+            padding: "32px 32px 28px",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+            display: "flex", flexDirection: "column", gap: 16,
+          }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <span style={{
+                width: 44, height: 44, borderRadius: 10,
+                background: p.accent + "18",
+                border: "1px solid " + p.accent + "44",
+                display: "inline-flex", alignItems: "center", justifyContent: "center",
+                flex: "none",
+              }}>
+                <i data-lucide={p.icon} style={{ width: 20, height: 20, color: p.accent }} />
+              </span>
+              <div style={{
+                fontSize: 12, fontWeight: 700, letterSpacing: "0.08em",
+                textTransform: "uppercase", color: "var(--pascal-fg-muted)",
+              }}>{p.role}</div>
+            </div>
+            <h3 style={{
+              fontSize: 20, fontWeight: 700, color: "var(--pascal-ink)",
+              letterSpacing: "-0.02em", lineHeight: 1.25, margin: 0,
+            }}>{p.headline}</h3>
+            <p style={{
+              fontSize: 15, lineHeight: 1.65, color: "var(--pascal-fg-muted)", margin: 0,
+            }}>{p.body}</p>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              {p.tags.map(t => (
+                <span key={t} style={{
+                  padding: "4px 12px", borderRadius: 999,
+                  fontSize: 11.5, fontWeight: 600,
+                  background: p.accent + "14",
+                  color: p.accent,
+                  border: "1px solid " + p.accent + "30",
+                }}>{t}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 );
 
 /* ─── Sub-Nav ─── */
 const SUBNAV_ITEMS = [
-  { id: "agent-control",    label: "Agent Control Center" },
-  { id: "mcp-connectors",   label: "Finance Ready MCP Connectors" },
-  { id: "financial-agents", label: "Financial Agents" },
-  { id: "frontend",         label: "Pascal AI Front End" },
-  { id: "api-sdk",          label: "API & SDK" },
+  { id: "agent-control",       label: "Agent Control Center" },
+  { id: "mcp-connectors",      label: "Finance Ready MCP Connectors" },
+  { id: "financial-agents",    label: "Financial Agents" },
+  { id: "context-memory",      label: "Context & Memory Graph" },
+  { id: "frontend",            label: "Pascal AI Front End" },
+  { id: "api-sdk",             label: "API & SDK" },
 ];
 
 const ProductSubNav = () => {
@@ -200,9 +310,6 @@ const InteractiveTwoCol = ({ id, theme = "light", eyebrow, title, subtitle, bloc
                         color: "var(--pascal-emerald)", textDecoration: "none",
                       }}>
                         {block.cta}
-                        <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
                       </a>
                     )}
                   </>
@@ -274,23 +381,15 @@ const ArchitectureVisual = () => {
       {sub && <div style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)", marginTop: 3 }}>{sub}</div>}
     </div>
   );
-  const Arrow = () => (
-    <div style={{ display: "flex", justifyContent: "center", padding: "5px 0" }}>
-      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
-        <path d="M7 2 L7 14" stroke="rgba(0,0,0,0.20)" strokeWidth="1.6" strokeLinecap="round"/>
-        <path d="M3.5 11 L7 16 L10.5 11" stroke="rgba(0,0,0,0.20)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    </div>
-  );
   return (
     <BrowserShell>
       <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 8, textAlign: "center" }}>LLM Layer</div>
       <div style={{ display: "flex", gap: 8 }}>
         {["Claude 4.7", "GPT-5.5", "Gemini 3.1"].map(m => <Box key={m} label={m} />)}
       </div>
-      <Arrow />
+      <div style={{ height: 8 }} />
       <Box label="Pascal Cognitive Engine" sub="Routing · Audit · Citations · Governance" accent />
-      <Arrow />
+      <div style={{ height: 8 }} />
       <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 8, textAlign: "center" }}>Finance Data Layer</div>
       <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
         {["Bloomberg", "FactSet", "Broker Research", "Internal Docs", "RMS"].map(t => (
@@ -354,8 +453,8 @@ const AgentControlCenter = () => (
   <InteractiveTwoCol
     id="agent-control"
     theme="light"
-    eyebrow="Orchestration"
-    title="Agent Control Center"
+    eyebrow="Agent Control Center"
+    title="One platform. Every researcher."
     subtitle="One orchestration layer for every agent, every query, every data flow — all inside your perimeter."
     blocks={[
       { num: "01", title: "Manage Sources and Permissions", body: "Scope every query by company, document type, integration, or private vault. RBAC and audit logs enforced on every action." },
@@ -427,7 +526,7 @@ const AuditOutputVisual = () => (
   <BrowserShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
       <div>
-        <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>KYC Dossier — Adani Enterprises</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>KYC Dossier — Blackstone Group</div>
         <div style={{ fontSize: 11, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Generated · Nov 14, 2025 · 3 sources</div>
       </div>
       <span style={{
@@ -437,14 +536,14 @@ const AuditOutputVisual = () => (
       }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 16, flexWrap: "wrap" }}>
-      {["Bloomberg", "SEBI Filing", "Internal Notes"].map(src => (
+      {["Bloomberg", "SEC Filing", "Internal Notes"].map(src => (
         <span key={src} style={{ padding: "3px 9px", borderRadius: 999, fontSize: 11, fontWeight: 500, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{src}</span>
       ))}
     </div>
     {[
-      { label: "Entity Overview", val: "Adani Enterprises Ltd. is the flagship company of the Adani Group, engaged in infrastructure and primary industries.", cite: true },
-      { label: "Promoter Holdings", val: "72.6% — Adani Family Trust", cite: true },
-      { label: "Source of Wealth", val: "Infrastructure development, energy, ports, and logistics", cite: false },
+      { label: "Entity Overview", val: "Blackstone Group Inc. is a leading global alternative asset management firm with $1T+ in AUM across PE, RE, credit, and hedge funds.", cite: true },
+      { label: "Key Shareholders", val: "22.4% — Blackstone Management Partners LLC", cite: true },
+      { label: "Business Segments", val: "Private Equity, Real Estate, Hedge Fund Solutions, Credit & Insurance", cite: false },
     ].map(({ label, val, cite }) => (
       <div key={label} style={{ padding: "10px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
@@ -519,7 +618,7 @@ const AllAgentsVisual = () => {
               padding: "4px 12px", borderRadius: 999, fontSize: 11.5, fontWeight: 600,
               background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)",
               border: "1px solid rgba(0,0,0,0.12)", cursor: "pointer", whiteSpace: "nowrap",
-            }}>Run →</span>
+            }}>Run</span>
           </div>
         ))}
       </div>
@@ -572,10 +671,10 @@ const WorkflowsVisual = () => {
 
 const EarningsCalendarVisual = () => {
   const EVENTS = [
-    { ticker: "PAISALO", name: "Paisalo Digital Ltd.",      type: "Q2 Results", date: "Nov 12", exchange: "BSE", status: "upcoming" },
-    { ticker: "ROSSELL", name: "Rossell Techsys",           type: "Q2 Results", date: "Nov 13", exchange: "NSE", status: "upcoming" },
-    { ticker: "INDHOTEL",name: "Indian Hotels Co.",         type: "Q3 Results", date: "Nov 14", exchange: "NSE", status: "today" },
-    { ticker: "SYRMA",   name: "Syrma SGS Technology",      type: "Q2 Results", date: "Nov 15", exchange: "BSE", status: "upcoming" },
+    { ticker: "META",    name: "Meta Platforms Inc.",       type: "Q3 Results", date: "Nov 12", exchange: "NASDAQ", status: "upcoming" },
+    { ticker: "NVDA",    name: "Nvidia Corporation",        type: "Q3 Results", date: "Nov 13", exchange: "NASDAQ", status: "upcoming" },
+    { ticker: "JPM",     name: "JPMorgan Chase & Co.",      type: "Q3 Results", date: "Nov 14", exchange: "NYSE", status: "today" },
+    { ticker: "V",       name: "Visa Inc.",                 type: "Q3 Results", date: "Nov 15", exchange: "NYSE", status: "upcoming" },
   ];
   const statusColor = { today: "#519872", upcoming: "#F59E0B" };
   return (
@@ -627,7 +726,109 @@ const FinancialAgents = () => (
 );
 
 /* ═══════════════════════════════════════
-   SECTION 4: PASCAL AI FRONT END
+   SECTION 4: CONTEXT & MEMORY GRAPH
+═══════════════════════════════════════ */
+
+const MemoryGraphVisual = () => {
+  const nodes = [
+    { x: 50, y: 50, label: "NVDA Thesis", type: "memo", r: 28 },
+    { x: 75, y: 25, label: "Q3 Earnings", type: "filing", r: 20 },
+    { x: 75, y: 75, label: "Analyst Note", type: "doc", r: 20 },
+    { x: 25, y: 25, label: "Sector View", type: "memo", r: 22 },
+    { x: 25, y: 75, label: "Risk Flag", type: "alert", r: 18 },
+    { x: 88, y: 50, label: "10-K Filing", type: "filing", r: 16 },
+  ];
+  const edges = [[0,1],[0,2],[0,3],[0,4],[1,5],[2,5]];
+  const typeColor = { memo: "var(--pascal-emerald)", filing: "#3B82F6", doc: "#8B5CF6", alert: "#F59E0B" };
+  return (
+    <BrowserShell minHeight={360}>
+      <div style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 12 }}>Research Memory Graph</div>
+      <div style={{ position: "relative", height: 220 }}>
+        <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", overflow: "visible" }} viewBox="0 0 100 100" preserveAspectRatio="none">
+          {edges.map(([a, b], i) => (
+            <line key={i}
+              x1={`${nodes[a].x}%`} y1={`${nodes[a].y}%`}
+              x2={`${nodes[b].x}%`} y2={`${nodes[b].y}%`}
+              stroke="var(--pascal-line)" strokeWidth="0.8"
+            />
+          ))}
+        </svg>
+        {nodes.map((n, i) => (
+          <div key={i} style={{
+            position: "absolute",
+            left: `${n.x}%`, top: `${n.y}%`,
+            transform: "translate(-50%, -50%)",
+            display: "flex", flexDirection: "column", alignItems: "center", gap: 3,
+          }}>
+            <div style={{
+              width: n.r * 2, height: n.r * 2, borderRadius: "50%",
+              background: typeColor[n.type] + "18",
+              border: `1.5px solid ${typeColor[n.type]}`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: 10, fontWeight: 700, color: typeColor[n.type],
+              textAlign: "center", padding: 4, lineHeight: 1.2,
+            }}>{n.label.split(" ")[0]}</div>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: 14, display: "flex", gap: 6, flexWrap: "wrap" }}>
+        {[["Research Memo","var(--pascal-emerald)"],["Filing","#3B82F6"],["Document","#8B5CF6"],["Risk Alert","#F59E0B"]].map(([l, c]) => (
+          <span key={l} style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10.5 }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: c, flex: "none" }} />
+            <span style={{ color: "var(--pascal-fg-muted)" }}>{l}</span>
+          </span>
+        ))}
+      </div>
+    </BrowserShell>
+  );
+};
+
+const EntityTimelineVisual = () => (
+  <BrowserShell>
+    <div style={{ fontSize: 10.5, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 12 }}>Entity Memory — Nvidia Corp.</div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+      {[
+        { date: "Nov 14", type: "Memo", title: "Q3 Earnings Analysis", cite: "4 sources", color: "var(--pascal-emerald)" },
+        { date: "Oct 28", type: "Alert", title: "Supply chain risk flagged", cite: "Bloomberg", color: "#F59E0B" },
+        { date: "Oct 10", type: "Filing", title: "10-Q ingested & parsed", cite: "SEC EDGAR", color: "#3B82F6" },
+        { date: "Sep 22", type: "Note", title: "Broker report summarized", cite: "GS Research", color: "#8B5CF6" },
+      ].map((item, i) => (
+        <div key={i} style={{ display: "flex", gap: 12, paddingBottom: 14, paddingTop: i === 0 ? 0 : 14, borderTop: i > 0 ? "1px solid var(--pascal-line)" : "none", alignItems: "flex-start" }}>
+          <div style={{ flex: "none", textAlign: "right", minWidth: 42 }}>
+            <div style={{ fontSize: 10, color: "var(--pascal-fg-muted)", fontWeight: 600 }}>{item.date}</div>
+          </div>
+          <div style={{ flex: "none", width: 8, height: 8, borderRadius: "50%", background: item.color, marginTop: 3, flex: "none" }} />
+          <div style={{ flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
+              <span style={{ fontSize: 10, fontWeight: 700, padding: "1px 7px", borderRadius: 999, background: item.color + "18", color: item.color }}>{item.type}</span>
+            </div>
+            <div style={{ fontSize: 12.5, fontWeight: 600, color: "var(--pascal-ink)", lineHeight: 1.3 }}>{item.title}</div>
+            <div style={{ fontSize: 11, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Source: {item.cite}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </BrowserShell>
+);
+
+const ContextMemorySection = () => (
+  <InteractiveTwoCol
+    id="context-memory"
+    theme="dark"
+    eyebrow="Context & Memory Graph"
+    title="Your research compounds. Every query gets smarter."
+    subtitle="Pascal builds a persistent knowledge graph across every document, filing, and output your team has ever touched."
+    blocks={[
+      { num: "01", title: "Persistent Entity Memory", body: "Every company, sector, and theme gets a living memory layer. Past memos, alerts, filings, and notes are linked and retrievable on demand.", cta: "See the Knowledge Graph" },
+      { num: "02", title: "Cross-Session Context", body: "Analysts pick up exactly where they left off. Pascal surfaces prior theses, flagged risks, and related documents automatically — without re-prompting.", cta: "Explore Context Engine" },
+      { num: "03", title: "Institutional Knowledge Capture", body: "Every output, annotation, and analyst decision is stored and attributed. The firm's analytical edge compounds with every deal and every quarter.", cta: "Learn About Memory" },
+    ]}
+    visuals={[EntityTimelineVisual, MemoryGraphVisual, EntityTimelineVisual]}
+  />
+);
+
+/* ═══════════════════════════════════════
+   SECTION 5: PASCAL AI FRONT END
 ═══════════════════════════════════════ */
 
 const ChatVisual = () => (
@@ -646,7 +847,7 @@ const ChatVisual = () => (
           </div>
         ))}
         <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginTop: 12, marginBottom: 8 }}>My Vault</div>
-        {["HDFC_Q3.pdf", "IC_Memo_Draft.docx", "Broker_Note.pdf"].map(f => (
+        {["NVDA_Q3.pdf", "IC_Memo_Draft.docx", "Broker_Note.pdf"].map(f => (
           <div key={f} style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)", padding: "4px 0", borderBottom: "1px solid var(--pascal-line)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>📄 {f}</div>
         ))}
       </div>
@@ -680,7 +881,7 @@ const ChatVisual = () => (
 const DossierVisual = () => (
   <BrowserShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-      <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-ink)" }}>Company Primer — Indian Hotels Ltd.</div>
+      <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-ink)" }}>Company Primer — Marriott International</div>
       <div style={{ display: "flex", gap: 6 }}>
         {["Table", "Text"].map((t, i) => (
           <span key={t} style={{
@@ -694,9 +895,9 @@ const DossierVisual = () => (
       </div>
     </div>
     {[
-      { heading: "Business Overview", body: "Indian Hotels Company Ltd. (IHCL) operates the Taj, Vivanta, and Ginger hotel brands across India and internationally, with 250+ hotels in 100+ locations." },
+      { heading: "Business Overview", body: "Marriott International is the world's largest hotel company, operating 30+ brands and 8,800+ properties globally. Asset-light franchise model generates strong free cash flow with global RevPAR exposure." },
       { heading: "Financial Highlights", body: null },
-      { heading: "Key Risks", body: "Macro sensitivity to travel demand · FX exposure on overseas properties · Capex for new property pipeline" },
+      { heading: "Key Risks", body: "Macro sensitivity to travel demand · FX exposure on international properties · Capex for new property development pipeline" },
     ].map(({ heading, body }) => (
       <div key={heading} style={{ padding: "10px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ fontSize: 11, fontWeight: 700, color: "var(--pascal-fg-muted)", marginBottom: 6, letterSpacing: "0.04em" }}>{heading}</div>
@@ -704,7 +905,7 @@ const DossierVisual = () => (
           <div style={{ fontSize: 12.5, color: "var(--pascal-ink)", lineHeight: 1.6 }}>{body}</div>
         ) : (
           <div style={{ display: "flex", gap: 10 }}>
-            {[["Revenue", "₹6,242 Cr"], ["EBITDA", "₹1,748 Cr"], ["PAT", "₹1,102 Cr"]].map(([k, v]) => (
+            {[["Revenue", "$23.7B"], ["EBITDA", "$4.1B"], ["FCF", "$3.2B"]].map(([k, v]) => (
               <div key={k} style={{ flex: 1, padding: "8px 10px", borderRadius: 7, background: "var(--pascal-paper-soft)", border: "1px solid var(--pascal-line)" }}>
                 <div style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)" }}>{k}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-emerald)" }}>{v}</div>
@@ -716,7 +917,7 @@ const DossierVisual = () => (
     ))}
     <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 12 }}>
       <span style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)" }}>Sources:</span>
-      {["BSE Filing", "Annual Report 2024", "Broker Notes"].map(s => (
+      {["SEC Filing", "Annual Report 2024", "Broker Notes"].map(s => (
         <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
@@ -820,7 +1021,7 @@ const SDK_CODES = [
     CL([["# Query your RMS portfolio", _cmt]]),
     CL([["portfolio", _txt], [" = ", _op], ["pascal", _txt], [".", _op], ["query", _txt], [".", _op], ["run", _fn], ["(", _op]]),
     CL([["    source", _txt], ["=", _op], ['"rms_production"', _str], [",", _txt]]),
-    CL([["    company", _txt], ["=", _op], ['"Reliance Industries"', _str], [",", _txt]]),
+    CL([["    company", _txt], ["=", _op], ['"Nvidia Corporation"', _str], [",", _txt]]),
     CL([["    type", _txt], ["=", _op], ['"portfolio_exposure"', _str]]),
     CL([[")", _op]]),
   ],
@@ -831,7 +1032,7 @@ const SDK_CODES = [
     CL([["# Compose a multi-step workflow", _cmt]]),
     CL([["chain", _txt], [" = ", _op], ["AgentChain", _cls], ["([", _op]]),
     CL([["    AgentChain", _cls], [".", _op], ["step", _fn], ["(", _op], ['"kpi-extractor"', _str], [", {", _op]]),
-    CL([['        "tickers"', _str], [": ", _op], ['["RELIANCE"', _str], [", ", _txt], ['"TCS"]', _str], [",", _txt]]),
+    CL([['        "tickers"', _str], [": ", _op], ['["NVDA"', _str], [", ", _txt], ['"MSFT"]', _str], [",", _txt]]),
     CL([['        "metrics"', _str], [": ", _op], ['["ROE"', _str], [", ", _txt], ['"EBITDA"]', _str], [",", _txt]]),
     CL([["    }),", _op]]),
     CL([["    AgentChain", _cls], [".", _op], ["step", _fn], ["(", _op], ['"research-memo"', _str], [", {", _op]]),
@@ -860,8 +1061,8 @@ const SDK_CODES = [
     CL([["response", _txt], [" = ", _op], ["pascal", _txt], [".", _op], ["agents", _txt], [".", _op], ["run", _fn], ["({", _op]]),
     CL([['    "agentId"', _str], [": ", _op], ['"earnings-summary"', _str], [",", _txt]]),
     CL([['    "input"', _str], [": {", _op]]),
-    CL([['        "objective"', _str], [": ", _op], ['"Generate Q2 earnings summary for Indian IT services"', _str], [",", _txt]]),
-    CL([['        "tickers"', _str], [": ", _op], ['["TCS"', _str], [", ", _txt], ['"INFY"', _str], [", ", _txt], ['"WIPRO"]', _str], [",", _txt]]),
+    CL([['        "objective"', _str], [": ", _op], ['"Generate Q2 earnings summary for US mega-cap tech"', _str], [",", _txt]]),
+    CL([['        "tickers"', _str], [": ", _op], ['["NVDA"', _str], [", ", _txt], ['"MSFT"', _str], [", ", _txt], ['"AAPL"]', _str], [",", _txt]]),
     CL([['        "audience"', _str], [": ", _op], ['"Portfolio Manager"', _str]]),
     CL([["    }", _op]]),
     CL([["})", _op]]),
@@ -1005,8 +1206,8 @@ const SovereignSection = () => (
 ═══════════════════════════════════════ */
 
 const PROD_PARTNERS = [
-  { name: "Kotak AMC",        abbr: "KO", color: "#D2232A" },
-  { name: "ICICI Prudential",  abbr: "IP", color: "#F47920" },
+  { name: "Citadel",           abbr: "CT", color: "#0047AB" },
+  { name: "Two Sigma",         abbr: "TS", color: "#1E3A5F" },
   { name: "Kalaari Capital",   abbr: "KC", color: "#1D3461" },
   { name: "Infoedge",          abbr: "IE", color: "#E8431F" },
   { name: "MS Capital",        abbr: "MS", color: "#003087" },
@@ -1164,10 +1365,12 @@ const ProductPage = () => {
     <React.Fragment>
       <Nav />
       <ProductHero />
+      <PersonasSection />
       <ProductSubNav />
       <AgentControlCenter />
       <MCPConnectors />
       <FinancialAgents />
+      <ContextMemorySection />
       <PascalFrontEnd />
       <ApiSDKSection />
       <SovereignSection />

@@ -72,9 +72,6 @@ const PostCard = ({ post, accent }) => (
         display: "inline-flex", alignItems: "center", gap: 4, marginLeft: "auto",
       }}>
         Read more
-        <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </span>
     </div>
   </div>

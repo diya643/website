@@ -57,7 +57,7 @@ const AboutHero = () => (
           width: "100%",
           margin: "0 auto",
         }}>
-          Pascal AI Labs builds sovereign, source-cited AI for AMCs, banks, and hedge funds. Founded 2024. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
+          Pascal AI Labs builds sovereign, source-cited AI for asset managers, banks, and hedge funds. Founded 2024. Deployed at leading institutional investment firms across North America and Asia.
         </p>
       </div>
     </div>
@@ -220,7 +220,7 @@ const AboutFounders = () => (
           initials="VV"
           accent="#519872"
           name="Vibhav Viswanathan — Co-founder & CEO"
-          bio="Vibhav leads Pascal's vision and partnerships. Before Pascal, he worked across capital markets and technology with India's leading AMCs and banks."
+          bio="Vibhav leads Pascal's vision and partnerships. Before Pascal, he worked across capital markets and technology at leading institutional asset managers and investment banks."
         />
         <FounderCard
           photo="assets/founders/mithun.jpg"
@@ -386,9 +386,6 @@ const AboutCTA = () => (
       onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald-2)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.transform = "none"; }}>
         Schedule an Institutional Briefing
-        <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </a>
     </div>
   </section>

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="description" content="See Pascal's research agents run on your firm's data. Sovereign deployment, source-cited outputs. We respond within one business day."/>
+  <meta name="description" content="Pascal AI Labs Trust Center — Security architecture, compliance posture, data governance, and certifications for institutional finance."/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Book a Pascal AI Demo — Agentic AI for Buy-Side Research</title>
+  <title>Trust Center — Pascal AI Labs</title>
   <link rel="stylesheet" href="colors_and_type.css?v=1778922181"/>
   <link rel="stylesheet" href="styles.css?v=1778922181"/>
 
@@ -12,26 +12,6 @@
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Pascal AI Labs",
-  "url": "https://pascalailabs.com",
-  "logo": "https://pascalailabs.com/logo.png",
-  "founder": [
-    { "@type": "Person", "name": "Vibhav Viswanathan", "jobTitle": "Co-founder & CEO" },
-    { "@type": "Person", "name": "Mithun M S", "jobTitle": "Co-founder & CTO" }
-  ],
-  "foundingDate": "2024",
-  "sameAs": ["https://www.linkedin.com/company/pascalailabs"],
-  "address": [
-    { "@type": "PostalAddress", "streetAddress": "228 Park Ave S PMB 55152", "addressLocality": "New York", "addressCountry": "USA" },
-    { "@type": "PostalAddress", "streetAddress": "86-90 Paul Street", "addressLocality": "London", "postalCode": "EC2A 4NE", "addressCountry": "UK" },
-    { "@type": "PostalAddress", "streetAddress": "Indiqube Edge, ORR", "addressLocality": "Bangalore", "addressCountry": "India" }
-  ]
-}
-  </script>
 </head>
 <body>
   <div id="root"></div>
@@ -39,13 +19,14 @@
   <script type="text/babel" src="components/Logo.jsx?v=1778922181"></script>
   <script type="text/babel" src="components/Nav.jsx?v=1778922181"></script>
   <script type="text/babel" src="components/Footer.jsx?v=1778922181"></script>
-  <script type="text/babel" src="components/DemoPage.jsx?v=1778922181"></script>
+  <script type="text/babel" src="components/TrustCenterPage.jsx?v=1778922181"></script>
 
   <script type="text/babel">
     const waitForComponents = () => {
-      const needed = ["Nav", "Footer", "DemoPage"];
+      const needed = ["Nav", "Footer", "TrustCenterPage"];
       if (needed.every(k => window[k])) {
-        ReactDOM.createRoot(document.getElementById("root")).render(<DemoPage/>);
+        ReactDOM.createRoot(document.getElementById("root")).render(<TrustCenterPage/>);
+        lucide.createIcons();
       } else {
         setTimeout(waitForComponents, 30);
       }

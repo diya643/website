@@ -19,16 +19,16 @@ const AMShell = ({ children, minH = 320 }) => (
 /* ─── Hero visual: Agentic Table comparing companies ─── */
 const AgenticTableHeroVisual = () => {
   const rows = [
-    { tick: "TCS",  name: "Tata Consultancy", rev: "₹2.41L Cr", growth: "+8.4%", pe: "28x", roe: "45%", hi: false },
-    { tick: "INFY", name: "Infosys Ltd.",      rev: "₹1.54L Cr", growth: "+4.2%", pe: "22x", roe: "32%", hi: true  },
-    { tick: "WIPRO",name: "Wipro Ltd.",        rev: "₹90,088 Cr",growth: "+2.1%", pe: "20x", roe: "18%", hi: false },
-    { tick: "HCLT", name: "HCL Technologies",  rev: "₹1.09L Cr", growth: "+6.5%", pe: "25x", roe: "25%", hi: false },
+    { tick: "MSFT", name: "Microsoft Corp.",   rev: "$211.9B",    growth: "+8.4%", pe: "28x", roe: "45%", hi: false },
+    { tick: "AAPL", name: "Apple Inc.",        rev: "$119.6B",    growth: "+4.2%", pe: "22x", roe: "32%", hi: true  },
+    { tick: "AMZN", name: "Amazon.com Inc.",   rev: "$187.8B",    growth: "+2.1%", pe: "20x", roe: "18%", hi: false },
+    { tick: "GOOGL", name: "Alphabet Inc.",      rev: "$307.4B",    growth: "+6.2%", pe: "24x", roe: "29%", hi: false },
   ];
   return (
     <AMShell minH={400}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
         <div>
-          <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>Agentic Table · India IT Coverage</div>
+          <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>Agentic Table · US Tech Coverage</div>
           <div style={{ fontSize: 11, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Bloomberg · FactSet · Auto-cited</div>
         </div>
         <div style={{ display: "flex", gap: 6 }}>
@@ -58,7 +58,7 @@ const AgenticTableHeroVisual = () => {
         </tbody>
       </table>
       <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.12)" }}>
-        <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>INFY — Variance Alert</div>
+        <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>AAPL — Variance Alert</div>
         <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>Q2 actuals deviate −1.1% vs consensus on revenue. Variance note auto-drafted · 3 analyst citations.</div>
       </div>
       <div style={{ marginTop: 8, display: "flex", gap: 5 }}>
@@ -88,7 +88,7 @@ const AMHero = () => (
             Pascal AI for<br /><span style={{ color: "var(--pascal-emerald)" }}>Asset Management</span>
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.72, color: "var(--pascal-dark-muted)", maxWidth: 520, width: "100%", marginBottom: 36 }}>
-            Source-cited research agents inside your VPC. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
+            Source-cited research agents inside your VPC. Built for institutional asset managers and portfolio companies.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a href="demo.html" style={{
@@ -101,9 +101,6 @@ const AMHero = () => (
             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
               Watch a Demo
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
             <a href="product.html" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -132,10 +129,10 @@ const AMEarningsVis = () => (
   <AMShell>
     <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 12 }}>Earnings Calendar · Live</div>
     {[
-      { tick: "TCS",   name: "Tata Consultancy Services", q: "Q2 FY26", date: "Oct 10", status: "Filed",    var: "+4.2% vs est", up: true  },
-      { tick: "INFY",  name: "Infosys Ltd.",              q: "Q2 FY26", date: "Oct 11", status: "Live",     var: "-1.1% vs est", up: false },
-      { tick: "WIPRO", name: "Wipro Ltd.",                q: "Q2 FY26", date: "Oct 14", status: "Expected", var: "—",            up: null  },
-      { tick: "HCLT",  name: "HCL Technologies",          q: "Q2 FY26", date: "Oct 15", status: "Expected", var: "—",            up: null  },
+      { tick: "MSFT",  name: "Microsoft Corporation",     q: "Q2 FY25", date: "Oct 10", status: "Filed",    var: "+4.2% vs est", up: true  },
+      { tick: "AAPL",  name: "Apple Inc.",                q: "Q2 FY25", date: "Oct 11", status: "Live",     var: "-1.1% vs est", up: false },
+      { tick: "AMZN",  name: "Amazon.com Inc.",           q: "Q2 FY25", date: "Oct 14", status: "Expected", var: "—",            up: null  },
+      { tick: "META",  name: "Meta Platforms Inc.",        q: "Q3 FY25", date: "Oct 15", status: "Expected", var: "—",            up: null  },
     ].map(r => (
       <div key={r.tick} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ flex: 1 }}>
@@ -158,7 +155,7 @@ const AMEarningsVis = () => (
     ))}
     <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.12)" }}>
       <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>Auto-Draft Ready</div>
-      <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>INFY variance note drafted · 3 analyst citations · 2 min ago</div>
+      <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>AAPL variance note drafted · 3 analyst citations · 2 min ago</div>
     </div>
   </AMShell>
 );
@@ -166,18 +163,18 @@ const AMEarningsVis = () => (
 const AMICMemoVis = () => (
   <AMShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>IC Memo — HDFC Bank Ltd.</div>
+      <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>IC Memo — JPMorgan Chase & Co.</div>
       <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
-      {["Q4 FY25 Annual Report", "Broker Notes ×4", "Internal Thesis"].map(s => (
+      {["Q4 2024 Annual Report", "Broker Notes ×4", "Internal Thesis"].map(s => (
         <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
     {[
-      { label: "Investment Thesis", body: "HDFC Bank's merger integration with HDFC Ltd. creates India's largest private bank by assets, with structural advantage in mortgage origination and cross-sell to an 80M+ customer base..." },
+      { label: "Investment Thesis", body: "JPMorgan Chase's scale advantage in investment banking and consumer deposits creates durable ROE leadership, with cross-sell leverage across its 80M+ retail customer base..." },
       { label: "Key Financials (FY25)", body: null },
-      { label: "Key Risks", body: "Integration execution risk · NIM compression post-merger · Slippage in HDFC Ltd. legacy book" },
+      { label: "Key Risks", body: "Rising credit loss provisions · NIM compression from rate cuts · Regulatory capital headwinds under Basel III endgame" },
     ].map(({ label, body }) => (
       <div key={label} style={{ padding: "9px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ fontSize: 10.5, fontWeight: 700, color: "var(--pascal-fg-muted)", marginBottom: 5, letterSpacing: "0.04em" }}>{label}</div>
@@ -185,7 +182,7 @@ const AMICMemoVis = () => (
           <div style={{ fontSize: 12, color: "var(--pascal-ink)", lineHeight: 1.6 }}>{body}</div>
         ) : (
           <div style={{ display: "flex", gap: 8 }}>
-            {[["NII", "₹1.08L Cr"], ["PAT", "₹60,812 Cr"], ["NIM", "3.46%"]].map(([k, v]) => (
+            {[["NII", "$89.3B"], ["NI", "$58.5B"], ["ROE", "17.8%"]].map(([k, v]) => (
               <div key={k} style={{ flex: 1, padding: "7px 9px", borderRadius: 6, background: "var(--pascal-paper-soft)", border: "1px solid var(--pascal-line)" }}>
                 <div style={{ fontSize: 9.5, color: "var(--pascal-fg-muted)" }}>{k}</div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-emerald)" }}>{v}</div>
@@ -206,24 +203,24 @@ const CompanyPrimerVis = () => (
   <AMShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
       <div>
-        <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>Company Primer — Reliance Industries</div>
-        <div style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Conglomerate · NSE: RELIANCE · ₹20.1L Cr mkt cap</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>Company Primer — Nvidia Corporation</div>
+        <div style={{ fontSize: 10.5, color: "var(--pascal-fg-muted)", marginTop: 2 }}>Semiconductors · NASDAQ: NVDA · $3.2T mkt cap</div>
       </div>
       <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Export ↑</span>
     </div>
     {[
       {
         label: "Business Model",
-        body: "Integrated O2C, Retail (Reliance Retail), and Digital (Jio) segments. Consumer businesses now contribute >50% of EBITDA, reducing commodity cyclicality...",
+        body: "AI accelerator hardware, CUDA software ecosystem, and enterprise platforms. Data center segment contributes >75% of revenue, compounding with AI infrastructure spend...",
       },
       {
         label: "Segment Economics",
         body: null,
-        metrics: [["O2C", "₹1.47L Cr"], ["Retail", "₹89,000 Cr"], ["Jio", "₹58,000 Cr"]],
+        metrics: [["Data Center", "$47.5B"], ["Gaming", "$10.4B"], ["Pro Viz", "$1.6B"]],
       },
       {
         label: "Competitive Position",
-        body: "Market leader in telecom (Jio, 480M subs) and organized retail. O2C scale yields structural feedstock cost advantage vs. standalone refiners.",
+        body: "Dominant in AI accelerator hardware with 80%+ data center GPU share. CUDA ecosystem creates deep software moats, locking in hyperscaler and enterprise workloads.",
       },
       {
         label: "Management Quality",
@@ -345,7 +342,7 @@ const AMAgentCarousel = () => {
             <h3 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.025em", color: "var(--pascal-ink)", lineHeight: 1.1, marginBottom: 20 }}>{tab.headline}</h3>
             <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--pascal-fg-muted)", maxWidth: 480, width: "100%", marginBottom: 28 }}>{tab.body}</p>
             <a href="demo.html" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
-              Learn More →
+              Learn More
             </a>
           </div>
           <Visual />
@@ -391,9 +388,6 @@ const AMSDKSection = () => (
           onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
           onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
             Watch a Demo
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </a>
         </div>
         <div style={{ borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)", background: "#1e1e2e", boxShadow: "0 28px 72px -18px rgba(0,0,0,0.5)", fontFamily: "Menlo, Monaco, 'Courier New', monospace" }}>
@@ -415,7 +409,7 @@ const AMSDKSection = () => (
               { t: [["# Run Earnings Summary Agent", "#546E7A"]] },
               { t: [["response", "#EEFFFF"], [" = ", "#89DDFF"], ["pascal", "#EEFFFF"], [".", "#89DDFF"], ["agents", "#EEFFFF"], [".", "#89DDFF"], ["run", "#82AAFF"], ["({", "#89DDFF"]] },
               { t: [['    "agentId"', "#C3E88D"], [": ", "#89DDFF"], ['"earnings-summary"', "#C3E88D"], [",", "#EEFFFF"]] },
-              { t: [['    "tickers"', "#C3E88D"], [": ", "#89DDFF"], ['["TCS"', "#C3E88D"], [", ", "#EEFFFF"], ['"INFY"', "#C3E88D"], [", ", "#EEFFFF"], ['"WIPRO"]', "#C3E88D"]] },
+              { t: [['    "tickers"', "#C3E88D"], [": ", "#89DDFF"], ['["MSFT"', "#C3E88D"], [", ", "#EEFFFF"], ['"AAPL"', "#C3E88D"], [", ", "#EEFFFF"], ['"AMZN"]', "#C3E88D"]] },
               { t: [["})", "#89DDFF"]] },
               { t: [["print", "#82AAFF"], ["(", "#89DDFF"], ["response", "#EEFFFF"], [")", "#89DDFF"]] },
             ].map((line, i) => (
@@ -501,11 +495,7 @@ const AMTestimonial = () => (
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(0,0,0,0.15)" }} />
         <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>Head of Research &amp; Technology</div>
-        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>ICICI Prudential AMC</div>
-        <div style={{ marginTop: 8, display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ width: 28, height: 28, borderRadius: 6, background: "#F47920", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#fff" }}>IP</span>
-          <span style={{ fontSize: 12, fontWeight: 600, color: "var(--pascal-dark-muted)" }}>ICICI Prudential AMC</span>
-        </div>
+        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Asset Manager</div>
       </div>
     </div>
   </section>
@@ -552,7 +542,7 @@ const AMIntegrations = () => (
       </div>
       <div style={{ textAlign: "center" }}>
         <a href="product.html#mcp-connectors" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
-          See All Integrations →
+          See All Integrations
         </a>
       </div>
     </div>
@@ -572,7 +562,7 @@ const AMWhyPascal = () => (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginBottom: 56 }}>
         {[
           { icon: "🛡️", title: "Sovereignty", body: "Research and portfolio data never leave your perimeter. On-prem or private cloud options with zero data retention enforced at the infrastructure layer." },
-          { icon: "📋", title: "Accuracy", body: "Every output cites its source — page, line, filing, or transcript. Built for SEBI tech risk reviews and internal audit from day one." },
+          { icon: "📋", title: "Accuracy", body: "Every output cites its source — page, line, filing, or transcript. Audit-ready for SEC, FINRA, and internal review from day one." },
           { icon: "🤝", title: "Partnership", body: "Our team works as an extension of yours to co-develop workflows, templates, and integrations tailored to your exact investment process." },
         ].map(pillar => (
           <div key={pillar.title} style={{
@@ -596,9 +586,6 @@ const AMWhyPascal = () => (
         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.color = "#fff"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--pascal-emerald)"; }}>
           Watch a Demo
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-            <path d="M3 11 L11 3 M5 3 L11 3 L11 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -629,9 +616,6 @@ const AMFinalCTA = () => (
       onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(0,0,0,0.20)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(0,0,0,0.20)"; }}>
         Watch a Demo
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </a>
     </div>
   </section>

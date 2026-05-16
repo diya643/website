@@ -104,7 +104,6 @@ const Footer = () => {
                 ) : (
                   <React.Fragment>
                     Subscribe
-                    <i data-lucide="arrow-right" style={{ width: 16, height: 16 }}/>
                   </React.Fragment>
                 )}
               </button>
@@ -129,7 +128,6 @@ const Footer = () => {
             <Logo size={36}/>
             <a href="demo.html" className="pbtn pbtn-primary">
               Schedule Demo
-              <i data-lucide="arrow-up-right" style={{ width: 16, height: 16 }}/>
             </a>
           </div>
         </div>

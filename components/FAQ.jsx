@@ -45,7 +45,6 @@ const FAQ = () => {
           </p>
           <a href="demo.html" className="pbtn pbtn-outline">
             Talk to our team
-            <i data-lucide="arrow-up-right" style={{ width: 14, height: 14 }}/>
           </a>
         </div>
 

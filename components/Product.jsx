@@ -19,10 +19,10 @@ const FEATURES = [
 ];
 
 const MODULES = [
-  { name: "Sovereign Data Fabric", tag: "Your data stays in your VPC",      icon: "server" },
-  { name: "Cognitive Engine",      tag: "Source-cited analyst reasoning",    icon: "brain"  },
-  { name: "Agent Library",         tag: "25+ buy-side research agents",      icon: "users"  },
-  { name: "MCP Hub & SDK",         tag: "Connect your existing stack",       icon: "plug"   },
+  { name: "Sovereign Data Fabric",    tag: "Your data stays in your VPC",         icon: "server"      },
+  { name: "Cognitive Engine",         tag: "Source-cited analyst reasoning",       icon: "brain"       },
+  { name: "Agent Library",            tag: "25+ buy-side research agents",         icon: "users"       },
+  { name: "MCP Hub & SDK",            tag: "Connect your existing stack",          icon: "plug"        },
 ];
 
 const PlatformSketch = () => (
@@ -30,7 +30,7 @@ const PlatformSketch = () => (
     borderRadius: 16,
     overflow: "hidden",
     border: "1px solid var(--pascal-line)",
-    boxShadow: "rgba(23,25,28,0.05) 0px 4px 8px 0px",
+    boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.12) 0px 0px 0px 1px, rgba(0,0,0,0.08) 0px 1px 2px 0px",
     background: "var(--pascal-paper)",
   }}>
     <div style={{
@@ -133,7 +133,7 @@ const ModuleCard = ({ name, tag, icon }) => {
         cursor: "pointer",
         transition: "all 200ms ease",
         transform: hover ? "translateY(-2px)" : "none",
-        boxShadow: hover ? "rgba(23,25,28,0.10) 0px 20px 40px 0px, rgba(23,25,28,0.20) 0px 40px 80px 0px" : "rgba(23,25,28,0.05) 0px 4px 8px 0px",
+        boxShadow: hover ? "rgba(39,156,123,0.15) 0px 0px 8px 0px, rgba(0,0,0,0.08) 0px 4px 12px 0px" : "none",
       }}>
       <span style={{
         flex: "none",
@@ -187,7 +187,7 @@ const Product = () => (
             color: "var(--pascal-fg-muted)",
             maxWidth: 480,
           }}>
-            25+ research agents inside your VPC. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
+            25+ research agents inside your VPC. Deployed at leading institutional investors across North America and Asia.
           </p>
 
           <a href="product.html" style={{
@@ -235,9 +235,12 @@ const Product = () => (
             gridTemplateColumns: "repeat(2, 1fr)",
             gap: 12,
           }}>
-            {MODULES.map((m, i) => (
+            {MODULES.slice(0, 4).map((m, i) => (
               <ModuleCard key={i} {...m} />
             ))}
+            <div style={{ gridColumn: "1 / -1" }}>
+              <ModuleCard {...MODULES[4]} />
+            </div>
           </div>
         </div>
       </div>

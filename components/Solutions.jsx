@@ -78,7 +78,7 @@ const Solutions = () => {
             <span style={{ color: "var(--pascal-ink)", fontWeight: 700 }}>Sovereign by Design.</span>
           </h2>
           <p style={{ marginTop: 22, fontSize: 18, lineHeight: 1.55, color: "var(--pascal-fg-muted)" }}>
-            Purpose-built for banks, asset managers, and hedge funds. Live at ICICI Prudential AMC and Kotak Mahindra AMC.
+            Purpose-built for hedge funds, asset managers, and investment banks. Deployed at leading institutional investors across North America and Asia-Pacific.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ const Solutions = () => {
           background: "var(--pascal-paper-card)",
           border: "1px solid var(--pascal-line)",
           borderRadius: 20,
-          boxShadow: "rgba(23,25,28,0.05) 0px 13px 16px 0px, rgba(23,25,28,0.10) 0px 4px 30px 0px",
+          boxShadow: "rgba(0,0,0,0.04) 0px -2px 0px 0px inset, rgba(0,0,0,0.10) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 16px 0px",
           overflow: "hidden",
           display: "grid",
           gridTemplateColumns: "1fr 1.2fr",

@@ -61,6 +61,21 @@ const PILLARS = [
     visual: "core",
     href: "product.html#api-sdk",
   },
+  {
+    key: "context",
+    label: "Context & Memory Graph",
+    short: "Context & Memory Graph",
+    icon: "git-branch",
+    headline: "Persistent context across every research workflow.",
+    body: "Pascal remembers every entity, relationship, and research thread your firm has ever touched. The more your team uses it, the smarter and faster every new workflow becomes.",
+    stats: [
+      { v: "Firm-wide", l: "Knowledge graph" },
+      { v: "100%",      l: "Private, in your VPC" },
+      { v: "Real-time", l: "Entity updates" },
+    ],
+    visual: "context",
+    href: "product.html#context-memory",
+  },
 ];
 
 const Pillars = () => {
@@ -170,9 +185,6 @@ const Pillars = () => {
             onMouseEnter={(e) => e.currentTarget.style.gap = "12px"}
             onMouseLeave={(e) => e.currentTarget.style.gap = "8px"}>
               Learn more about {p.short}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
             </a>
           </div>
 
@@ -373,10 +385,61 @@ const CoreVisual = () => (
   </div>
 );
 
+const ContextVisual = () => {
+  const nodes = [
+    { id: "nvda",  label: "Nvidia Corp.",        x: 50,  y: 40,  r: 22, color: "#76a9fa" },
+    { id: "msft",  label: "Microsoft",           x: 200, y: 20,  r: 18, color: "#a78bfa" },
+    { id: "amd",   label: "AMD",                 x: 340, y: 50,  r: 16, color: "#34d399" },
+    { id: "memo",  label: "IC Memo Q3",          x: 130, y: 130, r: 20, color: "#f59e0b" },
+    { id: "macro", label: "Macro Brief",         x: 290, y: 140, r: 18, color: "#f59e0b" },
+    { id: "chip",  label: "Semis Sector",        x: 200, y: 210, r: 16, color: "#6ee7b7" },
+    { id: "pm",    label: "Portfolio Manager",   x: 60,  y: 220, r: 14, color: "#93c5fd" },
+    { id: "ana",   label: "Lead Analyst",        x: 360, y: 220, r: 14, color: "#c4b5fd" },
+  ];
+  const edges = [
+    ["nvda","memo"],["msft","memo"],["amd","macro"],["nvda","macro"],
+    ["memo","chip"],["macro","chip"],["memo","pm"],["macro","ana"],
+    ["nvda","chip"],["msft","amd"],
+  ];
+  return (
+    <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 18, padding: 18, backdropFilter: "blur(6px)" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
+        <div style={{ fontSize: 12, fontWeight: 700, color: "rgba(255,255,255,0.85)", letterSpacing: "0.04em" }}>KNOWLEDGE GRAPH · LIVE</div>
+        <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10, fontWeight: 600, background: "rgba(39,156,123,0.2)", color: "var(--pascal-accent)", border: "1px solid rgba(39,156,123,0.3)" }}>247 entities · updated 2m ago</span>
+      </div>
+      <svg viewBox="0 0 420 260" width="100%" style={{ display: "block" }}>
+        {edges.map(([a, b], i) => {
+          const na = nodes.find(n => n.id === a), nb = nodes.find(n => n.id === b);
+          return <line key={i} x1={na.x} y1={na.y} x2={nb.x} y2={nb.y} stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />;
+        })}
+        {nodes.map(n => (
+          <g key={n.id}>
+            <circle cx={n.x} cy={n.y} r={n.r} fill={n.color} fillOpacity="0.15" stroke={n.color} strokeWidth="1.5" />
+            <text x={n.x} y={n.y + 4} textAnchor="middle" fontSize="8" fill="rgba(255,255,255,0.75)" fontFamily="Inter, sans-serif" fontWeight="600">{n.label.split(" ")[0]}</text>
+          </g>
+        ))}
+      </svg>
+      <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
+        {[
+          { label: "Company", color: "#76a9fa" },
+          { label: "Research Output", color: "#f59e0b" },
+          { label: "Sector", color: "#6ee7b7" },
+          { label: "Analyst", color: "#c4b5fd" },
+        ].map(t => (
+          <span key={t.label} style={{ display: "inline-flex", alignItems: "center", gap: 5, fontSize: 10, color: "rgba(255,255,255,0.6)" }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: t.color, opacity: 0.8 }} />{t.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const PillarVisual = ({ kind }) => {
   if (kind === "workspace") return <WorkspaceVisual />;
   if (kind === "agents")    return <AgentsVisual />;
   if (kind === "secure")    return <SecureVisual />;
+  if (kind === "context")   return <ContextVisual />;
   return <CoreVisual />;
 };
 

@@ -10,13 +10,14 @@ const Hero = () => (
     borderBottom: "1px solid rgba(255,255,255,0.08)",
   }}>
 
-    {/* YouTube background — NYC aerial 4K drone footage */}
+    {/* YouTube background — NYC aerial 4K drone footage, loops a 5-second clip */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 0,
       overflow: "hidden",
     }}>
       <iframe
-        src="https://www.youtube.com/embed/qpRf06q2PKg?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&playlist=qpRf06q2PKg&playsinline=1&modestbranding=1&disablekb=1"
+        id="hero-yt-bg"
+        src="https://www.youtube.com/embed/qpRf06q2PKg?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&playlist=qpRf06q2PKg&playsinline=1&modestbranding=1&disablekb=1&start=10&end=15&enablejsapi=1"
         style={{
           position: "absolute",
           top: "50%", left: "50%",
@@ -33,21 +34,70 @@ const Hero = () => (
         frameBorder="0"
       />
     </div>
+    <script dangerouslySetInnerHTML={{ __html: `
+      (function() {
+        var CLIP_START = 10, CLIP_END = 15;
+        var player, loopStarted = false;
+        function onYTReady() {
+          player = new YT.Player('hero-yt-bg', {
+            events: {
+              onReady: function() { startLoop(); },
+              onStateChange: function(e) {
+                if (e.data === YT.PlayerState.ENDED || e.data === YT.PlayerState.PAUSED) {
+                  player.seekTo(CLIP_START, true);
+                  player.playVideo();
+                }
+              }
+            }
+          });
+        }
+        function startLoop() {
+          if (loopStarted) return;
+          loopStarted = true;
+          setInterval(function() {
+            if (!player || typeof player.getCurrentTime !== 'function') return;
+            var t = player.getCurrentTime();
+            if (t >= CLIP_END || t < CLIP_START - 1) {
+              player.seekTo(CLIP_START, true);
+            }
+          }, 150);
+        }
+        if (window.YT && window.YT.Player) { onYTReady(); }
+        else {
+          var prev = window.onYouTubeIframeAPIReady;
+          window.onYouTubeIframeAPIReady = function() { if (prev) prev(); onYTReady(); };
+          if (!document.getElementById('yt-api-script')) {
+            var s = document.createElement('script');
+            s.id = 'yt-api-script';
+            s.src = 'https://www.youtube.com/iframe_api';
+            document.head.appendChild(s);
+          }
+        }
+      })();
+    ` }} />
 
     {/* Dark overlay for text contrast + YouTube UI masking */}
     <div aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 1,
       background: "linear-gradient(to bottom, rgba(5,8,15,0.72) 0%, rgba(5,8,15,0.38) 40%, rgba(5,8,15,0.38) 60%, rgba(5,8,15,0.72) 100%)",
     }} />
-    {/* Mask YouTube top-left title chip */}
+    {/* Mask YouTube top-left title chip — full opaque strip + gradient fade */}
     <div aria-hidden="true" style={{
-      position: "absolute", top: 0, left: 0, right: 0, height: 80, zIndex: 2,
-      background: "linear-gradient(to bottom, rgba(5,8,15,0.92) 0%, transparent 100%)",
+      position: "absolute", top: 0, left: 0, right: 0, height: 120, zIndex: 3,
+      background: "linear-gradient(to bottom, rgba(5,8,15,1) 0%, rgba(5,8,15,0.97) 40%, rgba(5,8,15,0.5) 75%, transparent 100%)",
+      pointerEvents: "none",
     }} />
     {/* Mask YouTube bottom-right "More videos" chip */}
     <div aria-hidden="true" style={{
-      position: "absolute", bottom: 0, left: 0, right: 0, height: 80, zIndex: 2,
-      background: "linear-gradient(to top, rgba(5,8,15,0.92) 0%, transparent 100%)",
+      position: "absolute", bottom: 0, left: 0, right: 0, height: 120, zIndex: 3,
+      background: "linear-gradient(to top, rgba(5,8,15,1) 0%, rgba(5,8,15,0.97) 40%, rgba(5,8,15,0.5) 75%, transparent 100%)",
+      pointerEvents: "none",
+    }} />
+    {/* Mask YouTube right-side "More videos" text chip */}
+    <div aria-hidden="true" style={{
+      position: "absolute", top: 0, bottom: 0, right: 0, width: 200, zIndex: 3,
+      background: "linear-gradient(to left, rgba(5,8,15,0.85) 0%, transparent 100%)",
+      pointerEvents: "none",
     }} />
 
     <div className="container" style={{ position: "relative", zIndex: 2 }}>
@@ -106,9 +156,6 @@ const Hero = () => (
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <a href="demo.html" className="pbtn pbtn-primary">
             Schedule a Demo
-          </a>
-          <a href="product.html" className="pbtn pbtn-ghost" style={{ color: "rgba(255,255,255,0.75)", fontSize: 15, borderColor: "rgba(255,255,255,0.25)" }}>
-            See the platform
           </a>
         </div>
 

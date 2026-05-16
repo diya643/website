@@ -16,8 +16,8 @@ const HFShell = ({ children, minH = 320 }) => (
   </div>
 );
 
-/* ─── Stylized Mumbai skyline ─── */
-const MumbaiSkyline = () => {
+/* ─── Stylized city skyline ─── */
+const CitySkyline = () => {
   const BG = [
     [10,220,14,180],[30,205,18,195],[52,225,12,175],[68,195,16,205],[88,218,14,182],
     [106,200,20,200],[132,215,15,185],[152,225,18,175],[175,210,22,190],[202,230,14,170],
@@ -67,9 +67,9 @@ const MumbaiSkyline = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
             {[
-              { tick: "TCS", q: "Q2 FY26", status: "Filed", var: "+4.2% vs est." },
-              { tick: "INFY", q: "Q2 FY26", status: "Live",  var: "-1.1% vs est." },
-              { tick: "WIPRO", q: "Q2 FY26", status: "Expected 14:30", var: "—" },
+              { tick: "MSFT", q: "Q2 FY25", status: "Filed", var: "+4.2% vs est." },
+              { tick: "AAPL", q: "Q2 FY25", status: "Live",  var: "-1.1% vs est." },
+              { tick: "GOOGL", q: "Q2 FY25", status: "Expected 14:30", var: "—" },
             ].map(r => (
               <div key={r.tick} style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-emerald)", width: 52, flex: "none" }}>{r.tick}</span>
@@ -121,9 +121,6 @@ const HFHero = () => (
             onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald-2)"; e.currentTarget.style.transform = "translateY(-1px)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.transform = "none"; }}>
               Book a Demo
-              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
             <a href="product.html" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
@@ -139,7 +136,7 @@ const HFHero = () => (
           </div>
         </div>
         <div style={{ height: 480, position: "relative" }}>
-          <MumbaiSkyline />
+          <CitySkyline />
         </div>
       </div>
     </div>
@@ -152,10 +149,10 @@ const EarningsVis = () => (
   <HFShell>
     <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--pascal-fg-muted)", marginBottom: 12 }}>Earnings Calendar · Live</div>
     {[
-      { tick: "TCS",    name: "Tata Consultancy Services", q: "Q2 FY26", date: "Oct 10", status: "Filed",  var: "+4.2% vs est", up: true },
-      { tick: "INFY",   name: "Infosys Ltd.",              q: "Q2 FY26", date: "Oct 11", status: "Live",   var: "-1.1% vs est", up: false },
-      { tick: "WIPRO",  name: "Wipro Ltd.",                q: "Q2 FY26", date: "Oct 14", status: "Expected", var: "—", up: null },
-      { tick: "HCLT",   name: "HCL Technologies",          q: "Q2 FY26", date: "Oct 15", status: "Expected", var: "—", up: null },
+      { tick: "MSFT",   name: "Microsoft Corporation",     q: "Q2 FY25", date: "Oct 10", status: "Filed",  var: "+4.2% vs est", up: true },
+      { tick: "AAPL",  name: "Apple Inc.",                q: "Q2 FY25", date: "Oct 11", status: "Live",   var: "-1.1% vs est", up: false },
+      { tick: "GOOGL", name: "Alphabet Inc.",              q: "Q2 FY25", date: "Oct 14", status: "Expected", var: "—", up: null },
+      { tick: "META",   name: "Meta Platforms Inc.",        q: "Q3 FY25", date: "Oct 15", status: "Expected", var: "—", up: null },
     ].map(r => (
       <div key={r.tick} style={{ display: "flex", alignItems: "center", gap: 10, padding: "9px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ flex: 1 }}>
@@ -178,7 +175,7 @@ const EarningsVis = () => (
     ))}
     <div style={{ marginTop: 12, padding: "10px 12px", borderRadius: 8, background: "rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.12)" }}>
       <div style={{ fontSize: 11.5, fontWeight: 600, color: "var(--pascal-emerald)", marginBottom: 3 }}>Auto-Draft Ready</div>
-      <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>TCS variance note drafted · 2 analyst citations · 3 min ago</div>
+      <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>MSFT variance note drafted · 2 analyst citations · 3 min ago</div>
     </div>
   </HFShell>
 );
@@ -186,18 +183,18 @@ const EarningsVis = () => (
 const ICMemoVis = () => (
   <HFShell>
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>IC Memo — Reliance Industries Ltd.</div>
+      <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-ink)" }}>IC Memo — Nvidia Corporation</div>
       <span style={{ padding: "3px 10px", borderRadius: 999, fontSize: 10.5, fontWeight: 600, background: "rgba(0,0,0,0.05)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>Export ↑</span>
     </div>
     <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
-      {["Q4 FY25 Filing", "Broker Notes ×3", "Internal Thesis"].map(s => (
+      {["Q4 2024 10-K Filing", "Broker Notes ×3", "Internal Thesis"].map(s => (
         <span key={s} style={{ padding: "2px 8px", borderRadius: 999, fontSize: 10.5, background: "var(--pascal-mint)", color: "var(--pascal-emerald)", border: "1px solid rgba(0,0,0,0.12)" }}>{s}</span>
       ))}
     </div>
     {[
-      { label: "Investment Thesis", body: "Reliance's O2C integration and JioCinema subscriber base provide durable revenue diversification, offsetting commodity cyclicality..." },
+      { label: "Investment Thesis", body: "Nvidia's CUDA ecosystem and data center GPU dominance position it as the critical infrastructure layer for AI model training and inference at scale..." },
       { label: "Key Financials (FY25)", body: null },
-      { label: "Key Risks", body: "Telecom regulatory overhang · Global crude price volatility · New commerce execution lag" },
+      { label: "Key Risks", body: "Export control restrictions · Customer concentration risk (hyperscalers) · AMD/Intel competitive pressure in inference workloads" },
     ].map(({ label, body }) => (
       <div key={label} style={{ padding: "9px 0", borderBottom: "1px solid var(--pascal-line)" }}>
         <div style={{ fontSize: 10.5, fontWeight: 700, color: "var(--pascal-fg-muted)", marginBottom: 5, letterSpacing: "0.04em" }}>{label}</div>
@@ -205,7 +202,7 @@ const ICMemoVis = () => (
           <div style={{ fontSize: 12, color: "var(--pascal-ink)", lineHeight: 1.6 }}>{body}</div>
         ) : (
           <div style={{ display: "flex", gap: 8 }}>
-            {[["Revenue", "₹9.01L Cr"], ["EBITDA", "₹1.69L Cr"], ["PAT", "₹79,020 Cr"]].map(([k, v]) => (
+            {[["Revenue", "$130.5B"], ["EBITDA", "$81.7B"], ["FCF", "$60.8B"]].map(([k, v]) => (
               <div key={k} style={{ flex: 1, padding: "7px 9px", borderRadius: 6, background: "var(--pascal-paper-soft)", border: "1px solid var(--pascal-line)" }}>
                 <div style={{ fontSize: 9.5, color: "var(--pascal-fg-muted)" }}>{k}</div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: "var(--pascal-emerald)" }}>{v}</div>
@@ -293,28 +290,28 @@ const CAROUSEL_TABS = [
     id: "earnings", label: "Earnings Synthesis",
     headline: "Earnings Synthesis",
     body: "Transcripts, presentations, and filings auto-fetched on release. Variance vs consensus flagged. Drafts ready for analyst review.",
-    cta: "Learn More →",
+    cta: "Learn More",
     Visual: EarningsVis,
   },
   {
     id: "memo", label: "IC Memo Builder",
     headline: "IC Memo Builder",
     body: "Filings, broker research, internal theses, and management calls pulled into your firm's IC template. Every claim cited.",
-    cta: "Learn More →",
+    cta: "Learn More",
     Visual: ICMemoVis,
   },
   {
     id: "rfp", label: "RFP / DDQ Response",
     headline: "RFP / DDQ Response",
     body: "Answers retrieved from your approved Answer Library. Drafts ready for review. The same questions stop being answered twice.",
-    cta: "Learn More →",
+    cta: "Learn More",
     Visual: RFPVis,
   },
   {
     id: "custom", label: "Build Custom Workflows",
     headline: "Build Custom Workflows",
     body: "Workflows tailored to your firm without engineering. Connects to Bloomberg, FactSet, your RMS. End-to-end audit trail.",
-    cta: "Book a Demo →",
+    cta: "Book a Demo",
     Visual: CustomWFVis,
   },
 ];
@@ -350,9 +347,6 @@ const AgentCarousel = () => {
             <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--pascal-fg-muted)", maxWidth: 480, width: "100%", marginBottom: 28 }}>{tab.body}</p>
             <a href="demo.html" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
               {tab.cta}
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
             </a>
           </div>
           <Visual />
@@ -398,9 +392,6 @@ const SDKSection = () => (
           onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-1px)"; }}
           onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; }}>
             Book a Demo
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
           </a>
         </div>
         <div style={{ borderRadius: 14, overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)", background: "#1e1e2e", boxShadow: "0 28px 72px -18px rgba(0,0,0,0.5)", fontFamily: "Menlo, Monaco, 'Courier New', monospace" }}>
@@ -423,7 +414,7 @@ const SDKSection = () => (
               { t: [["# Run Earnings Summary Agent", "#546E7A"]] },
               { t: [["response", "#EEFFFF"], [" = ", "#89DDFF"], ["pascal", "#EEFFFF"], [".", "#89DDFF"], ["agents", "#EEFFFF"], [".", "#89DDFF"], ["run", "#82AAFF"], ["({", "#89DDFF"]] },
               { t: [['    "agentId"', "#C3E88D"], [": ", "#89DDFF"], ['"earnings-summary"', "#C3E88D"], [",", "#EEFFFF"]] },
-              { t: [['    "tickers"', "#C3E88D"], [": ", "#89DDFF"], ['["TCS"', "#C3E88D"], [", ", "#EEFFFF"], ['"INFY"', "#C3E88D"], [", ", "#EEFFFF"], ['"WIPRO"]', "#C3E88D"]] },
+              { t: [['    "tickers"', "#C3E88D"], [": ", "#89DDFF"], ['["MSFT"', "#C3E88D"], [", ", "#EEFFFF"], ['"AAPL"', "#C3E88D"], [", ", "#EEFFFF"], ['"AMZN"]', "#C3E88D"]] },
               { t: [["})", "#89DDFF"]] },
               { t: [["print", "#82AAFF"], ["(", "#89DDFF"], ["response", "#EEFFFF"], [")", "#89DDFF"]] },
             ].map((line, i) => (
@@ -509,11 +500,7 @@ const Testimonial = () => (
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
         <div style={{ width: 48, height: 1, background: "rgba(0,0,0,0.15)" }} />
         <div style={{ fontSize: 13.5, fontWeight: 600, color: "var(--pascal-dark-text)" }}>Head of Research &amp; Technology</div>
-        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Indian Asset Management Company</div>
-        <div style={{ marginTop: 8, display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ width: 28, height: 28, borderRadius: 6, background: "#F47920", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 700, color: "#fff" }}>IP</span>
-          <span style={{ fontSize: 12, fontWeight: 600, color: "var(--pascal-dark-muted)" }}>ICICI Prudential AMC</span>
-        </div>
+        <div style={{ fontSize: 12.5, color: "var(--pascal-dark-muted)" }}>Leading Global Asset Management Firm</div>
       </div>
     </div>
   </section>
@@ -561,7 +548,7 @@ const Integrations = () => (
       </div>
       <div style={{ textAlign: "center" }}>
         <a href="product.html#mcp-connectors" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 14, fontWeight: 600, color: "var(--pascal-emerald)", textDecoration: "none" }}>
-          See All Integrations →
+          See All Integrations
         </a>
       </div>
     </div>
@@ -578,21 +565,21 @@ const CaseStudy = () => {
           <div>
             <span style={{ fontSize: 11.5, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--pascal-emerald)", display: "block", marginBottom: 16 }}>Case Study</span>
             <h2 style={{ fontSize: "clamp(24px, 3vw, 38px)", fontWeight: 700, letterSpacing: "-0.03em", color: "var(--pascal-ink)", lineHeight: 1.15, marginBottom: 16 }}>
-              ICICI Prudential AMC: how India's largest agentic-research deployment went live.
+              How a leading multi-strategy fund cut earnings research time by 60%.
             </h2>
             <p style={{ fontSize: 15.5, lineHeight: 1.72, color: "var(--pascal-fg-muted)", marginBottom: 28, width: "100%" }}>
-              Deployed inside ICICI Prudential's governance perimeter. IC memos from days to hours. Zero data sent to third-party LLMs.
+              Deployed inside the firm's private cloud perimeter. IC memos from days to hours. Zero data sent to third-party LLMs.
             </p>
             <div style={{ padding: "24px", borderRadius: 16, border: "1px solid var(--pascal-line)", background: "#fff" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                <span style={{ width: 40, height: 40, borderRadius: 8, background: "#F47920", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: "#fff", flex: "none" }}>IP</span>
+                <span style={{ width: 40, height: 40, borderRadius: 8, background: "#0047AB", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700, color: "#fff", flex: "none" }}>HF</span>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-ink)" }}>ICICI Prudential AMC</div>
-                  <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>One of India's largest fund houses</div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: "var(--pascal-ink)" }}>Leading Multi-Strategy Fund</div>
+                  <div style={{ fontSize: 11.5, color: "var(--pascal-fg-muted)" }}>$20B+ AUM · North America</div>
                 </div>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {["60% fewer analyst hours during earnings season", "Deployed inside ICICI's private cloud perimeter", "IC memo cycle time: days → hours", "Zero data sent to third-party LLM providers"].map(kpi => (
+                {["60% fewer analyst hours during earnings season", "Deployed inside the firm's private cloud perimeter", "IC memo cycle time: days to hours", "Zero data sent to third-party LLM providers"].map(kpi => (
                   <div key={kpi} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
                     <span style={{ color: "var(--pascal-emerald)", fontWeight: 700, fontSize: 14, flex: "none", marginTop: 1 }}>✓</span>
                     <span style={{ fontSize: 13, color: "var(--pascal-fg-muted)", lineHeight: 1.5 }}>{kpi}</span>
@@ -691,9 +678,6 @@ const WhyPascal = () => (
         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--pascal-emerald)"; e.currentTarget.style.color = "#fff"; }}
         onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--pascal-emerald)"; }}>
           Contact Us
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-            <path d="M3 11 L11 3 M5 3 L11 3 L11 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -724,9 +708,6 @@ const FinalCTA = () => (
       onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 36px -8px rgba(0,0,0,0.20)"; }}
       onMouseLeave={(e) => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "0 8px 32px -8px rgba(0,0,0,0.20)"; }}>
         Request Demo
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7 L11 7 M7 3 L11 7 L7 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
       </a>
     </div>
   </section>
